@@ -1,0 +1,9 @@
+/* Định dạng chung cho thẻ input */
+.t-input{
+    border: none;
+    outline: none;
+}
+
+.t-input:focus, select:focus{
+    border: 1px solid #636dde;
+}

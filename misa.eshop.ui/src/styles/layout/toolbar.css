@@ -1,0 +1,91 @@
+.tool-bar{
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 36px;
+    background-color: #2b3173;
+    border-bottom-width: 0;
+    border-top-width: 0;
+    font-size: 11px im !important;
+}
+
+.tool-bar .tool-bar-btn button{
+    padding: 0 7px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #2b3173;
+    color: #fff;
+}
+.tool-bar span{
+    padding: 0 3px;
+}
+
+.tool-bar .tool-bar-btn .isActive:hover{
+    background-color: #6b6f9d!important;
+}
+
+.tool-bar .tool-bar-btn:not(:last-child){
+    border-right: 1px solid #190472;
+}
+    /* Định dạng vị trí cho các icon trong toolbar */
+    .tool-bar-btn .t-icon-add{
+        background-position-x: -1px;
+        background-position-y: -127px;
+    }
+    .tool-bar-btn .t-icon-replication{
+        background-position-x: -978px;
+        background-position-y: -127px;
+    }
+    .tool-bar-btn .t-icon-watch{
+        background-position-x: -1602px;
+        background-position-y: -127px;
+    }
+    .tool-bar-btn .t-icon-edit{
+        background-position-x: -77px;
+        background-position-y: -203px;
+    }
+    .tool-bar-btn .t-icon-delete{
+        background-position-x: -1077px;
+        background-position-y: -128px;
+    }
+    .tool-bar-btn .t-icon-load{
+        background-position-x: -127px;
+        background-position-y: -201px;
+    }
+    .tool-bar-btn .t-icon-prev{
+        background-position-x: -476px;
+        background-position-y: -127px;
+    }
+    .tool-bar-btn .t-icon-next{
+        background-position-x: -425px;
+        background-position-y: -127px;
+    }
+    .tool-bar-btn .t-icon-save{
+        background-position-x: -328px;
+    background-position-y: -127px;
+    }
+    .tool-bar-btn .t-icon-pause{
+        background-position-x: -1402px;
+    background-position-y: -127px;
+    }
+    .tool-bar-btn .t-icon-print{
+        background-position-x: -227px;
+    background-position-y: -127px;
+    }
+    .tool-bar-btn .t-icon-export{
+        background-position-x: -127px;
+    background-position-y: -127px;
+    }
+    .tool-bar-btn .t-icon-help{
+        background-position-x: -179px;
+        background-position-y: -202px;
+    }
+    .tool-bar-btn .t-icon-exit{
+        background-position-x: -278px;
+    background-position-y: -127px;
+    }
+    
+
+
+    

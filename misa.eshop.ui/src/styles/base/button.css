@@ -1,0 +1,17 @@
+
+/* Định dạng chung cho thẻ button */
+.t-btn{
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    background-color: #fff;
+    /* font-family: sans-serif !important; */
+}
+.t-btn:hover{
+    cursor: pointer;
+}
+    /* định dạng 1 class khi bị disable */
+  
+    .t-btn-disable:hover{
+        pointer-events: visible;
+    }

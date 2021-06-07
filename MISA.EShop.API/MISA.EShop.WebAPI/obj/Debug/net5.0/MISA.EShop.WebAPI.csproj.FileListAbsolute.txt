@@ -1,0 +1,385 @@
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+D:\nctu1\BaiDanhGia\MISA.eShop\Project\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+D:\Bai Test\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+D:\vmquang\ThamKhao\Thamkhao2\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+D:\vmquang\ThamKhao\Thamkhao2_eshop\MISA.eShop.NgoThiCamTu\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+D:\vmquang\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\Dell E7450\Desktop\MISA.Eshop\APIIII\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\vmquang1\Desktop\mf806_vmquang\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache

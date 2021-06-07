@@ -1,0 +1,92 @@
+.footer{
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+    height: 52px;
+    background-color: #fff;
+    opacity: 0.9;
+    border-bottom: 1px solid #e1e1e1;
+
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.footer .footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .footer-content .footer-text{
+    color: #4b4c4c;
+    padding: 0 6px;
+    white-space: nowrap;
+    font: 300 13px/16px 'Open Sans','Helvetica Neue',helvetica,arial,verdana,sans-serif;
+}
+
+.footer .pagination{
+    display: flex;
+    height: 32px;
+    align-items: center;
+}
+
+.footer .btn-footer, .footer .p-index, .footer .cb-paging{
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    border-radius: 3px;
+    height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 1px;
+    font-size: 12px;
+
+}
+.footer .btn-footer{
+    width: 24px;
+    padding: 0;
+}
+
+.footer .btn-footer, .cb-paging:hover{
+    border: 1px solid #6b6f9d;
+}
+
+    /* Xét vị trí background img */
+    .footer .t-icon-left-shift{
+        background-position: -649px -124px;
+    }
+
+    .footer .t-icon-previous{
+        background-position: -700px -124px;
+    }
+
+    .footer .t-icon-next{
+        background-position: -749px -124px;
+    }
+
+    .footer .t-icon-right-shift{
+        background-position: -798px -124px;
+    }
+    .footer .t-icon-refresh{
+        background-position: -849px -124px;
+    }
+.footer .p-index{
+    padding: 0;
+}
+
+.footer .p-index, .footer select{
+    width: 40px;
+    line-height: 13px;
+    padding-left: 4px;
+}
+.footer .p-index:focus, .footer select:focus{
+    border: 1px solid #6b6f9d;
+    outline: none;
+}
+
+.footer .display-paging-text{
+    overflow: hidden;
+    margin-right: 14px;
+    padding-right: 6px !important;
+}
+

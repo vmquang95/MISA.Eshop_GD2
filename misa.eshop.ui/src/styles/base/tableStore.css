@@ -1,0 +1,95 @@
+/* Định dạng cho table */
+table{
+    width: 100%;
+    /* overflow: auto; */
+}
+    /* Định nghĩa độ rộng cho 1 cột của table */
+    .col-15{
+        min-width: 19px;
+    }
+    .col-21{
+        min-width: 130px;
+    }
+    .col-42{
+        width: 42%;
+        min-width: 150px;
+    }
+    .col-12{
+        width: 12%;
+        min-width: 150px;
+    }
+    .col-10{
+        width: 10%;
+        min-width: 125px;
+    }
+
+    table thead{
+        text-align: center;
+        color: #212121;
+    }
+
+    table thead th{
+        border-right: 1px solid #d0d0d0 !important;
+        white-space: nowrap;
+        position: sticky;
+        top: 0;
+        background-color: #f4f4f4;
+        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+    }
+    
+    table thead th:last-child{
+        border-right-width: 0  !important;
+    }
+
+    table tbody td{
+        height: 32px;
+        white-space: nowrap;
+        padding: 0px 10px;
+        border: 1px solid #d0d0d0;
+        border-collapse: collapse;
+    }
+    table tbody td {
+        border-left-width: 0;
+        border-bottom-width: 0;
+    }
+    table tbody td:last-child {
+        border-right-width: 0;
+    }
+
+    table tbody tr:last-child td {
+        border-bottom-width: 1px;
+    }
+
+    table tr:nth-child(2n+1){
+        background-color: #f0f0fa;
+    }
+
+    table tbody tr:hover{
+        background-color: #d4d7e7;
+        cursor: pointer;
+    }
+
+    .order-date-input{
+        width: 170px !important;
+    }
+    .order-bill-id-input{
+        width: 150px !important;
+    }
+    .text-date{
+        text-align: center;
+    }
+    .txt-total{
+        text-align: right;
+    }
+    .txt-orderbill-id{
+        color: #636dde;
+        text-decoration:sandybrown;
+    }
+    .txt-orderbill-id span:hover{
+        border-bottom: 1px solid #636dde;
+    }
+    
+    .txt-status-text{
+        color: #EB7728;
+        text-decoration:sandybrown;
+    }

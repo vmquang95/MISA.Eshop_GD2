@@ -1,0 +1,228 @@
+.t-sidebar{
+    width: 150px;
+    height: 100%;
+    background-color: #2b3173!important;
+    z-index: 1;
+}
+
+
+    /* Phần logo */
+    .t-sidebar .logo-area{
+        width: 100%;
+        height: 52px;
+        background-color: #1e235a;
+    }
+    
+        .logo-area .logo-img{
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            background-image: url("../../assets/img/Logo_Full_White.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position-y: 3px;
+            cursor: pointer !important;
+        }
+    
+    /* Phần menu sidebar */
+    .t-sidebar .sidebar-area{
+        width: 98.5%;
+        height: calc(100% - 52px);
+    }
+
+        .sidebar-area .scroll-sidebar{
+            max-height: calc(100% - 41px);
+            overflow-y: auto;
+        }
+
+        .sidebar-area .sidebar-content .sidebar-item, .bottom-sidebar-content .sidebar-item{
+            color: #aaacc7;
+            height: 40px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar-area .sidebar-content .sidebar-item{
+            margin-bottom: 4px;
+        }
+
+        .sidebar-area .sidebar-content .sidebar-item:hover, .bottom-sidebar-content .sidebar-item:hover{
+            background-color: #1e235a;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Định dạng cho các icon ở sidebar */
+        .sidebar-item .sidebar-item-img{
+            position: absolute;
+            height: 28px;
+            width: 22px;
+            left: 8px;
+            top: 2px;
+            color: #f6f6f6;
+            text-align: center;
+            margin: 0;
+        }
+
+        .sidebar-item-img > i{
+            margin-top: 8px;
+            font-size: 16px;
+        }
+        
+        .sidebar-item .sidebar-item-text{
+            height: 26px;
+            width: 100%;
+            text-align: left;
+            padding-left: 40px;
+            line-height: 24px;
+        }
+
+        /* Xét vị trí cho các icon */
+        /* Tổng quan */
+        .sidebar-item .icon-home{
+            background-position: 0 6px;
+        }
+
+        /* Báo cáo */
+        .sidebar-item .icon-report{
+            background-position: 0 -273px;
+        }
+
+        /* Đơn hàng */
+        .sidebar-item .icon-order{
+            background: url("../../assets/img/ic_sogiaohang.png") no-repeat;
+            background-position: 4px 9px;
+        }
+
+        /* Mua hàng */
+        .sidebar-item .icon-purchase{
+            background-position: 0 -33px;
+        }
+
+        /* Khuyến mại */
+        .sidebar-item .icon-promotion{
+            background-position: 0 -193px;
+        }
+
+        /* Kho */
+        .sidebar-item .icon-stock{
+            background-position: 0 -75px;
+        }
+        /* quỹ tiền */
+        .sidebar-item .icon-cash{
+            background-position: 0 -115px;
+        }
+        /* Chi phí  */
+        .sidebar-item .icon-payment-receipt{
+            background-position: -2px -154px;
+        }
+
+        /* smsmarketing  */
+        .sidebar-item .icon-smsmarketing{
+            background: url("../../assets/icon/sms_menu.png") no-repeat;
+            background-size: 58%;
+            background-position: 5px 7px;
+        }
+        /*Thiết lập*/
+        .sidebar-area .icon-setting{
+            background-position: 0 -313px;
+
+        }
+        /*Trợ giúp*/
+        .sidebar-area .icon-help{
+            background-position: 0 -383px;
+
+        }
+        /*Thuê bao*/
+        .sidebar-area .icon-menusubcribe{
+            background-position: 0 -419px;
+
+        }
+         /* Hóa đơn điện tử  */
+         .sidebar-item .icon-meinvoice{
+            background: url("../../assets/icon/Logo_meInvoice.png") no-repeat;
+            background-size: 99.5%;
+            background-position: 0px 7px;
+        }
+          /* icon amis  */
+          .sidebar-item .icon-amis{
+            background: url("../../assets/icon/ic_Ketoan.png") no-repeat;
+            background-size: 65%;
+            background-position: 4px 9px;
+        }
+
+        /* Quản lý cửa hàng */
+        .sidebar-item .icon-store-management{
+            background-position: 0 -233px;
+        }
+           /* ocm */
+           .sidebar-item .icon-ocm{
+            background: url("../../assets/icon/ic_ocm_logo.png") no-repeat;
+            background-size: 73%;
+            background-position: 4px 9px;
+        }
+          /* misa lomas */
+          .sidebar-item .icon-misa-lomas{
+            background: url("../../assets/icon/ic_MISAlomas.png") no-repeat;
+            background-size: 99%;
+            background-position: 0px 6px;
+        }
+         /* icon api*/
+         .sidebar-item .icon-api{
+            background: url("../../assets/icon/ic_api_20.png") no-repeat;
+            background-size: 90%;
+            background-position: 2px 9px;
+        }
+        /* Trang đặt hàng */
+        .sidebar-item .icon-shopping{
+            background: url("../../assets/icon/ic_shopping_basket_48.png") no-repeat;
+            background-size: 81%;
+            background-position: 2px 3px;
+        }
+
+        /* Hàng hóa */
+        .sidebar-item .icon-merchandise{
+            background-position: 0 -350px;
+        }
+
+    /* Phần sidebar bottom */
+    .sidebar-area .bottom-sidebar-content{
+        border-top: 1px solid #190472;
+    }
+
+/* Định dạng cho thanh cuộn phần sidebar*/
+/* width */
+.sidebar-content::-webkit-scrollbar {
+    width: 7.2px;
+    height: 8px;
+     /* position: absolute;  */
+}
+.sidebar-content::-webkit-scrollbar-track-piece {
+    background:transparent;
+  }
+/* Track */
+.sidebar-content::-webkit-scrollbar-track {
+    /* background: rgba(190, 190, 190, 0.5);  */
+    background-color: #e0e0e0;
+    border-radius: 15px 40px 0px 0px;
+}
+
+/* Handle */
+.sidebar-content::-webkit-scrollbar-thumb {
+    /* background: rgba(69, 69, 69, 0.5);   */
+    background-color: #c2c2c2;
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+    /* background: rgba(39, 39, 39, 0.5);   */
+    background-color: #919191;
+}
+
+.default-active {
+    background-color: #1e235a;
+  }
+

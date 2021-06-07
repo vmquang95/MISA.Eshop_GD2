@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+    color: #404040;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 300;
+    /* font-family:'GoogleSans-Regular'; */
+    font-family: roboto,Tahoma,sans-serif!important;
+    background: #f6f6f6;
+    box-sizing: border-box;
+}
+/* Font chữ của MISA */
+@font-face {
+    font-family: 'GoogleSans-Regular';
+    src: url('../../assets/fonts/GoogleSans-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Light';
+   src: url('../../assets/fonts/GoogleSans-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: 'GoogleSans-Black';
+   src: url('../../assets/fonts/GoogleSans-Black.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Thin';
+  src: url('../../assets/fonts/GoogleSans-Thin.otf') format('opentype');
+}
+@import "./select.css";
+@import "./tableStore.css";
+@import "./icon.css";
+@import "./input.css";
+@import "./button.css";
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+/* Định dạng chung cho icon */
+.t-icon, .t-icon-1{
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    margin-right: 4px;
+}
+.t-icon{
+    background-image: url('../../assets/img/common-icon.png');
+}
+.t-icon-1{
+    background-image: url('../../assets/img/slibarmenu.png');
+
+}

@@ -1,0 +1,56 @@
+.text-color-red{
+    color: #cf4c35;
+    margin-left: 1px;
+}
+.tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  line-height: 20px;
+  background-color: #df4646;
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  padding: 0px 0px 0px 3px;
+  position: fixed;
+  left: calc(50% + 300px);
+  z-index: 1;
+}
+
+.tooltiptext::after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -14px;
+  right: auto;
+  top: 4px;
+  bottom: auto;
+  border: 7px solid;
+  border-color: transparent #df4646 transparent transparent;
+}
+
+.tooltipPhoneNumber {
+  left: calc(50% + 5px);
+}
+
+.warning {
+  cursor: pointer;
+}
+
+.warning .tooltiptext {
+  visibility: visible;
+}
+
+.status-side{
+  margin-left: -8px;
+  margin-top: -10px;
+}
+
+.store-status{
+  position: absolute;
+  margin-left: 100px;
+  cursor: pointer;
+}
+.stop-active{
+  margin-left: 118px !important;
+}

@@ -1,0 +1,46 @@
+.success {
+    background-color: #187d1e;
+  }
+  .fail {
+    background-color: #ffe7af;
+  }
+
+ 
+  
+  .alert-modal {
+    color: black;
+    background-color: white;
+    font-size: 15px;
+    border: 2px solid yellow;
+    z-index: 1000;
+    align-items: center;
+    position: fixed;
+    top: 52px;
+    right: 11px;
+    align-items: center;
+    display: flex;
+  }
+
+  .info-icon{
+    height: 100%;
+    width: 40px;
+    background-color: yellow;
+  }
+  .info-icon-img{
+    height: 40px;
+  }
+
+
+  .alert-form {
+    border: 5px solid yellow;
+    width: calc(100% - 40px);
+    height: 16px;
+    background-color: white !important;
+    padding: 8px 20px;
+    color: #434774;
+    font-weight: bold;
+    background-color: #ffffff;
+    font-size: 15px;
+    vertical-align: middle;
+  
+  }

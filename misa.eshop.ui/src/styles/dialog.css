@@ -1,0 +1,429 @@
+/* Phần dùng chung cho input, button, label trong dialog */
+.dialog .t-input{
+    border-radius: 4px;
+    height: 35px;
+    font-size: 13px;
+    border: 1px solid #bbbbbb;
+    padding-left: 12px;
+    box-sizing: border-box;
+}
+
+.dialog .t-input:hover:not(select){
+    cursor: text;
+}
+
+.dialog .t-input:visited{
+    outline: none;
+    font-size: 14px;
+    color: #000000;
+}
+.dialog .boder-warning{
+    border: 1px solid #df4646;
+}
+
+/* Input required validate
+.dialog .border-red{
+    border: 1px solid #ff4747;
+} */
+
+.dialog .warning{
+    background-image: url('../assets/img/warning32.png');
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-position: calc(100% - 1px) center;
+    width: 14px;
+    height: 14px;
+    margin-left: 2px;
+    align-self: center;
+    position: relative;
+    right: -3px;
+}
+
+/* Phần nền */
+.dialog .background-white{
+    background-color: #fff;
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 900;
+}
+
+/* Định dạng phần dialog */
+.dialog{
+    font-family: sans-serif !important;
+    display: block;
+    box-shadow: rgb(136 136 136/18%) 5px -5px 6px;
+    /* display: none; */
+}
+
+.dialog-modal{
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: 0.6;
+    z-index: 990;
+}
+
+/* ĐỊNH DẠNG CHUNG CHO CÁC DIALOG */
+    .dialog-form{
+        z-index: 1000;
+        background-color: #ffffff;
+        border: 2px solid #d0d0d0;
+        border-radius: 3px;
+        position: absolute;
+    }
+    .dialog-add-edit, .dialog-delete{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 16px 16px 0;
+        font-weight: 400;
+    }
+
+    .dialog-content{
+        width: 100%;
+        height: calc(100% - 56px);
+    }
+
+    /* Định dạng chung cho phần dialog header */
+        .dialog-header{
+            width: 100%;
+            height: 40px;
+            font-size: 16px;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #dfdfdf;
+            padding: 10px 16px;
+            box-sizing: border-box;
+            border-radius: 3px;
+        }
+
+        .dialog-header-content{
+            display: flex;
+            position: relative;
+            width: 100%;
+        }
+
+        /* Định dạng header title*/
+        .dialog-header .dialog-title{
+            height: 19px;
+            font-weight: 700;
+            color: #212121;
+            line-height: 20px;
+        }
+
+        /* Định dạng button close */
+        .dialog-button{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        #btn-close{
+            width: 16px;
+            height: 16px;
+            border: none;
+            outline: none;
+            color: #757575;
+            margin-right: 0;
+            background-color: #f0f0f0;
+            background-position: -1127px -127px;
+            opacity: 0.5;
+        }
+
+        #btn-close:hover{
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+    /* Định dạng chung phần footer */
+    .dialog-footer{
+        width: 100%;
+        border-top: 1px solid #dbd9d9;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+    }
+
+/* Định dạng cho form thêm, sửa thông tin cửa hàng */
+.dialog-form.form-add-edit{
+    width: 976px;
+    height: 717px;
+    position: absolute;
+    top: calc(50% - 720px / 2);
+    left: calc(50% - 490px);
+}
+
+
+
+
+/* Định dạng phần content thêm sửa*/
+.dialog-add-edit{
+    height: 370px;
+}
+
+/* Phần nội dung dialog thêm sửa (chia làm 2 phần top & bottom */
+    .dialog-content-top{
+        height: 50%;
+        margin-top: 4px;
+    }
+
+    .form-group{
+        width: 100%;
+        height: 35px;
+        display: flex;
+    }
+
+    /* Một hàng input */
+    .t-row{
+        display: flex;
+        margin-bottom: 8px;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+        .label-text{
+            width: 100px;
+            min-width: 100px;
+            margin: 8px 8px 8px 0;
+            white-space: nowrap;
+        }
+        
+        .form-control{
+            border-radius: 3px;
+            width: calc(100% - 100px);
+            border: 1px solid #d0d0d0;
+        }
+
+        .form-control:focus{
+            border: 1px solid #636dde;
+        }
+        .form-group #txt-address{
+            max-height: 82px;
+            min-height: 82px;
+            resize: none;
+            border-radius: 4px;
+            font-size: 13px;
+            padding-left: 12px;
+            padding-top: 6px;
+            box-sizing: border-box;
+            font-family: sans-serif !important;
+
+        }
+    
+    
+    .dialog-content-bottom{
+        height: 50%;
+    }
+
+    .t-row .col-50{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .t-row .col-50:first-child{
+            padding-right: 8px;
+        }
+
+        .t-row .col-50:last-child{
+            padding-left: 8px;
+        }
+
+        .t-row .col-50 .form-control{
+            width: calc(100% - 104px);
+        }
+
+    /* Định dạng phần footer thêm sửa*/
+    .footer-add-edit{
+        height: 60px;
+    }
+
+    /* footer left */
+        .dialog-footer .dialog-footer-left button{
+            display: flex;
+            height: 35px;
+            align-items: center;
+            margin-left: 6px;
+            margin-right: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #2b3173;
+            border-radius: 3px;
+        }
+
+        .dialog-footer-left .t-icon-help{
+            background: url('../assets/img/help.png') no-repeat 4px 1px;
+            margin-right: 5px;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .dialog-footer-left .dialog-btn-help:hover{
+            background-color: #e5e6eb;
+        }
+
+    /* footer right */
+        .dialog-footer .dialog-footer-right{
+            position: absolute;
+            right: 14px;
+            height: 35px;
+            display: flex;
+        }
+
+        .dialog-footer-right .d-btn{
+            height: 35px;
+            border-radius: 3px;
+            border: 1px solid #2b3173;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        /* button footer thêm sửa */
+            /* Lưu */
+            .btn-save{
+                background-color: #2b3173 !important;
+                color: #fff;
+                margin-right: 8px;
+                border: 1px solid #2b3173;
+            }
+
+            .btn-save:hover, .btn-save:focus{
+                background-color: #6b6f9d;
+                opacity: 0.8;
+            }
+
+                .icon-save{
+                    background-position:  -327px -127px;
+                }
+            
+            /* Lưu và thêm mới */
+            .btn-save-add{
+                margin-right: 8px;
+                color: #2b3173;
+            }
+
+            .btn-save-add:hover, .btn-save-add:focus{
+                color: #6b6f9d;
+            }
+
+                .icon-save-add{
+                    background-position:  -26px -127px;
+                }
+
+        /* Button Hủy  trong footer*/
+        .btn-cancel{
+            border: 1px solid;
+            border-color: #fff !important;
+            outline: none;
+            color: #2b3173;
+        }
+
+            .btn-cancel:hover, .btn-cancel:focus{
+                color: #6b6f9d;
+                border: 1px solid #6b6f9d !important;
+            }
+
+            .icon-cancel{
+                background-position:  -252px -127px;
+            }
+
+        .dialog-footer span{
+            margin-left: 0px;
+            margin-right: 5px;
+        }
+            
+/* Dialog xác nhận xóa */
+.dialog-form.form-confirm-delete{
+    width: 400px;
+    height: 156px;
+    top: calc(50% - 78px);
+    left: calc(50% - 200px);
+    box-sizing: border-box;
+}
+
+.dialog-confirm-delete{
+    width: 100%;
+    height: calc(100% - 40px);
+}
+.content-confirm{
+    height: 64px;
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px;
+    align-items: center;
+}
+    .content-confirm .icon-confirm{
+        width: 44px;
+        height: 44px;
+        background-image: url('../assets/img/icon-popup.png');
+        background-position: -165px -2px;
+    }
+
+    .content-confirm .msg-confirm-delete{
+        width: calc(100% - 44px);
+        height: 100%;
+        margin-left: 16px;
+        line-height: 20px;
+    }
+
+    .msg-confirm-delete .store-name-selected{
+        font-weight: 700;
+    }
+
+    .dialog-footer .footer-confirm-delete{
+        position: relative;
+        display: flex;
+    }
+
+    .dialog-footer .dialog-footer-btn{
+        display: flex;
+        height: 48px;
+        align-items: center;
+        padding: 8px 0;
+        box-sizing: border-box;
+        margin-left: 233px;
+    }
+
+    .dialog-footer .dialog-footer-btn  button{
+        display: flex;
+        height: 32px;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 700;
+        border-radius: 3px;
+        /* margin-left: 8px; */
+    }
+
+    .dialog-footer .dialog-footer-btn span{
+        margin-right: 16px;
+    }
+
+    .dialog-footer-btn .btn-delete-record{
+        padding: 7px;
+        background-color: #df4646 !important;
+        color: #fff  !important;
+    }
+    .btn-delete-record:hover{
+        opacity: 0.7;
+    }
+
+    .btn-delete-record .icon-delete{
+            background-position: -1077px -128px;
+        }
+
+    .dialog-footer-btn  .btn-cancel:hover{
+        /* right: 16px; */
+        border-color: #ffffff !important;
+    }
+
+        
+
+

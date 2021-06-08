@@ -302,17 +302,20 @@ export default {
     axios
       .get("http://localhost:35480/api/v1/OrderBills")
       .then((respone) => {
+        console.log(respone.data.data);
         this.orderBillList = respone.data.data;
         // console.log(this.orderBillList);
+         console.log(this.orderBillList.detail);
       })
       .catch((error) => console.log(error));
   },
 
   methods: {
+  
     getMoneyOrderBill(obj) {
       var moneyOrderBill = 0;
       try {
-        const arrayDetail = JSON.parse(JSON.parse(obj.detail));
+        let arrayDetail = JSON.parse(obj.detail);
         arrayDetail.forEach((element) => {
           moneyOrderBill += element.prince * element.quality;
         });
@@ -390,5 +393,8 @@ export default {
 }
 .col-inputdate {
   min-width: 129px;
+}
+.selected-row{
+  background-color: aquamarine;
 }
 </style>

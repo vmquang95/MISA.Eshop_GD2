@@ -36,7 +36,7 @@
       <!-- toolbar 1 -->
       <div class="tool-bar" style="height:32px">
         <div class="tool-bar-btn div-btn-add">
-          <button class="t-btn btn-add click-outside isActive" id="btn-add">
+          <button class="t-btn btn-add click-outside btn-hidden" id="btn-add">
             <i class="t-icon t-icon-prev"></i>
             <span>Trước</span>
           </button>
@@ -44,7 +44,7 @@
         <div class="tool-bar-btn div-btn-replication ">
           <button
             disabled
-            class="t-btn btn-replication t-btn-disable isActive"
+            class="t-btn btn-replication t-btn-disable btn-hidden"
             id="btn-replication"
           >
             <span>Sau</span>
@@ -73,7 +73,7 @@
         </div>
         <div class="tool-bar-btn div-btn-delete">
           <button
-            disabled
+            @click="save()"
             class="t-btn btn-delete t-btn-disable isActive"
             id="btn-delete"
           >
@@ -88,34 +88,36 @@
           </button>
         </div>
         <div class="tool-bar-btn div-btn-load">
-          <button class="t-btn btn-load isActive" id="btn-load">
+          <button class="t-btn btn-load btn-hidden" id="btn-load">
             <i class="t-icon t-icon-pause"></i>
             <span>Hoãn</span>
           </button>
         </div>
         <div class="tool-bar-btn div-btn-load">
-          <button class="t-btn btn-load isActive" id="btn-load">
+          <button class="t-btn btn-load btn-hidden" id="btn-load">
             <i class="t-icon t-icon-print"></i>
             <span>In</span>
           </button>
         </div>
         <div class="tool-bar-btn div-btn-load">
-          <button class="t-btn btn-load isActive" id="btn-load">
+          <button class="t-btn btn-load btn-hidden" id="btn-load">
             <i class="t-icon t-icon-export"></i>
             <span>Xuất Khẩu</span>
           </button>
         </div>
         <div class="tool-bar-btn div-btn-load">
-          <button class="t-btn btn-load isActive" id="btn-load">
+          <button class="t-btn btn-load btn-hidden" id="btn-load">
             <i class="t-icon t-icon-help"></i>
             <span>Trợ giúp</span>
           </button>
         </div>
         <div class="tool-bar-btn div-btn-load">
+          <button>Clear</button>
           <button class="t-btn btn-load isActive" id="btn-load" @click="hide()">
             <i class="t-icon t-icon-exit"></i>
             <span>Đóng</span>
           </button>
+          
         </div>
       </div>
       <!-- toolbar2 -->
@@ -256,6 +258,7 @@
             <select
               v-if="!isReadOnlyInput"
               class="select-datetime-create"
+              v-model="currentObject.status"
             >
               <option v-for="element in arrayStatus" :key="element.value">{{
                 element.text
@@ -278,7 +281,7 @@
       <!-- action-table -->
       <div class="action-table">
         <label> CHI TIẾT</label>
-        <i class="t-icon t-icon-add-col-table"></i>
+        <i class="t-icon t-icon-add-col-table" @click="addNewColumDetail()"></i>
       </div>
 
       <!-- grid -->
@@ -286,16 +289,12 @@
         <table id="tbl-list-store" cellspacing="0" cellpadding="0" width="100%">
           <thead>
             <tr>
-              <th class="col-15">
+              <th class="col-15 colum-sku">
                 <div class="thead-text">Mã SKU</div>
                 <div class="thead-filter order-date-input">
                   <button class="t-btn condition">*</button>
                   <input type="text" class="t-input filter-text" />
-                  <!-- <input
-                    type="text"
-                    class="t-input filter-text"
-                    id="filter-shop-code"
-                  /> -->
+          
                 </div>
               </th>
               <th class="col-15" fieldName="shopCode">
@@ -303,14 +302,10 @@
                 <div class="thead-filter order-bill-id-input">
                   <button class="t-btn condition">*</button>
                   <input type="text" class="t-input filter-text" />
-                  <!-- <input
-                    type="text"
-                    class="t-input filter-text"
-                    id="filter-shop-code"
-                  /> -->
+         
                 </div>
               </th>
-              <th class="col-12" fieldName="status">
+              <th class="col-12 colum-unit" fieldName="status">
                 <div class="thead-text">Đơn vị tính</div>
                 <div class="thead-filter">
                   <select type="text" class="filter-select" id="filter-status">
@@ -320,27 +315,19 @@
                   </select>
                 </div>
               </th>
-              <th class="col-21" fieldName="shopName">
+              <th class="col-21 colum-quality" fieldName="shopName">
                 <div class="thead-text">Số lượng đặt</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
                   <input type="text" class="t-input filter-text" />
-                  <!-- <input
-                    type="text"
-                    class="t-input filter-text"
-                    id="filter-shop-name"
-                  /> -->
+           
                 </div>
               </th>
-              <th class="col-42" fieldName="address">
+              <th class="col-42 colum-quality" fieldName="address">
                 <div class="thead-text">Số lượng nhập</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
-                  <!-- <input
-                    type="text"
-                    class="t-input filter-text"
-                    id="filter-address"
-                  /> -->
+         
                   <input
                     type="text"
                     class="t-input filter-text"
@@ -349,16 +336,12 @@
                 </div>
               </th>
 
-              <th class="col-10" fieldName="phoneNumber">
+              <th class="col-10 colum-prince" fieldName="phoneNumber">
                 <div class="thead-text">Đơn giá</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
                   <input type="text" class="t-input filter-text" />
-                  <!-- <input
-                    type="text"
-                    class="t-input filter-text"
-                    id="filter-phone-number"
-                  /> -->
+          
                 </div>
               </th>
 
@@ -367,11 +350,7 @@
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
                   <input type="text" class="t-input filter-text" />
-                  <!-- <input
-                    type="text"
-                    class="t-input filter-text"
-                    id="filter-address"
-                  /> -->
+ 
                 </div>
               </th>
               <th class="col-15"></th>
@@ -384,19 +363,19 @@
               v-for="element in this.arrayDetail"
               :key="element.sku"
             >
-              <td class="col-15">{{ element.sku }}</td>
-              <td class="col-15">{{ element.name }}</td>
-              <td class="col-21">{{ element.unit }}</td>
-              <td class="col-42 txt-money">{{ element.quality }}</td>
-              <td class="col-10 txt-total txt-money">0</td>
-              <td class="col-12 txt-money">
-                {{ element.prince | formatMoney }}
+              <td class="col-15 colum-sku" style="padding:0"><input class="input-table-detail" type="text" v-model="element.sku"></td>
+              <td class="col-15" style="padding:0"><input class="input-table-detail" type="text" v-model="element.name"></td>
+              <td class="col-21 colum-unit" style="padding:0"><input class="input-table-detail" type="text" v-model="element.unit"></td>
+              <td class="col-42 txt-money colum-quality" style="padding:0"><input class="input-table-detail" type="number" v-model="element.quality"></td>
+              <td class="col-10 txt-total txt-money colum-quality" style="padding:0"><input class="input-table-detail" type="text" value="0" readonly style="background-color:#e1e1e1;"></td>
+              <td class="col-12 txt-money colum-prince" style="padding:0">
+                <input class="input-table-detail" type="text" v-model="element.prince">
               </td>
-              <td class="col-42 txt-money">
-                {{ (element.prince * element.quality) | formatMoney }}
+              <td class="col-42 txt-money" style="padding:0">
+                <input class="input-table-detail" type="text">
               </td>
-              <td class="col-15">
-                <div class="icon-delete-table"></div>
+              <td class="col-15" style="width:30px; padding:0">
+                <div class="icon-delete-table" @click="deleteRowDetail(element.sku)"></div>
               </td>
             </tr>
           </tbody>
@@ -436,6 +415,7 @@ export default {
   },
   data() {
     return {
+      index:0,
       isReadOnlyInput: false,
       object: "",
       currentObject: {},
@@ -450,29 +430,76 @@ export default {
   watch: {},
   created() {},
   filters: {
-    fnFormatDate: function(dateInput) {
-      return moment(String(dateInput)).format("DD/MM/YYYY");
-    },
-    formatMoney: function(money) {
-      if (money != null)
-        var num = money.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
-      else return "0";
-      return num;
-    },
   },
   methods: {
+    deleteRowDetail(idSku){
+     this.arrayDetail = this.arrayDetail.filter(function(obj){
+       return obj.sku != idSku;
+     })
+    },
+    addNewColumDetail(){
+      let item={
+        //  sku:"",
+        // name:"",
+        // unit:"",
+        // quality:0,
+        // prince:0
+      };
+      this.arrayDetail.push(item);
+      console.log(this.arrayDetail);
+    },
+    save(){
+      if(this.formMode === "insert"){
+        confirm("save insert");
+        
+      }
+      else if(this.formMode === "update"){
+        confirm("save updaete");
+      }
+      else if(this.formMode === "watch"){
+        console.log(this.arrayDetail);
+        console.log(JSON.stringify(this.arrayDetail));
+      }
+      else {
+        return
+      }
+    },
+
+    /**
+     * Hàm này delete những phần tử  {} trong mảng arrayDetail
+     */
+    deleteObjectNull(){
+      console.log(this.arrayDetail);
+      this.arrayDetail = this.arrayDetail.filter(function(obj){
+        return Object.keys(obj).length != 0 || obj.constructor != Object;
+      })
+      console.log(this.arrayDetail);
+    },
+
+    /**
+     * Hàm này formatdate theo định dạng yêu cầu.
+     */
     fnFormatDate: function(dateInput) {
       return moment(String(dateInput)).format("DD/MM/YYYY");
     },
+    /**
+     * resert form
+     */
     reSetform() {
       this.currentObject = {};
       this.arrayDetail = [];
       this.isReadOnlyInput = false;
     },
+    /**
+     * ẩn form
+     */
     hide() {
       this.$refs.BaseForm_ref.hide();
       this.reSetform();
     },
+    /**
+     * hiển thị form
+     */
     show() {
       if (this.formMode == "update" || this.formMode == "watch") {
         if (this.formMode == "watch") {
@@ -485,13 +512,9 @@ export default {
           .then((respone) => {
             this.currentObject = respone.data.data;
             if (this.currentObject.detail) {
-              this.arrayDetail = JSON.parse(
-                JSON.parse(this.currentObject.detail)
-              );
+              this.arrayDetail = 
+                JSON.parse(this.currentObject.detail);
             }
-            this.currentObject.orderDate = this.fnFormatDate(
-              this.currentObject.orderDate
-            );
             //  console.log(this.currentObject.orderDate);
           })
           .catch((error) => console.log(error));
@@ -503,6 +526,7 @@ export default {
 </script>
 
 <style>
+
 @import url("../../../styles/base/formCreate.css");
 @import "../../../styles/layout/toolbar.css";
 .totalfooter {
@@ -539,10 +563,11 @@ export default {
   height: 279px !important;
 }
 .icon-delete-table {
-  background-image: url(/img/common-icon.6cf6ba71.png);
-  background-repeat: no-repeat;
-  height: 16px;
-  background-position: -2px -2px;
+      background-image: url(/img/common-icon.6cf6ba71.png);
+    background-repeat: no-repeat;
+    height: 16px;
+    background-position: 14px -2px;
+    width: 40px;
 }
 .icon-delete-table :hover {
   background-image: url(/img/common-icon.6cf6ba71.png);
@@ -651,5 +676,35 @@ export default {
 
 .txt-money {
   text-align: right !important;
+}
+.input-table-detail{
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 7px 10px 6px;
+  width: 86%;
+  height: 19px;
+
+}
+.input-table-detail:focus{
+  border: 1px solid #636dde;
+  border-radius: 4px;
+  background-color: #ffff ;
+}
+.btn-hidden{
+      cursor: auto !important;
+              opacity: 0.5;
+}
+.colum-unit{
+  min-width: 89px !important;
+}
+.colum-quality{
+  min-width: 119px !important;
+}
+.colum-prince{
+  min-width: 99px !important;
+}
+.colum-sku{
+  min-width: 150px !important;
 }
 </style>

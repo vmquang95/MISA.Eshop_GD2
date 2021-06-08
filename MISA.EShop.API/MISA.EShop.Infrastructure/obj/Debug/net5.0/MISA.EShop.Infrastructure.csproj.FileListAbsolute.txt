@@ -133,3 +133,18 @@ C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.Infrastructu
 C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\MISA.EShop.Infrastructure.dll
 C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\ref\MISA.EShop.Infrastructure.dll
 C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\bin\Debug\net5.0\MISA.EShop.Infrastructure.deps.json
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\bin\Debug\net5.0\ref\MISA.EShop.Infrastructure.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\bin\Debug\net5.0\MISA.EShop.Core.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\bin\Debug\net5.0\MISA.EShop.Core.pdb
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\MISA.EShop.Infrastructure.csprojAssemblyReference.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\MISA.EShop.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\MISA.EShop.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\MISA.EShop.Infrastructure.AssemblyInfo.cs
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\MISA.EShop.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\MISA.EShop.Infrastructure.csproj.CopyComplete
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\MISA.EShop.Infrastructure.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\ref\MISA.EShop.Infrastructure.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Infrastructure\obj\Debug\net5.0\MISA.EShop.Infrastructure.pdb

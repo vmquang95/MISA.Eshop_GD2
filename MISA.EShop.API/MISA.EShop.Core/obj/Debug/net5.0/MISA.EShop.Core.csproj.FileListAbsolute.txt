@@ -138,3 +138,17 @@ C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Deb
 C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.dll
 C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\ref\MISA.EShop.Core.dll
 C:\Users\Dell E7450\Desktop\MISAeShop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.pdb
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\bin\Debug\net5.0\MISA.EShop.Core.deps.json
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\bin\Debug\net5.0\MISA.EShop.Core.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\bin\Debug\net5.0\ref\MISA.EShop.Core.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\bin\Debug\net5.0\MISA.EShop.Core.pdb
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.csprojAssemblyReference.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.Resources.Messages.resources
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.csproj.GenerateResource.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.AssemblyInfoInputs.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.AssemblyInfo.cs
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.csproj.CoreCompileInputs.cache
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\ref\MISA.EShop.Core.dll
+C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.pdb

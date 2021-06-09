@@ -9,7 +9,7 @@
             <button
               class="t-btn btn-add click-outside isActive"
               id="btn-add"
-              @click="openDialog('insert','')"
+              @click="openDialog('insert', '')"
             >
               <i class="t-icon t-icon-add"></i>
               <span>Thêm mới</span>
@@ -17,7 +17,7 @@
           </div>
           <div class="tool-bar-btn div-btn-replication ">
             <button
-              :class="selectedObjectId? 'isActive':'isNotActive'"
+              :class="selectedObjectId ? 'isActive' : 'isNotActive'"
               :disabled="!selectedObjectId"
               @click="openDialog('insert', '')"
               class="t-btn btn-replication t-btn-disable"
@@ -29,7 +29,7 @@
           </div>
           <div class="tool-bar-btn div-btn-edit">
             <button
-              :class="selectedObjectId? 'isActive':'isNotActive'"
+              :class="selectedObjectId ? 'isActive' : 'isNotActive'"
               :disabled="!selectedObjectId"
               class="t-btn btn-edit t-btn-disable"
               id="btn-edit"
@@ -40,9 +40,9 @@
           </div>
           <div class="tool-bar-btn div-btn-edit">
             <button
-              :class="selectedObjectId? 'isActive':'isNotActive'"
+              :class="selectedObjectId ? 'isActive' : 'isNotActive'"
               :disabled="!selectedObjectId"
-              @click="openDialog('update',selectedObjectId)"
+              @click="openDialog('update', selectedObjectId)"
               class="t-btn btn-edit t-btn-disable"
               id="btn-edit"
             >
@@ -52,7 +52,7 @@
           </div>
           <div class="tool-bar-btn div-btn-delete">
             <button
-              :class="selectedObjectId? 'isActive':'isNotActive'"
+              :class="selectedObjectId ? 'isActive' : 'isNotActive'"
               :disabled="!selectedObjectId"
               @click="deleteObject()"
               class="t-btn btn-delete t-btn-disable"
@@ -63,7 +63,11 @@
             </button>
           </div>
           <div class="tool-bar-btn div-btn-load">
-            <button @click="loadData()" class="t-btn btn-load isActive" id="btn-load">
+            <button
+              @click="loadData()"
+              class="t-btn btn-load isActive"
+              id="btn-load"
+            >
               <i class="t-icon t-icon-load"></i>
               <span>Nạp</span>
             </button>
@@ -205,7 +209,12 @@
                 @click="clickRow(obj.orderBillId)"
                 v-bind:class="isSelected(obj.orderBillId) ? 'selected-row' : ''"
               >
-                <td class="col-15"><input type="checkbox" :checked="isSelected(obj.orderBillId)"/></td>
+                <td class="col-15">
+                  <input
+                    type="checkbox"
+                    :checked="isSelected(obj.orderBillId)"
+                  />
+                </td>
                 <td class="col-15 text-date">
                   {{ obj.orderDate | fnFormatDate }}
                 </td>
@@ -240,7 +249,7 @@
             </div>
             <div>
               <span style="margin-right:15px"> Tổng thành tiền</span>
-              <span>{{ totalMoneyOrderBill | formatMoney}}</span>
+              <span>{{ totalMoneyAllOrderBill | formatMoney }}</span>
             </div>
           </div>
         </div>
@@ -274,7 +283,7 @@ export default {
   components: {
     ModalCreateShop,
     TheFooterStore,
-    ModalDeletShop
+    ModalDeletShop,
   },
   filters: {
     fnFormatDate: function(dateInput) {
@@ -293,7 +302,7 @@ export default {
       selectedObjectId: "",
       orderBillList: [],
       countOrderBill: 0,
-      totalMoneyOrderBill: 0,
+      totalMoneyAllOrderBill: 0,
       storeStatus: [
         {
           statusName: "Tất cả",
@@ -320,24 +329,23 @@ export default {
   },
 
   methods: {
-    loadData(){
-      this.selectedObjectId='';
-        axios
-      .get("http://localhost:35480/api/v1/OrderBills")
-      .then((respone) => {
-        console.log(respone.data.data);
-        this.orderBillList = respone.data.data;
-      })
-      .catch((error) => console.log(error));
+    loadData() {
+      this.selectedObjectId = "";
+      axios
+        .get("http://localhost:35480/api/v1/OrderBills")
+        .then((respone) => {
+          console.log(respone.data.data);
+          this.orderBillList = respone.data.data;
+        })
+        .catch((error) => console.log(error));
     },
     /**
      * Sự kiện xóa 1 row của table orderList
      */
-    deleteObject(){
-      if(!this.selectedObjectId){
-        console.log("ko co ai de chon",this.selectedObjectId);
-      }
-      else{
+    deleteObject() {
+      if (!this.selectedObjectId) {
+        console.log("ko co ai de chon", this.selectedObjectId);
+      } else {
         this.$refs.ModalDelete.show();
       }
     },
@@ -435,15 +443,15 @@ export default {
 .col-inputdate {
   min-width: 129px;
 }
-.selected-row{
-        background-color: #a7afe4 !important;
-        color: #000;
-        cursor: default !important;
-    }
-.isNotActive{
+.selected-row {
+  background-color: #a7afe4 !important;
+  color: #000;
+  cursor: default !important;
+}
+.isNotActive {
   opacity: 0.4;
 }
-.isNotActive:hover{
+.isNotActive:hover {
   cursor: context-menu;
 }
 </style>

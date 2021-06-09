@@ -4,7 +4,9 @@
       <!-- Begin dialog header -->
       <div class="dialog-header">
         <div class="dialog-header-content">
-          <div class="dialog-title" id="dialog-title">Dữ liệu chưa được lưu</div>
+          <div class="dialog-title" id="dialog-title">
+            Dữ liệu chưa được lưu
+          </div>
           <div class="dialog-button">
             <button
               class="t-btn btn-close t-icon"
@@ -27,28 +29,27 @@
         </div>
         <div class="dialog-footer footer-confirm-delete">
           <div class="dialog-footer-btn" style="margin-left: 120px;">
-            
             <button
-              class="t-btn d-btn btn-delete-record" style="background-color: #2b3173 !important;"
+              class="t-btn d-btn btn-delete-record"
+              style="background-color: #2b3173 !important;"
               id="btn-delete-record"
               tabindex="1"
             >
               <div class="t-icon icon-save"></div>
               <span>Lưu</span>
             </button>
-             <button
-            style="width: 100px;margin-left:6px;border:1px solid; border-color: #2b3173 !important;"
+            <button
+              style="width: 100px;margin-left:6px;border:1px solid; border-color: #2b3173 !important;"
               class="t-btn d-btn btn-cancel"
               id="btn-cf-cancel"
               tabindex="2"
-              @click="hide()"
-
+              @click="noSave()"
             >
               <div class="t-icon icon-no-save"></div>
               <span>Không lưu</span>
             </button>
             <button
-            style="margin-left:6px"
+              style="margin-left:6px"
               class="t-btn d-btn btn-cancel"
               id="btn-cf-cancel"
               tabindex="2"
@@ -71,16 +72,19 @@ export default {
   components: {
     BaseModalFormSave,
   },
-  props: {
-  },
+  props: {},
   data() {
-    return {
-    };
+    return {};
   },
-  created() {
-    
-  },
+  created() {},
   methods: {
+    /**
+     * Sự kiện khi ấn nút không lưu
+     */
+    noSave(){
+      this.$emit('hide');
+      this.$refs.BaseForm.hide();
+    },
     /**
      *  Ẩn dialog xác nhận xóa
      *  CreatedBy: vmquang 16.04.2021
@@ -97,13 +101,11 @@ export default {
       this.$refs.BaseForm.show();
     },
   },
-  watch: {
-  },
+  watch: {},
 };
 </script>
 <style>
-.icon-no-save{
-   background-image: url('../../../assets/icon/not-save.png') !important;
+.icon-no-save {
+  background-image: url("../../../assets/icon/not-save.png") !important;
 }
 </style>
-

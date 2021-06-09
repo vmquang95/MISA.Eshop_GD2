@@ -418,3 +418,38 @@ C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\
 C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
 C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
 C:\Users\vmquang1\Desktop\mf806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\appsettings.json
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.exe
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.deps.json
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.json
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.runtimeconfig.dev.json
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Dapper.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Core.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\bin\Debug\net5.0\MISA.EShop.Infrastructure.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csprojAssemblyReference.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfoInputs.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.AssemblyInfo.cs
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.Manifest.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\staticwebassets\MISA.EShop.WebAPI.StaticWebAssets.xml
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\scopedcss\bundle\MISA.EShop.WebAPI.styles.css
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.csproj.CopyComplete
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\ref\MISA.EShop.WebAPI.dll
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop_GD2\MISA.EShop.API\MISA.EShop.WebAPI\obj\Debug\net5.0\MISA.EShop.WebAPI.genruntimeconfig.cache

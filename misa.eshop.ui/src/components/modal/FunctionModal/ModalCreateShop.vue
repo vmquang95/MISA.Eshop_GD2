@@ -26,8 +26,7 @@
               title="Đóng"
               class="t-btn btn-close t-icon"
               id="btn-close"
-              v-shortkey="['esc']"
-              @shortkey="hide()"
+              key="['esc']"
               @click="hide()"
             ></button>
           </div>
@@ -62,11 +61,7 @@
           </button>
         </div>
         <div class="tool-bar-btn div-btn-edit">
-          <button
-            
-            class="t-btn btn-edit t-btn-disable isActive"
-            id="btn-edit"
-          >
+          <button class="t-btn btn-edit t-btn-disable isActive" id="btn-edit">
             <i class="t-icon t-icon-edit"></i>
             <span>Sửa</span>
           </button>
@@ -82,7 +77,11 @@
           </button>
         </div>
         <div class="tool-bar-btn div-btn-load">
-          <button class="t-btn btn-load isActive" id="btn-load" style="opacity:0.5">
+          <button
+            class="t-btn btn-load isActive"
+            id="btn-load"
+            style="opacity:0.5"
+          >
             <i class="t-icon t-icon-delete"></i>
             <span>Xóa</span>
           </button>
@@ -116,7 +115,6 @@
             <i class="t-icon t-icon-exit"></i>
             <span>Đóng</span>
           </button>
-          
         </div>
       </div>
       <!-- toolbar2 -->
@@ -260,9 +258,12 @@
               class="select-datetime-create"
               v-model="currentObject.status"
             >
-              <option v-for="element in arrayStatus" :key="element.value" :value="element.value" >{{
-                element.text
-              }}</option>
+              <option
+                v-for="element in arrayStatus"
+                :key="element.value"
+                :value="element.value"
+                >{{ element.text }}</option
+              >
             </select>
             <select
               v-else
@@ -295,7 +296,6 @@
                 <div class="thead-filter order-date-input">
                   <button class="t-btn condition">*</button>
                   <input type="text" class="t-input filter-text" />
-          
                 </div>
               </th>
               <th class="col-15" fieldName="shopCode">
@@ -303,16 +303,18 @@
                 <div class="thead-filter order-bill-id-input">
                   <button class="t-btn condition">*</button>
                   <input type="text" class="t-input filter-text" />
-         
                 </div>
               </th>
               <th class="col-12 colum-unit" fieldName="status">
                 <div class="thead-text">Đơn vị tính</div>
                 <div class="thead-filter">
                   <select type="text" class="filter-select" id="filter-status">
-                    <option v-for="element in arrayUnit" :key="element.value" :value="element.value" >{{
-                      element.text
-                  }}</option>
+                    <option
+                      v-for="element in arrayUnit"
+                      :key="element.value"
+                      :value="element.value"
+                      >{{ element.text }}</option
+                    >
                   </select>
                 </div>
               </th>
@@ -321,14 +323,13 @@
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
                   <input type="text" class="t-input filter-text" />
-           
                 </div>
               </th>
               <th class="col-42 colum-quality" fieldName="address">
                 <div class="thead-text">Số lượng nhập</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
-         
+
                   <input
                     type="text"
                     class="t-input filter-text"
@@ -342,7 +343,6 @@
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
                   <input type="text" class="t-input filter-text" />
-          
                 </div>
               </th>
 
@@ -351,39 +351,97 @@
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
                   <input type="text" class="t-input filter-text" />
- 
                 </div>
               </th>
-              <th class="col-15"></th>
+              <th v-show="!isReadOnlyInput" class="col-15"></th>
             </tr>
           </thead>
 
           <tbody class="tbl-scroll">
             <tr
               class="row-data"
-              v-for="(element,index) in this.arrayDetail"
+              v-for="(element, index) in this.arrayDetail"
               :key="index"
             >
-              <td class="col-15 colum-sku" style="padding:0"><input class="input-table-detail" type="text" v-model="element.sku"></td>
-              <td class="col-15" style="padding:0"><input class="input-table-detail" type="text" v-model="element.name"></td>
+              <td class="col-15 colum-sku" style="padding:0">
+                <input
+                  :disabled="isReadOnlyInput"
+                  class="input-table-detail"
+                  type="text"
+                  v-model="element.sku"
+                />
+              </td>
+              <td class="col-15" style="padding:0">
+                <input
+                  :disabled="isReadOnlyInput"
+                  class="input-table-detail"
+                  type="text"
+                  v-model="element.name"
+                />
+              </td>
               <td class="col-21 colum-unit" style="padding:0">
-                <select type="text" class="filter-select" id="filter-status">
-                    <option v-for="element in arrayUnit" :key="element.value" :value="element.value" >{{
-                      element.text
-                  }}</option>
-                  </select>
+                <select
+                  :disabled="isReadOnlyInput"
+                  type="text"
+                  class="filter-select"
+                  id="filter-status"
+                  v-model="element.unit"
+                >
+                  <option
+                    v-for="item in arrayUnit"
+                    :key="item.value"
+                    :value="item.value"
+                    >{{ item.text }}</option
+                  >
+                </select>
                 <!-- <input class="input-table-detail input-prince txt-money" type="text" v-model="element.unit"> -->
-                </td>
-              <td class="col-42 txt-money colum-quality" style="padding:0"><input class="input-table-detail txt-money" type="number" v-model="element.quality"></td>
-              <td class="col-10 txt-total txt-money colum-quality" style="padding:0"><input class="input-table-detail txt-money" type="text" value="0" readonly style="background-color:#e1e1e1;"></td>
+              </td>
+              <td class="col-42 txt-money colum-quality" style="padding:0">
+                <input
+                  :disabled="isReadOnlyInput"
+                  class="input-table-detail txt-money"
+                  type="number"
+                  min="0"
+                  v-model="element.quality"
+                />
+              </td>
+              <td
+                class="col-10 txt-total txt-money colum-quality"
+                style="padding:0"
+              >
+                <input
+                  disabled
+                  class="input-table-detail txt-money"
+                  type="text"
+                  value="0"
+                  readonly
+                  style="background-color:#e1e1e1;"
+                />
+              </td>
               <td class="col-12 txt-money colum-prince" style="padding:0">
-                <input class="input-table-detail input-prince txt-money" type="text" v-model="element.prince">
+                <input
+                  :disabled="isReadOnlyInput"
+                  class="input-table-detail input-prince txt-money"
+                  type="text"
+                  v-model="element.prince"
+                  @keypress="formatPressNumber($event)"
+                />
               </td>
-              <td class="col-42 txt-money" style="padding:0">
-                <input class="input-table-detail txt-money" type="text">
+              <td class="col-42 txt-money" style="padding:0 8px 0 0">
+                <span>
+                  {{ (element.prince * element.quality) | formatMoney }}
+                </span>
               </td>
-              <td class="col-15" style="width:30px; padding:0">
-                <div class="icon-delete-table" @click="deleteRowDetail(element.sku)"></div>
+
+              <td
+                v-show="!isReadOnlyInput"
+                class="col-15"
+                style="width:30px; padding:0"
+              >
+                <div
+                  class="icon-delete-table"
+                  @click="deleteRowDetail(element.sku)"
+                ></div>
               </td>
             </tr>
           </tbody>
@@ -393,22 +451,20 @@
         <div class="total-content">
           <div style="margin-right: 370px;">
             <span style="margin-right:15px">Số dòng</span>
-            <span>{{arrayDetail.length}}</span>
+            <span>{{ arrayDetail.length }}</span>
           </div>
           <div style="margin-right:30px">
             <span style="margin-right:15px"> Tổng số lương</span>
-            <span>0</span>
+            <span>{{ getTotalQuality() }}</span>
           </div>
           <div>
             <span style="margin-right:15px"> Thành tiền</span>
-            <span>0</span>
+            <span>{{ getTotalMoney() | formatMoney }}</span>
           </div>
         </div>
       </div>
     </div>
-    <ModelSave 
-    ref="ModalSave"
-    />
+    <ModelSave ref="ModalSave" @hide="hide"/>
   </BaseModalForm>
 </template>
 
@@ -418,12 +474,12 @@
 import moment from "moment";
 import axios from "axios";
 import BaseModalForm from "../../layout/BaseModalForm";
-import ModelSave from '../FunctionModal/ModelSave.vue';
+import ModelSave from "../FunctionModal/ModelSave.vue";
 export default {
   components: {
     BaseModalForm,
     ModelSave,
-    // DatePicker 
+    // DatePicker
   },
   props: {
     selectedObjectId: String,
@@ -431,11 +487,13 @@ export default {
   },
   data() {
     return {
-      index:0,
+      totalQualityDetail: 1010,
+      totalMoneyDetail: 132131231,
+      index: 0,
       isReadOnlyInput: false,
       object: "",
       currentObject: {
-        detail:''
+        detail: "",
       },
       arrayDetail: [],
       arrayStatus: [
@@ -454,39 +512,68 @@ export default {
     };
   },
   watch: {
-    arrayDetail(){
+    arrayDetail() {
       this.currentObject.detail = JSON.stringify(this.arrayDetail);
       console.log(this.currentObject.detail);
-    }
+    },
   },
   created() {},
   filters: {
+    formatMoney: function(money) {
+      if (money != null)
+        var num = money.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+      else return "0";
+      return num;
+    },
   },
   methods: {
     /**
+     * Lấy tổng tiền.
+     */
+    getTotalMoney() {},
+    /**
+     * Lấy tổng số lượng đặt hàng hàng từ 1 chi tiết orerbill
+     */
+    getTotalQuality() {
+      var sumQuality = 0;
+      this.arrayDetail.forEach((element) => {
+        sumQuality += element.quality;
+      });
+      return sumQuality;
+    },
+    /**
+     * Chỉ cho phép nhập số.
+     */
+    formatPressNumber(e) {
+      let key = e.key;
+      if (!/^\d+/g.test(key)) {
+        e.preventDefault();
+      }
+    },
+    /**
      * Event mở mocal save, báo dữ liệu thay đổi
      */
-    openModalSave(){
+    openModalSave() {
       this.$refs.ModalSave.show();
     },
     /**
      * Format date bind vào input
      * CreateBy:vmquang(21/04/2021)
      */
-    fnFormatDateInput: function (dateInput) {
-        return moment(dateInput).format('YYYY-MM-DD')
+    fnFormatDateInput: function(dateInput) {
+      return moment(dateInput).format("YYYY-MM-DD");
     },
 
     /**
      * Xóa 1 row ở table detail
      */
-    deleteRowDetail(idSku){
-     this.arrayDetail = this.arrayDetail.filter(function(obj){
-       return obj.sku != idSku;
-     })
+    deleteRowDetail(idSku) {
+      this.arrayDetail = this.arrayDetail.filter(function(obj) {
+        return obj.sku != idSku;
+      });
     },
-    addNewColumDetail(){
-      let item={
+    addNewColumDetail() {
+      let item = {
         //  sku:"",
         // name:"",
         // unit:"",
@@ -495,50 +582,52 @@ export default {
       };
       this.arrayDetail.push(item);
     },
-    save(){
-      if(this.formMode === "insert"){
+    save() {
+      if (this.formMode === "insert") {
         this.deleteObjectNull();
         console.log("Che do Insert");
-        axios.post("http://localhost:35480/api/v1/OrderBills", this.currentObject)
-        .then((response)=>{
-          console.log("Insert thanh cong",response);
-          this.hide();
-          this.$emit('loadData');
-        })
-        .catch((error) => {
-          console.log(error.data);
-       });
-      }
-      else if(this.formMode === "update"){
+        axios
+          .post("http://localhost:35480/api/v1/OrderBills", this.currentObject)
+          .then((response) => {
+            console.log("Insert thanh cong", response);
+            this.hide();
+            this.$emit("loadData");
+          })
+          .catch((error) => {
+            console.log(error.data);
+          });
+      } else if (this.formMode === "update") {
         console.log("Che do update");
         this.deleteObjectNull();
-        axios.put(`http://localhost:35480/api/v1/OrderBills/${this.selectedObjectId}`,this.currentObject)
-        .then((response)=>{
-          console.log("update thanh cong",response);
-          this.hide();
-          this.$emit('loadData');
-        })
-        .catch((error)=>{
-          console.log(error.data);
-        })
-      }
-      else if(this.formMode === "watch"){
+        axios
+          .put(
+            `http://localhost:35480/api/v1/OrderBills/${this.selectedObjectId}`,
+            this.currentObject
+          )
+          .then((response) => {
+            console.log("update thanh cong", response);
+            this.hide();
+            this.$emit("loadData");
+          })
+          .catch((error) => {
+            console.log(error.data);
+          });
+      } else if (this.formMode === "watch") {
         console.log("Che do watch");
         this.hide();
-      }
-      else {
-        return
+      } else {
+        return;
       }
     },
 
     /**
      * Hàm này delete những phần tử  {} trong mảng arrayDetail
      */
-    deleteObjectNull(){
+    deleteObjectNull() {
       console.log(this.arrayDetail);
-      this.arrayDetail = this.arrayDetail.filter(function(obj){
+      this.arrayDetail = this.arrayDetail.filter(function(obj) {
         return Object.keys(obj).length != 0 || obj.constructor != Object;
-      })
+      });
       console.log(this.arrayDetail);
     },
     /**
@@ -570,10 +659,11 @@ export default {
           )
           .then((respone) => {
             this.currentObject = respone.data.data;
-            this.currentObject.orderDate = this.fnFormatDateInput(this.currentObject.orderDate);
+            this.currentObject.orderDate = this.fnFormatDateInput(
+              this.currentObject.orderDate
+            );
             if (this.currentObject.detail) {
-              this.arrayDetail = 
-                JSON.parse(this.currentObject.detail);
+              this.arrayDetail = JSON.parse(this.currentObject.detail);
             }
             console.log(this.currentObject);
             console.log(this.arrayDetail);
@@ -588,7 +678,6 @@ export default {
 </script>
 
 <style>
-
 @import url("../../../styles/base/formCreate.css");
 @import "../../../styles/layout/toolbar.css";
 .totalfooter {
@@ -625,11 +714,11 @@ export default {
   height: 279px !important;
 }
 .icon-delete-table {
-      background-image: url(/img/common-icon.6cf6ba71.png);
-    background-repeat: no-repeat;
-    height: 16px;
-    background-position: 14px -2px;
-    width: 40px;
+  background-image: url(/img/common-icon.6cf6ba71.png);
+  background-repeat: no-repeat;
+  height: 16px;
+  background-position: 14px -2px;
+  width: 40px;
 }
 .icon-delete-table :hover {
   background-image: url(/img/common-icon.6cf6ba71.png);
@@ -739,37 +828,36 @@ export default {
 .txt-money {
   text-align: right !important;
 }
-.input-table-detail{
+.input-table-detail {
   border: none;
   background: transparent;
   outline: none;
   padding: 7px 10px 6px;
   width: 86%;
   height: 19px;
-
 }
-.input-table-detail:focus{
+.input-table-detail:focus {
   border: 1px solid #636dde;
   border-radius: 4px;
-  background-color: #ffff ;
+  background-color: #ffff;
 }
-.btn-hidden{
-      cursor: auto !important;
-              opacity: 0.5;
+.btn-hidden {
+  cursor: auto !important;
+  opacity: 0.5;
 }
-.colum-unit{
+.colum-unit {
   min-width: 89px !important;
 }
-.colum-quality{
+.colum-quality {
   min-width: 119px !important;
 }
-.colum-prince{
+.colum-prince {
   min-width: 99px !important;
 }
-.colum-sku{
+.colum-sku {
   min-width: 150px !important;
 }
-.input-prince{
+.input-prince {
   width: 67px;
 }
 </style>

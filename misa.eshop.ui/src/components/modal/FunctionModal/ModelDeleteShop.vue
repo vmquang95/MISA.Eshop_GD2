@@ -21,7 +21,7 @@
           <div class="content-confirm">
             <div class="icon-confirm"></div>
             <div class="msg-confirm-delete">
-              <span>Bạn có chắc chắn muốn xóa phiếu đặt hàng </span> 
+              <span>Bạn có chắc chắn muốn xóa phiếu đặt hàng </span>
               <span class="store-name-selected" style="color:#df4646">{{
                 currentObject.refCode
               }}</span>
@@ -69,22 +69,22 @@ export default {
   },
   data() {
     return {
-      currentObject:{},
+      currentObject: {},
     };
   },
-  created() {
-    
-  },
+  created() {},
   methods: {
     /**
      * Xóa Object theo id
      */
-    deleteRecord(){
+    deleteRecord() {
       axios
-        .delete("http://localhost:35480/api/v1/OrderBills/" + this.selectedObjectId)
+        .delete(
+          "http://localhost:35480/api/v1/OrderBills/" + this.selectedObjectId
+        )
         .then((respone) => {
           console.log(respone);
-          this.$emit('loadData');
+          this.$emit("loadData");
         })
         .catch((error) => {
           console.log(error);
@@ -105,21 +105,18 @@ export default {
      */
     show() {
       axios
-          .get(
-            "http://localhost:35480/api/v1/OrderBills/" + this.selectedObjectId
-          )
-          .then((respone) => {
-            this.currentObject = respone.data.data;
-          })
-          .catch((error) => console.log(error));
+        .get(
+          "http://localhost:35480/api/v1/OrderBills/" + this.selectedObjectId
+        )
+        .then((respone) => {
+          this.currentObject = respone.data.data;
+        })
+        .catch((error) => console.log(error));
       this.$refs.BaseForm.show();
     },
   },
-  watch: {
-  },
+  watch: {},
 };
 </script>
 
-<style>
-</style>
-
+<style></style>

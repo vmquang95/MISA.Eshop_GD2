@@ -23,7 +23,7 @@
             <div class="msg-confirm-delete">
               Bạn có chắc chắn muốn xóa
               <span class="store-name-selected">{{
-                selectedShop.storeName
+                currentObject.refCode
               }}</span>
               khỏi danh sách cửa hàng?
             </div>
@@ -65,28 +65,32 @@ export default {
     BaseModalForm,
   },
   props: {
-    selectedShopId: String,
+    selectedObjectId: String,
   },
   data() {
     return {
-      selectedShop: {
-        storeCode: "",
-        storeName: "",
-        address: "",
-        phoneNumber: "",
-        storeTaxCode: "",
-        countryId: null,
-        provinceId: null,
-        districtId: null,
-        wardId: null,
-        status: 0,
-      },
+      currentObject:{},
     };
   },
   created() {
     
   },
   methods: {
+    /**
+     * Xóa Object theo id
+     */
+    deleteRecord(){
+      axios
+        .delete("http://localhost:35480/api/v1/OrderBills/" + this.selectedObjectId)
+        .then((respone) => {
+          console.log(respone);
+          this.$emit('loadData');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      this.$refs.BaseForm.hide();
+    },
     /**
      *  Ẩn dialog xác nhận xóa
      *  CreatedBy: vmquang 16.04.2021
@@ -97,49 +101,21 @@ export default {
 
     /**
      * Hiện dialog xác nhận xóa
-     * CreatedBy: 16.04.2021
-     */
-    show() {
-      this.$refs.BaseForm.show();
-    },
-
-    /**
-     *  Lấy thông tin 1 bản ghi theo Id
      * CreatedBy: vmquang 16.04.2021
      */
-    getStoreById() {
+    show() {
       axios
-        .get("http://localhost:35480/api/v1/stores/" + this.selectedShopId)
-        .then((respone) => {
-          this.selectedShop = respone.data.data;
-        })
-        .catch((error) => console.log(error));
-    },
-
-    /**
-     *  Xóa 1 bản ghi theo id
-     *  CreatedBy: vmquang 16.04.2021
-     */
-    deleteRecord() {
-      let alertMessage = "";
-      axios
-        .delete("http://localhost:35480/api/v1/stores/" + this.selectedShopId)
-        .then((respone) => {
-          console.log(respone);
-          alertMessage = "Xóa bản ghi thành công";
-          this.$emit("showAlertDelete", alertMessage);
-        })
-        .catch((error) => {
-          console.log(error);
-          alertMessage = "Xóa bản ghi thất bại";
-          this.$emit("showAlertDelete", alertMessage);
-        });
+          .get(
+            "http://localhost:35480/api/v1/OrderBills/" + this.selectedObjectId
+          )
+          .then((respone) => {
+            this.currentObject = respone.data.data;
+          })
+          .catch((error) => console.log(error));
+      this.$refs.BaseForm.show();
     },
   },
   watch: {
-    selectedShopId() {
-      this.getStoreById();
-    },
   },
 };
 </script>

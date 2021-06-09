@@ -63,7 +63,7 @@
         </div>
         <div class="tool-bar-btn div-btn-edit">
           <button
-            disabled
+            
             class="t-btn btn-edit t-btn-disable isActive"
             id="btn-edit"
           >
@@ -82,7 +82,7 @@
           </button>
         </div>
         <div class="tool-bar-btn div-btn-load">
-          <button class="t-btn btn-load isActive" id="btn-load">
+          <button class="t-btn btn-load isActive" id="btn-load" style="opacity:0.5">
             <i class="t-icon t-icon-delete"></i>
             <span>Xóa</span>
           </button>
@@ -112,7 +112,6 @@
           </button>
         </div>
         <div class="tool-bar-btn div-btn-load">
-          <button>Clear</button>
           <button class="t-btn btn-load isActive" id="btn-load" @click="hide()">
             <i class="t-icon t-icon-exit"></i>
             <span>Đóng</span>
@@ -252,6 +251,7 @@
               v-model="currentObject.orderDate"
               style="background-color: #e5e6eb;"
             />
+            <!-- <date-picker v-model="currentObject.orderDate" format="DD-MM-YYYY"></date-picker> -->
           </div>
           <div class="row-side" style="margin-top:8px">
             <span style="margin-right: 32px;">Trạng thái</span>
@@ -260,7 +260,7 @@
               class="select-datetime-create"
               v-model="currentObject.status"
             >
-              <option v-for="element in arrayStatus" :key="element.value">{{
+              <option v-for="element in arrayStatus" :key="element.value" :value="element.value" >{{
                 element.text
               }}</option>
             </select>
@@ -269,6 +269,7 @@
               disabled
               class="select-datetime-create"
               style="background-color: #e5e6eb;"
+              v-model="currentObject.status"
             >
               <option v-for="element in arrayStatus" :key="element.value">{{
                 element.text
@@ -360,8 +361,8 @@
           <tbody class="tbl-scroll">
             <tr
               class="row-data"
-              v-for="element in this.arrayDetail"
-              :key="element.sku"
+              v-for="(element,index) in this.arrayDetail"
+              :key="index"
             >
               <td class="col-15 colum-sku" style="padding:0"><input class="input-table-detail" type="text" v-model="element.sku"></td>
               <td class="col-15" style="padding:0"><input class="input-table-detail" type="text" v-model="element.name"></td>
@@ -385,7 +386,7 @@
         <div class="total-content">
           <div style="margin-right: 370px;">
             <span style="margin-right:15px">Số dòng</span>
-            <span>0</span>
+            <span>{{arrayDetail.length}}</span>
           </div>
           <div style="margin-right:30px">
             <span style="margin-right:15px"> Tổng số lương</span>
@@ -402,12 +403,15 @@
 </template>
 
 <script>
+// import DatePicker from 'vue2-datepicker';
+//   import 'vue2-datepicker/index.css';
 import moment from "moment";
 import axios from "axios";
 import BaseModalForm from "../../layout/BaseModalForm";
 export default {
   components: {
     BaseModalForm,
+    // DatePicker 
   },
   props: {
     selectedObjectId: String,
@@ -418,7 +422,10 @@ export default {
       index:0,
       isReadOnlyInput: false,
       object: "",
-      currentObject: {},
+      currentObject: {
+        // detail:'[{"sku":"OB-00003","name":"Ak-47","unit":"Tạ","quality":126,"prince":10040},{"sku":"OB600003","name":"Bàn học","unit":"Tạ","quality":102,"prince":12000}]'
+        detail:''
+      },
       arrayDetail: [],
       arrayStatus: [
         { value: 0, text: "Chưa thực hiện" },
@@ -427,7 +434,12 @@ export default {
       ],
     };
   },
-  watch: {},
+  watch: {
+    arrayDetail(){
+      this.currentObject.detail = JSON.stringify(this.arrayDetail);
+      console.log(this.currentObject.detail);
+    }
+  },
   created() {},
   filters: {
   },
@@ -446,19 +458,32 @@ export default {
         // prince:0
       };
       this.arrayDetail.push(item);
-      console.log(this.arrayDetail);
     },
     save(){
       if(this.formMode === "insert"){
-        confirm("save insert");
-        
+        this.deleteObjectNull();
+        console.log("Che do Insert");
+        axios.post("http://localhost:35480/api/v1/OrderBills", this.currentObject)
+        .then((response)=>{
+          console.log("Insert thanh cong",response);
+        })
+        .catch((error) => {
+          console.log(error.data);
+       });
       }
       else if(this.formMode === "update"){
-        confirm("save updaete");
+        console.log("Che do update");
+        this.deleteObjectNull();
+        axios.put(`http://localhost:35480/api/v1/OrderBills/${this.selectedObjectId}`,this.currentObject)
+        .then((response)=>{
+          console.log("update thanh cong",response);
+        })
+        .catch((error)=>{
+          console.log(error.data);
+        })
       }
       else if(this.formMode === "watch"){
-        console.log(this.arrayDetail);
-        console.log(JSON.stringify(this.arrayDetail));
+        console.log("Che do watch");
       }
       else {
         return
@@ -515,7 +540,9 @@ export default {
               this.arrayDetail = 
                 JSON.parse(this.currentObject.detail);
             }
-            //  console.log(this.currentObject.orderDate);
+            console.log(this.currentObject);
+            console.log(this.arrayDetail);
+            console.log(this.currentObject.orderDate);
           })
           .catch((error) => console.log(error));
       }

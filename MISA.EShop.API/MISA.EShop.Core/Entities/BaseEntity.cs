@@ -22,7 +22,7 @@ namespace MISA.EShop.Core.Entities
         /// <summary>
         /// Người tạo, có thể null.
         /// </summary>
-        public string CreatedBy { get; set; }
+        //public string CreatedBy { get; set; }
 
         /// <summary>
         /// Ngày chỉnh sửa, có thể null.
@@ -34,7 +34,7 @@ namespace MISA.EShop.Core.Entities
         /// Người chỉnh sửa đối tượng , có thể null.
         /// </summary>
         /// CreatedBy: vmquang(14/5/2021)
-        public string ModifiedBy { get; set; }
+        //public string ModifiedBy { get; set; }
         #endregion
     }
 }

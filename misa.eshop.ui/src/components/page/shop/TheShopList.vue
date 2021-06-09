@@ -17,8 +17,10 @@
           </div>
           <div class="tool-bar-btn div-btn-replication ">
             <button
+              :class="selectedObjectId? 'isActive':'isNotActive'"
+              :disabled="!selectedObjectId"
               @click="openDialog('insert', '')"
-              class="t-btn btn-replication t-btn-disable isActive"
+              class="t-btn btn-replication t-btn-disable"
               id="btn-replication"
             >
               <i class="t-icon t-icon-replication"></i>
@@ -27,8 +29,9 @@
           </div>
           <div class="tool-bar-btn div-btn-edit">
             <button
-              disabled
-              class="t-btn btn-edit t-btn-disable isActive"
+              :class="selectedObjectId? 'isActive':'isNotActive'"
+              :disabled="!selectedObjectId"
+              class="t-btn btn-edit t-btn-disable"
               id="btn-edit"
             >
               <i class="t-icon t-icon-watch"></i>
@@ -37,8 +40,10 @@
           </div>
           <div class="tool-bar-btn div-btn-edit">
             <button
+              :class="selectedObjectId? 'isActive':'isNotActive'"
+              :disabled="!selectedObjectId"
               @click="openDialog('update',selectedObjectId)"
-              class="t-btn btn-edit t-btn-disable isActive"
+              class="t-btn btn-edit t-btn-disable"
               id="btn-edit"
             >
               <i class="t-icon t-icon-edit"></i>
@@ -47,8 +52,10 @@
           </div>
           <div class="tool-bar-btn div-btn-delete">
             <button
-              disabled
-              class="t-btn btn-delete t-btn-disable isActive"
+              :class="selectedObjectId? 'isActive':'isNotActive'"
+              :disabled="!selectedObjectId"
+              @click="deleteObject()"
+              class="t-btn btn-delete t-btn-disable"
               id="btn-delete"
             >
               <i class="t-icon t-icon-delete"></i>
@@ -56,7 +63,7 @@
             </button>
           </div>
           <div class="tool-bar-btn div-btn-load">
-            <button class="t-btn btn-load isActive" id="btn-load">
+            <button @click="loadData()" class="t-btn btn-load isActive" id="btn-load">
               <i class="t-icon t-icon-load"></i>
               <span>Nạp</span>
             </button>
@@ -194,7 +201,9 @@
                 v-for="obj in this.orderBillList"
                 :key="obj.orderBillId"
                 class="row-data"
-                @dblclick="openDialog('update', obj.orderBillId)"
+                @dblclick="openDialog('watch', obj.orderBillId)"
+                @click="clickRow(obj.orderBillId)"
+                v-bind:class="isSelected(obj.orderBillId) ? 'selected-row' : ''"
               >
                 <td class="col-15"><input type="checkbox" /></td>
                 <td class="col-15 text-date">
@@ -227,11 +236,11 @@
           <div class="total-content">
             <div style="margin-right: 370px;">
               <span style="margin-right:15px">Tổng số lượng</span>
-              <span>{{ countOrderBill }}</span>
+              <span>{{ orderBillList.length }}</span>
             </div>
             <div>
               <span style="margin-right:15px"> Tổng thành tiền</span>
-              <span>{{ totalMoneyOrderBill }}</span>
+              <span>{{ totalMoneyOrderBill | formatMoney}}</span>
             </div>
           </div>
         </div>
@@ -244,6 +253,11 @@
       :selectedObjectId="selectedObjectId"
       :formMode="formMode"
     />
+    <ModalDeletShop
+      ref="ModalDelete"
+      :selectedObjectId="selectedObjectId"
+      @loadData="loadData"
+    />
   </div>
 </template>
 
@@ -252,12 +266,14 @@ import moment from "moment";
 import axios from "axios";
 import TheFooterStore from "./TheFooterStore";
 import ModalCreateShop from "../../modal/FunctionModal/ModalCreateShop";
+import ModalDeletShop from "../../modal/FunctionModal/ModelDeleteShop";
 export default {
   name: "Content",
 
   components: {
     ModalCreateShop,
     TheFooterStore,
+    ModalDeletShop
   },
   filters: {
     fnFormatDate: function(dateInput) {
@@ -276,7 +292,7 @@ export default {
       selectedObjectId: "",
       orderBillList: [],
       countOrderBill: 0,
-      totalMoneyOrderBill: 10000000000000,
+      totalMoneyOrderBill: 0,
       storeStatus: [
         {
           statusName: "Tất cả",
@@ -299,19 +315,43 @@ export default {
   },
 
   created() {
-    axios
+    this.loadData();
+  },
+
+  methods: {
+    loadData(){
+        axios
       .get("http://localhost:35480/api/v1/OrderBills")
       .then((respone) => {
         console.log(respone.data.data);
         this.orderBillList = respone.data.data;
-        // console.log(this.orderBillList);
-         console.log(this.orderBillList.detail);
       })
       .catch((error) => console.log(error));
-  },
-
-  methods: {
-  
+    },
+    /**
+     * Sự kiện xóa 1 row của table orderList
+     */
+    deleteObject(){
+      if(!this.selectedObjectId){
+        console.log(this.selectedObjectId);
+        console.log("ko co ai de chon");
+      }
+      else{
+        this.$refs.ModalDelete.show();
+      }
+    },
+    /**
+     * sự kiện click vào 1 row của table OrderList.
+     * Gán selectedObject = id của row được chọn.
+     */
+    clickRow(id) {
+      this.selectedObjectId = id;
+      console.log(this.selectedObjectId);
+    },
+    isSelected(id) {
+      if (this.selectedObjectId == id) return true;
+      return false;
+    },
     getMoneyOrderBill(obj) {
       var moneyOrderBill = 0;
       try {
@@ -395,6 +435,14 @@ export default {
   min-width: 129px;
 }
 .selected-row{
-  background-color: aquamarine;
+        background-color: #a7afe4 !important;
+        color: #000;
+        cursor: default !important;
+    }
+.isNotActive{
+  opacity: 0.4;
+}
+.isNotActive:hover{
+  cursor: context-menu;
 }
 </style>

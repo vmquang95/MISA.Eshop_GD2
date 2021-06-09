@@ -121,7 +121,7 @@
       </div>
       <!-- toolbar2 -->
       <div class="toobar-filter-date toolbar-create">
-        <button class="btn-quang btn-chose">
+        <button class="btn-quang btn-chose" @click="openModalSave()">
           <span>Chọn phiếu báo hàng</span>
         </button>
       </div>
@@ -310,9 +310,9 @@
                 <div class="thead-text">Đơn vị tính</div>
                 <div class="thead-filter">
                   <select type="text" class="filter-select" id="filter-status">
-                    <option>
-                      Cái
-                    </option>
+                    <option v-for="element in arrayUnit" :key="element.value" :value="element.value" >{{
+                      element.text
+                  }}</option>
                   </select>
                 </div>
               </th>
@@ -366,14 +366,21 @@
             >
               <td class="col-15 colum-sku" style="padding:0"><input class="input-table-detail" type="text" v-model="element.sku"></td>
               <td class="col-15" style="padding:0"><input class="input-table-detail" type="text" v-model="element.name"></td>
-              <td class="col-21 colum-unit" style="padding:0"><input class="input-table-detail" type="text" v-model="element.unit"></td>
-              <td class="col-42 txt-money colum-quality" style="padding:0"><input class="input-table-detail" type="number" v-model="element.quality"></td>
-              <td class="col-10 txt-total txt-money colum-quality" style="padding:0"><input class="input-table-detail" type="text" value="0" readonly style="background-color:#e1e1e1;"></td>
+              <td class="col-21 colum-unit" style="padding:0">
+                <select type="text" class="filter-select" id="filter-status">
+                    <option v-for="element in arrayUnit" :key="element.value" :value="element.value" >{{
+                      element.text
+                  }}</option>
+                  </select>
+                <!-- <input class="input-table-detail input-prince txt-money" type="text" v-model="element.unit"> -->
+                </td>
+              <td class="col-42 txt-money colum-quality" style="padding:0"><input class="input-table-detail txt-money" type="number" v-model="element.quality"></td>
+              <td class="col-10 txt-total txt-money colum-quality" style="padding:0"><input class="input-table-detail txt-money" type="text" value="0" readonly style="background-color:#e1e1e1;"></td>
               <td class="col-12 txt-money colum-prince" style="padding:0">
-                <input class="input-table-detail" type="text" v-model="element.prince">
+                <input class="input-table-detail input-prince txt-money" type="text" v-model="element.prince">
               </td>
               <td class="col-42 txt-money" style="padding:0">
-                <input class="input-table-detail" type="text">
+                <input class="input-table-detail txt-money" type="text">
               </td>
               <td class="col-15" style="width:30px; padding:0">
                 <div class="icon-delete-table" @click="deleteRowDetail(element.sku)"></div>
@@ -399,6 +406,9 @@
         </div>
       </div>
     </div>
+    <ModelSave 
+    ref="ModalSave"
+    />
   </BaseModalForm>
 </template>
 
@@ -408,9 +418,11 @@
 import moment from "moment";
 import axios from "axios";
 import BaseModalForm from "../../layout/BaseModalForm";
+import ModelSave from '../FunctionModal/ModelSave.vue';
 export default {
   components: {
     BaseModalForm,
+    ModelSave,
     // DatePicker 
   },
   props: {
@@ -423,7 +435,6 @@ export default {
       isReadOnlyInput: false,
       object: "",
       currentObject: {
-        // detail:'[{"sku":"OB-00003","name":"Ak-47","unit":"Tạ","quality":126,"prince":10040},{"sku":"OB600003","name":"Bàn học","unit":"Tạ","quality":102,"prince":12000}]'
         detail:''
       },
       arrayDetail: [],
@@ -431,6 +442,14 @@ export default {
         { value: 0, text: "Chưa thực hiện" },
         { value: 1, text: "Đang thực hiện" },
         { value: 2, text: "Đã thực hiện" },
+      ],
+      arrayUnit: [
+        { value: 0, text: "Tấn" },
+        { value: 1, text: "Tạ" },
+        { value: 2, text: "Yến" },
+        { value: 3, text: "Kg" },
+        { value: 4, text: "Chiếc" },
+        { value: 5, text: "Cái" },
       ],
     };
   },
@@ -444,6 +463,23 @@ export default {
   filters: {
   },
   methods: {
+    /**
+     * Event mở mocal save, báo dữ liệu thay đổi
+     */
+    openModalSave(){
+      this.$refs.ModalSave.show();
+    },
+    /**
+     * Format date bind vào input
+     * CreateBy:vmquang(21/04/2021)
+     */
+    fnFormatDateInput: function (dateInput) {
+        return moment(dateInput).format('YYYY-MM-DD')
+    },
+
+    /**
+     * Xóa 1 row ở table detail
+     */
     deleteRowDetail(idSku){
      this.arrayDetail = this.arrayDetail.filter(function(obj){
        return obj.sku != idSku;
@@ -466,6 +502,8 @@ export default {
         axios.post("http://localhost:35480/api/v1/OrderBills", this.currentObject)
         .then((response)=>{
           console.log("Insert thanh cong",response);
+          this.hide();
+          this.$emit('loadData');
         })
         .catch((error) => {
           console.log(error.data);
@@ -477,6 +515,8 @@ export default {
         axios.put(`http://localhost:35480/api/v1/OrderBills/${this.selectedObjectId}`,this.currentObject)
         .then((response)=>{
           console.log("update thanh cong",response);
+          this.hide();
+          this.$emit('loadData');
         })
         .catch((error)=>{
           console.log(error.data);
@@ -484,6 +524,7 @@ export default {
       }
       else if(this.formMode === "watch"){
         console.log("Che do watch");
+        this.hide();
       }
       else {
         return
@@ -499,13 +540,6 @@ export default {
         return Object.keys(obj).length != 0 || obj.constructor != Object;
       })
       console.log(this.arrayDetail);
-    },
-
-    /**
-     * Hàm này formatdate theo định dạng yêu cầu.
-     */
-    fnFormatDate: function(dateInput) {
-      return moment(String(dateInput)).format("DD/MM/YYYY");
     },
     /**
      * resert form
@@ -536,6 +570,7 @@ export default {
           )
           .then((respone) => {
             this.currentObject = respone.data.data;
+            this.currentObject.orderDate = this.fnFormatDateInput(this.currentObject.orderDate);
             if (this.currentObject.detail) {
               this.arrayDetail = 
                 JSON.parse(this.currentObject.detail);
@@ -733,5 +768,8 @@ export default {
 }
 .colum-sku{
   min-width: 150px !important;
+}
+.input-prince{
+  width: 67px;
 }
 </style>

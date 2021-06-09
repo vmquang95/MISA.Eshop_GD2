@@ -1,10 +1,10 @@
 <template>
-  <BaseModalForm ref="BaseForm">
+  <BaseModalFormSave ref="BaseForm">
     <div class="dialog-form form-confirm-delete">
       <!-- Begin dialog header -->
       <div class="dialog-header">
         <div class="dialog-header-content">
-          <div class="dialog-title" id="dialog-title">Xóa dữ liệu</div>
+          <div class="dialog-title" id="dialog-title">Dữ liệu chưa được lưu</div>
           <div class="dialog-button">
             <button
               class="t-btn btn-close t-icon"
@@ -21,26 +21,34 @@
           <div class="content-confirm">
             <div class="icon-confirm"></div>
             <div class="msg-confirm-delete">
-              <span>Bạn có chắc chắn muốn xóa phiếu đặt hàng </span> 
-              <span class="store-name-selected" style="color:#df4646">{{
-                currentObject.refCode
-              }}</span>
-              không?
+              Dữ liệu đã thay đổi, bạn có muốn lưu không?
             </div>
           </div>
         </div>
         <div class="dialog-footer footer-confirm-delete">
-          <div class="dialog-footer-btn">
+          <div class="dialog-footer-btn" style="margin-left: 120px;">
+            
             <button
-              class="t-btn d-btn btn-delete-record"
+              class="t-btn d-btn btn-delete-record" style="background-color: #2b3173 !important;"
               id="btn-delete-record"
               tabindex="1"
-              @click="deleteRecord()"
             >
-              <div class="t-icon icon-delete"></div>
-              <span>Xóa</span>
+              <div class="t-icon icon-save"></div>
+              <span>Lưu</span>
+            </button>
+             <button
+            style="width: 100px;margin-left:6px;border:1px solid; border-color: #2b3173 !important;"
+              class="t-btn d-btn btn-cancel"
+              id="btn-cf-cancel"
+              tabindex="2"
+              @click="hide()"
+
+            >
+              <div class="t-icon icon-no-save"></div>
+              <span>Không lưu</span>
             </button>
             <button
+            style="margin-left:6px"
               class="t-btn d-btn btn-cancel"
               id="btn-cf-cancel"
               tabindex="2"
@@ -54,43 +62,25 @@
       </div>
       <!-- End dialog delete -->
     </div>
-  </BaseModalForm>
+  </BaseModalFormSave>
 </template>
 
 <script>
-import axios from "axios";
-import BaseModalForm from "../../layout/BaseModalForm";
+import BaseModalFormSave from "../../layout/BaseModalFormSave";
 export default {
   components: {
-    BaseModalForm,
+    BaseModalFormSave,
   },
   props: {
-    selectedObjectId: String,
   },
   data() {
     return {
-      currentObject:{},
     };
   },
   created() {
     
   },
   methods: {
-    /**
-     * Xóa Object theo id
-     */
-    deleteRecord(){
-      axios
-        .delete("http://localhost:35480/api/v1/OrderBills/" + this.selectedObjectId)
-        .then((respone) => {
-          console.log(respone);
-          this.$emit('loadData');
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-      this.$refs.BaseForm.hide();
-    },
     /**
      *  Ẩn dialog xác nhận xóa
      *  CreatedBy: vmquang 16.04.2021
@@ -104,14 +94,6 @@ export default {
      * CreatedBy: vmquang 16.04.2021
      */
     show() {
-      axios
-          .get(
-            "http://localhost:35480/api/v1/OrderBills/" + this.selectedObjectId
-          )
-          .then((respone) => {
-            this.currentObject = respone.data.data;
-          })
-          .catch((error) => console.log(error));
       this.$refs.BaseForm.show();
     },
   },
@@ -119,7 +101,9 @@ export default {
   },
 };
 </script>
-
 <style>
+.icon-no-save{
+   background-image: url('../../../assets/icon/not-save.png') !important;
+}
 </style>
 

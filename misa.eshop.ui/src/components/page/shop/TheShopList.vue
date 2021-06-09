@@ -205,7 +205,7 @@
                 @click="clickRow(obj.orderBillId)"
                 v-bind:class="isSelected(obj.orderBillId) ? 'selected-row' : ''"
               >
-                <td class="col-15"><input type="checkbox" /></td>
+                <td class="col-15"><input type="checkbox" :checked="isSelected(obj.orderBillId)"/></td>
                 <td class="col-15 text-date">
                   {{ obj.orderDate | fnFormatDate }}
                 </td>
@@ -252,6 +252,7 @@
       ref="ModalCreate"
       :selectedObjectId="selectedObjectId"
       :formMode="formMode"
+      @loadData="loadData"
     />
     <ModalDeletShop
       ref="ModalDelete"
@@ -320,6 +321,7 @@ export default {
 
   methods: {
     loadData(){
+      this.selectedObjectId='';
         axios
       .get("http://localhost:35480/api/v1/OrderBills")
       .then((respone) => {
@@ -333,8 +335,7 @@ export default {
      */
     deleteObject(){
       if(!this.selectedObjectId){
-        console.log(this.selectedObjectId);
-        console.log("ko co ai de chon");
+        console.log("ko co ai de chon",this.selectedObjectId);
       }
       else{
         this.$refs.ModalDelete.show();

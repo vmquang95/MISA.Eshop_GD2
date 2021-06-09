@@ -325,12 +325,6 @@
             outline: none;
             color: #2b3173;
         }
-
-            .btn-cancel:hover, .btn-cancel:focus{
-                color: #6b6f9d;
-                border: 1px solid #6b6f9d !important;
-            }
-
             .icon-cancel{
                 background-position:  -252px -127px;
             }
@@ -411,9 +405,7 @@
         background-color: #df4646 !important;
         color: #fff  !important;
     }
-    .btn-delete-record:hover{
-        opacity: 0.7;
-    }
+
 
     .btn-delete-record .icon-delete{
             background-position: -1077px -128px;

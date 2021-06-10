@@ -424,13 +424,17 @@
                 />
               </td>
               <td class="col-12 txt-money colum-prince" style="padding:0">
-                <input
+                <!-- <input
                   :disabled="isReadOnlyInput"
                   class="input-table-detail input-prince txt-money"
                   type="text"
                   v-model="element.prince"
                   @keypress="formatPressNumber($event)"
-                />
+                /> -->
+                <money
+                class="txt-money"
+                :disabled="isReadOnlyInput"
+                 v-model="element.prince" v-bind="money"></money>
               </td>
               <td class="col-42 txt-money" style="padding:0 8px 0 0">
                 <span>
@@ -476,6 +480,7 @@
 <script>
 // import DatePicker from 'vue2-datepicker';
 //   import 'vue2-datepicker/index.css';
+import {Money} from 'v-money'
 import moment from "moment";
 import axios from "axios";
 import BaseModalForm from "../../layout/BaseModalForm";
@@ -484,6 +489,7 @@ export default {
   components: {
     BaseModalForm,
     ModelSave,
+    Money
     // DatePicker
   },
   props: {
@@ -492,11 +498,8 @@ export default {
   },
   data() {
     return {
-      totalQualityDetail: 1010,
-      totalMoneyDetail: 132131231,
       index: 0,
       isReadOnlyInput: false,
-      object: "",
       currentObject: {
         detail: "",
         orderDate: this.fnFormatDateInput(new Date()),
@@ -516,12 +519,13 @@ export default {
         { value: 4, text: "Chiếc" },
         { value: 5, text: "Cái" },
       ],
+      money: {
+          decimal: ',',
+          thousands: '.',
+          precision: 0,
+          masked: false
+        }
     };
-  },
-  watch: {
-    // arrayDetail() {
-    //   this.currentObject.detail = JSON.stringify(this.arrayDetail);
-    // },
   },
   mounted(){
     clearTimeout(this.timeOut);
@@ -597,8 +601,7 @@ export default {
     addNewColumDetail() {
       let item = {
          sku:"",
-        // name:"",
-          unit:4,
+        unit:4,
          quality:1,
          prince:1000
       };
@@ -691,6 +694,14 @@ export default {
             }
           })
           .catch((error) => console.log(error));
+      }
+      else if(this.formMode == "insert"){
+        this.arrayDetail=[{
+         sku:"",
+        unit:4,
+         quality:1,
+         prince:1000
+      }]
       }
       this.$refs.BaseForm_ref.show();
     },

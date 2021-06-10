@@ -357,7 +357,7 @@ export default {
      */
     deleteObject() {
       if (!this.selectedObjectId) {
-        //console.log("No data", this.selectedObjectId);
+        // console.log("No data", this.selectedObjectId);
         return;
       } else {
         this.$refs.ModalDelete.show();

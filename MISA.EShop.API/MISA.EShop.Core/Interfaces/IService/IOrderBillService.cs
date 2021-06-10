@@ -17,5 +17,6 @@ namespace MISA.EShop.Core.Interfaces.IService
     public interface IOrderBillService : IBaseService<OrderBill>
     {
         ResponseResult GetOrderBillFilter(string refCode, string supplierName, string customerName, int? status, string description);
+        
     }
 }

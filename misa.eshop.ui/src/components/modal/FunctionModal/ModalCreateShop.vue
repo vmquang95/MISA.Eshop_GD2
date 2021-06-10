@@ -52,7 +52,6 @@
         </div>
         <div class="tool-bar-btn div-btn-edit">
           <button
-            disabled
             class="t-btn btn-edit t-btn-disable isActive"
             id="btn-edit"
           >
@@ -130,8 +129,7 @@
           <div class="row-side">
             <span style="margin-right: 15px;">Nhà cung cấp</span>
             <input
-              v-autofocus
-              ref="focusInput"
+              ref="RefSupplierCode"
               v-if="isReadOnlyInput"
               readonly
               class="input-create"
@@ -141,6 +139,7 @@
             />
             <input
               v-else
+              ref="RefSupplierCode"
               class="input-create"
               type="text"
               v-model="currentObject.supplierCode"
@@ -365,12 +364,13 @@
               v-for="(element, index) in this.arrayDetail"
               :key="index"
             >
-              <td class="col-15 colum-sku" style="padding:0">
+              <td class="col-15 colum-sku" style="padding:0;">
                 <input
                   :disabled="isReadOnlyInput"
                   class="input-table-detail"
                   type="text"
                   v-model="element.sku"
+                  style=" width:88%"
                 />
               </td>
               <td class="col-15" style="padding:0">
@@ -400,10 +400,11 @@
               </td>
               <td class="col-42 txt-money colum-quality" style="padding:0">
                 <input
+                  style="width: 82%;"
                   :disabled="isReadOnlyInput"
                   class="input-table-detail txt-money"
                   type="number"
-                  min="0"
+                  min="1"
                   v-model="element.quality"
                 />
               </td>
@@ -431,7 +432,7 @@
               </td>
               <td class="col-42 txt-money" style="padding:0 8px 0 0">
                 <span>
-                  {{ (element.prince * element.quality) | formatMoney }}
+                  {{ element.prince * element.quality | formatMoney }}
                 </span>
               </td>
 
@@ -442,7 +443,7 @@
               >
                 <div
                   class="icon-delete-table"
-                  @click="deleteRowDetail(element.sku)"
+                  @click="deleteRowDetail(inndex)"
                 ></div>
               </td>
             </tr>
@@ -471,7 +472,6 @@
 </template>
 
 <script>
-import autofocus from "@vuejs-tips/v-autofocus"
 // import DatePicker from 'vue2-datepicker';
 //   import 'vue2-datepicker/index.css';
 import moment from "moment";
@@ -479,9 +479,6 @@ import axios from "axios";
 import BaseModalForm from "../../layout/BaseModalForm";
 import ModelSave from "../FunctionModal/ModelSave.vue";
 export default {
-  directives: {
-    autofocus
-  },
   components: {
     BaseModalForm,
     ModelSave,
@@ -522,6 +519,12 @@ export default {
     //   this.currentObject.detail = JSON.stringify(this.arrayDetail);
     // },
   },
+  mounted(){
+    clearTimeout(this.timeOut);
+    this.timeOut = setTimeout(() => {
+      this.$refs.RefSupplierCode.focus();
+    }, 300)
+  },
   created() {},
   filters: {
     formatMoney: function(money) {
@@ -532,6 +535,10 @@ export default {
     },
   },
   methods: {
+    getMoney(){
+      return 100000;
+    },
+ 
     /**
      * Lấy tổng tiền.
      */
@@ -572,20 +579,22 @@ export default {
     /**
      * Xóa 1 row ở table detail
      */
-    deleteRowDetail(idSku) {
-      this.arrayDetail = this.arrayDetail.filter(function(obj) {
-        return obj.sku != idSku;
-      });
+    deleteRowDetail(index) {
+      this.arrayDetail.pop(this.arrayDetail[index]);
+      // this.arrayDetail = this.arrayDetail.filter(function(obj) {
+      //   return obj.sku != idSku;
+      // });
     },
     addNewColumDetail() {
       let item = {
         //  sku:"",
         // name:"",
-        // unit:"",
-        // quality:0,
-        // prince:0
+          unit:4,
+         quality:1,
+         prince:1000
       };
       this.arrayDetail.push(item);
+      console.log(this.arrayDetail[this.arrayDetail.length -1]);
     },
     save() {
       if (this.formMode === "insert") {
@@ -649,6 +658,7 @@ export default {
     hide() {
       this.$refs.BaseForm_ref.hide();
       this.reSetform();
+      this.$emit('showDialogFn');
     },
     /**
      * hiển thị form
@@ -673,7 +683,6 @@ export default {
           })
           .catch((error) => console.log(error));
       }
-    
       this.$refs.BaseForm_ref.show();
     },
   },
@@ -840,6 +849,7 @@ export default {
   height: 19px;
 }
 .input-table-detail:focus {
+  height: 17px;
   border: 1px solid #636dde;
   border-radius: 4px;
   background-color: #ffff;
@@ -861,7 +871,7 @@ export default {
   min-width: 150px !important;
 }
 .input-prince {
-  width: 67px;
+  width: 76%
 }
 .select-unit{
   border-radius: 4px;

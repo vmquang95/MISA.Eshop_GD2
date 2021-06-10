@@ -258,10 +258,12 @@
     <!-- end content -->
 
     <ModalCreateShop
+      v-if="showDialog"
       ref="ModalCreate"
       :selectedObjectId="selectedObjectId"
       :formMode="formMode"
       @loadData="loadData"
+      @showDialogFn="showDialogFn"
     />
     <ModalDeletShop
       ref="ModalDelete"
@@ -298,6 +300,7 @@ export default {
   },
   data() {
     return {
+      showDialog: false,
       formMode: "",
       selectedObjectId: "",
       orderBillList: [],
@@ -329,6 +332,9 @@ export default {
   },
 
   methods: {
+    showDialogFn(){
+      this.showDialog = false;
+    },
     loadData() {
       this.selectedObjectId = "";
       axios
@@ -374,6 +380,7 @@ export default {
       return moneyOrderBill;
     },
     openDialog(mode, id) {
+      this.showDialog = true;
       if (mode == "insert") {
         this.formMode = "insert";
       } else if (mode == "update") {

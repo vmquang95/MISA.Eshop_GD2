@@ -31,6 +31,7 @@
             <button
               :class="selectedObjectId ? 'isActive' : 'isNotActive'"
               :disabled="!selectedObjectId"
+              @click="openDialog('watch',selectedObjectId)"
               class="t-btn btn-edit t-btn-disable"
               id="btn-edit"
             >

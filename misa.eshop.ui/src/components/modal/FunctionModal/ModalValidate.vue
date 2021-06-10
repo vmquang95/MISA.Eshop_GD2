@@ -1,11 +1,11 @@
 <template>
-  <BaseModalFormSave ref="BaseForm">
+  <BaseModalValidate ref="BaseForm">
     <div class="dialog-form form-confirm-delete">
       <!-- Begin dialog header -->
       <div class="dialog-header">
         <div class="dialog-header-content">
           <div class="dialog-title" id="dialog-title">
-            Dữ liệu chưa được lưu
+            MISA eShop
           </div>
           <div class="dialog-button">
             <button
@@ -21,75 +21,46 @@
       <div class="dialog-confirm-delete">
         <div class="dialog-content">
           <div class="content-confirm">
-            <div class="icon-confirm"></div>
+            <div class="icon-confirm-validate"></div>
             <div class="msg-confirm-delete">
-              Dữ liệu đã thay đổi, bạn có muốn lưu không?
+              {{message}}
             </div>
           </div>
         </div>
         <div class="dialog-footer footer-confirm-delete">
-          <div class="dialog-footer-btn" style="margin-left: 120px;">
+          <div class="dialog-footer-btn" style="margin-left: 313px;">
             <button
-              @click="onSave()"
+              @click="hide()"
               class="t-btn d-btn btn-delete-record"
-              style="background-color: #2b3173 !important;"
+              style="background-color: #2b3173 !important; width: 75px; padding: 1px 7px 0 18px;"
               id="btn-delete-record"
               tabindex="1"
             >
-              <div class="t-icon icon-save"></div>
-              <span>Lưu</span>
-            </button>
-            <button
-              style="width: 100px;margin-left:6px;border:1px solid; border-color: #2b3173 !important;"
-              class="t-btn d-btn btn-cancel"
-              id="btn-cf-cancel"
-              tabindex="2"
-              @click="noSave()"
-            >
-              <div class="t-icon icon-no-save"></div>
-              <span>Không lưu</span>
-            </button>
-            <button
-              style="margin-left:6px"
-              class="t-btn d-btn btn-cancel"
-              id="btn-cf-cancel"
-              tabindex="2"
-              @click="hide()"
-            >
-              <div class="t-icon icon-cancel"></div>
-              <span>Hủy bỏ</span>
+              <span>Đồng ý</span>
             </button>
           </div>
         </div>
       </div>
       <!-- End dialog delete -->
     </div>
-  </BaseModalFormSave>
+  </BaseModalValidate>
 </template>
 
 <script>
-import BaseModalFormSave from "../../layout/BaseModalFormSave";
+import BaseModalValidate from "../../layout/BaseModalValidate";
 export default {
   components: {
-    BaseModalFormSave,
+    BaseModalValidate,
   },
-  props: {},
+  props: {
+    message:String
+    },
   data() {
-    return {};
+    return {
+    };
   },
   created() {},
   methods: {
-    onSave(){
-      this.$emit('onSave');
-      this.$refs.BaseForm.hide();
-    },
-    /**
-     * Sự kiện khi ấn nút không lưu
-     */
-    noSave(){
-      this.$emit('hide');
-      this.$refs.BaseForm.hide();
-    },
     /**
      *  Ẩn dialog xác nhận xóa
      *  CreatedBy: vmquang 16.04.2021

@@ -51,10 +51,7 @@
           </button>
         </div>
         <div class="tool-bar-btn div-btn-edit">
-          <button
-            class="t-btn btn-edit t-btn-disable isActive"
-            id="btn-edit"
-          >
+          <button class="t-btn btn-edit t-btn-disable isActive" id="btn-edit">
             <i class="t-icon t-icon-add"></i>
             <span>Thêm mới</span>
           </button>
@@ -110,8 +107,11 @@
           </button>
         </div>
         <div class="tool-bar-btn div-btn-load">
-          <button @click="openModalSave()"
-            class="t-btn btn-load isActive" id="btn-load">
+          <button
+            @click="openModalSave()"
+            class="t-btn btn-load isActive"
+            id="btn-load"
+          >
             <i class="t-icon t-icon-exit"></i>
             <span>Đóng</span>
           </button>
@@ -119,7 +119,7 @@
       </div>
       <!-- toolbar2 -->
       <div class="toobar-filter-date toolbar-create">
-        <button class="btn-quang btn-chose">
+        <button class="btn-quang btn-chose" @click="openModalValidate()">
           <span>Chọn phiếu báo hàng</span>
         </button>
       </div>
@@ -137,6 +137,7 @@
               type="text"
               v-model="currentObject.supplierCode"
               style="background-color: #e5e6eb;"
+              placeholder="Mã nhà cung cấp"
             />
             <input
               v-else
@@ -144,6 +145,7 @@
               class="input-create"
               type="text"
               v-model="currentObject.supplierCode"
+              placeholder="Mã nhà cung cấp"
             />
             <input
               v-if="isReadOnlyInput"
@@ -152,6 +154,7 @@
               type="text"
               style="background-color: #e5e6eb; width:390px"
               v-model="currentObject.supplierName"
+              placeholder="Tên nhà cung cấp"
             />
             <input
               v-else
@@ -159,6 +162,7 @@
               type="text"
               style="width:390px"
               v-model="currentObject.supplierName"
+              placeholder="Tên nhà cung cấp"
             />
           </div>
           <div class="row-side row-side-2">
@@ -168,6 +172,7 @@
               class="input-create"
               type="text"
               v-model="currentObject.customerCode"
+              placeholder="Mã người đặt"
             />
             <input
               v-else
@@ -176,6 +181,7 @@
               v-model="currentObject.customerCode"
               readonly
               style="background-color: #e5e6eb;"
+              placeholder="Mã người đặt"
             />
             <input
               v-if="!isReadOnlyInput"
@@ -183,6 +189,7 @@
               type="text"
               style="width:390px"
               v-model="currentObject.customerName"
+              placeholder="Tên người đặt"
             />
             <input
               v-else
@@ -191,6 +198,7 @@
               style="width:390px; background-color: #e5e6eb;"
               v-model="currentObject.customerName"
               readonly
+              placeholder="Tên người đặt"
             />
           </div>
           <div class="row-side row-side-2">
@@ -285,7 +293,12 @@
       <!-- action-table -->
       <div class="action-table">
         <label> CHI TIẾT</label>
-        <i v-if="!isReadOnlyInput" class="t-icon t-icon-add-col-table" style="min-width: 31px;" @click="addNewColumDetail()"></i>
+        <i
+          v-if="!isReadOnlyInput"
+          class="t-icon t-icon-add-col-table"
+          style="min-width: 31px;"
+          @click="addNewColumDetail()"
+        ></i>
       </div>
 
       <!-- grid -->
@@ -340,7 +353,11 @@
                 </div>
               </th>
 
-              <th class="col-10 colum-prince" fieldName="phoneNumber" style="min-width: 158px;">
+              <th
+                class="col-10 colum-prince"
+                fieldName="phoneNumber"
+                style="min-width: 158px;"
+              >
                 <div class="thead-text">Đơn giá</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
@@ -368,7 +385,7 @@
               <td class="col-15 colum-sku" style="padding:0;">
                 <input
                   :disabled="isReadOnlyInput"
-                  class="input-table-detail"
+                  class="input-table-detail ip-sku"
                   type="text"
                   v-model="element.sku"
                   style=" width:88%"
@@ -423,7 +440,7 @@
                   style="background-color:#e1e1e1;"
                 />
               </td>
-              <td class="col-12 txt-money colum-prince" style="padding:0">
+              <td class="col-12 txt-money colum-prince" style="padding: 1px 0 0 0">
                 <!-- <input
                   :disabled="isReadOnlyInput"
                   class="input-table-detail input-prince txt-money"
@@ -432,13 +449,15 @@
                   @keypress="formatPressNumber($event)"
                 /> -->
                 <money
-                class="txt-money"
-                :disabled="isReadOnlyInput"
-                 v-model="element.prince" v-bind="money"></money>
+                  class="txt-money input-prince-money"
+                  :disabled="isReadOnlyInput"
+                  v-model="element.prince"
+                  v-bind="money"
+                ></money>
               </td>
               <td class="col-42 txt-money" style="padding:0 8px 0 0">
                 <span>
-                  {{ element.prince * element.quality | formatMoney }}
+                  {{ (element.prince * element.quality) | formatMoney }}
                 </span>
               </td>
 
@@ -473,23 +492,27 @@
         </div>
       </div>
     </div>
-    <ModelSave ref="ModalSave" @hide="hide"/>
+    <ModelSave ref="ModalSave" @hide="hide" @onSave="save" />
+    <ModalValidate ref="ModalValidate" :message="message" />
   </BaseModalForm>
 </template>
 
 <script>
 // import DatePicker from 'vue2-datepicker';
 //   import 'vue2-datepicker/index.css';
-import {Money} from 'v-money'
+import { Money } from "v-money";
 import moment from "moment";
 import axios from "axios";
 import BaseModalForm from "../../layout/BaseModalForm";
 import ModelSave from "../FunctionModal/ModelSave.vue";
+import ModalValidate from "../FunctionModal/ModalValidate.vue";
+
 export default {
   components: {
     BaseModalForm,
     ModelSave,
-    Money
+    ModalValidate,
+    Money,
     // DatePicker
   },
   props: {
@@ -498,12 +521,13 @@ export default {
   },
   data() {
     return {
+      message: "",
       index: 0,
       isReadOnlyInput: false,
       currentObject: {
         detail: "",
         orderDate: this.fnFormatDateInput(new Date()),
-        status:0
+        status: 0,
       },
       arrayDetail: [],
       arrayStatus: [
@@ -520,18 +544,18 @@ export default {
         { value: 5, text: "Cái" },
       ],
       money: {
-          decimal: ',',
-          thousands: '.',
-          precision: 0,
-          masked: false
-        }
+        decimal: ",",
+        thousands: ".",
+        precision: 0,
+        masked: false,
+      },
     };
   },
-  mounted(){
+  mounted() {
     clearTimeout(this.timeOut);
     this.timeOut = setTimeout(() => {
       this.$refs.RefSupplierCode.focus();
-    }, 300)
+    }, 300);
   },
   created() {},
   filters: {
@@ -543,12 +567,15 @@ export default {
     },
   },
   methods: {
+    openModalValidate() {
+      this.$refs.ModalValidate.show();
+    },
     /**
      * Lấy tổng tiền.
      */
     getTotalMoney() {
       let sum = 0;
-      this.arrayDetail.forEach((element)=>{
+      this.arrayDetail.forEach((element) => {
         sum += element.quality * element.prince;
       });
       return sum;
@@ -576,7 +603,7 @@ export default {
      * Event mở mocal save, báo dữ liệu thay đổi
      */
     openModalSave() {
-      if(this.formMode == "watch"){
+      if (this.formMode == "watch") {
         this.hide();
       }
       this.$refs.ModalSave.show();
@@ -600,17 +627,77 @@ export default {
     },
     addNewColumDetail() {
       let item = {
-         sku:"",
-        unit:4,
-         quality:1,
-         prince:1000
+        sku: "",
+        unit: 4,
+        quality: 1,
+        prince: 1000,
       };
       this.arrayDetail.push(item);
-      console.log(this.arrayDetail[this.arrayDetail.length -1]);
+      // console.log(this.arrayDetail.length);
+      // console.log(document.getElementsByClassName("ip-sku").item(this.arrayDetail.length-1));
+      // console.log(this.arrayDetail[this.arrayDetail.length -1]);
+    },
+    checkEmptyValue(value) {
+      if (value === "" || !value) {
+        return true;
+      }
+      return false;
+    },
+    removeSpaces(value) {
+      if (value) {
+        this.value = value.replace(/\s+/g, "");
+      }
+    },
+    ConvertData() {
+      this.removeSpaces(this.currentObject.supplierCode);
+      this.removeSpaces(this.currentObject.supplierName);
+      this.removeSpaces(this.currentObject.customerCode);
+      this.removeSpaces(this.currentObject.customerName);
+      this.removeSpaces(this.currentObject.description);
+      this.removeSpaces(this.currentObject.refCode);
     },
     save() {
       if (this.formMode === "insert") {
+        this.ConvertData();
+        if (
+          this.checkEmptyValue(this.currentObject.supplierCode) ||
+          this.checkEmptyValue(this.currentObject.supplierName)
+        ) {
+          this.openModalValidate();
+          this.message = "Không được bỏ trống Mà nhà cung cấp";
+          return;
+        }
+        if (
+          this.checkEmptyValue(this.currentObject.customerCode) ||
+          this.checkEmptyValue(this.currentObject.customerName)
+        ) {
+          this.openModalValidate();
+          this.message = "Không được bỏ trống người đặt";
+          return;
+        }
+        if (this.checkEmptyValue(this.currentObject.orderDate)) {
+          this.openModalValidate();
+          this.message = "Không được bỏ trống ngày đặt";
+          return;
+        }
+        if (this.checkEmptyValue(this.currentObject.refCode)) {
+          this.openModalValidate();
+          this.message = "Không được bỏ trống Phiếu đặt hàng";
+          return;
+        }
         this.deleteObjectInCorrect();
+        if (this.arrayDetail.length < 1) {
+          this.openModalValidate();
+          this.message = "Phải có ít nhất 1 hàng hóa.";
+          let item = {
+            sku: "",
+            unit: 4,
+            quality: 1,
+            prince: 1000,
+          };
+          this.arrayDetail.push(item);
+          return;
+        }
         this.currentObject.detail = JSON.stringify(this.arrayDetail);
         console.log("Che do Insert");
         axios
@@ -625,7 +712,46 @@ export default {
           });
       } else if (this.formMode === "update") {
         console.log("Che do update");
+        this.ConvertData();
+        if (
+          this.checkEmptyValue(this.currentObject.supplierCode) ||
+          this.checkEmptyValue(this.currentObject.supplierName)
+        ) {
+          this.openModalValidate();
+          this.message = "Không được bỏ trống Mà nhà cung cấp";
+          return;
+        }
+        if (
+          this.checkEmptyValue(this.currentObject.customerCode) ||
+          this.checkEmptyValue(this.currentObject.customerName)
+        ) {
+          this.openModalValidate();
+          this.message = "Không được bỏ trống người đặt";
+          return;
+        }
+        if (this.checkEmptyValue(this.currentObject.orderDate)) {
+          this.openModalValidate();
+          this.message = "Không được bỏ trống ngày đặt";
+          return;
+        }
+        if (this.checkEmptyValue(this.currentObject.refCode)) {
+          this.openModalValidate();
+          this.message = "Không được bỏ trống Phiếu đặt hàng";
+          return;
+        }
         this.deleteObjectInCorrect();
+        if (this.arrayDetail.length < 1) {
+          this.openModalValidate();
+          this.message = "Phải có ít nhất 1 hàng hóa.";
+          let item = {
+            sku: "",
+            unit: 4,
+            quality: 1,
+            prince: 1000,
+          };
+          this.arrayDetail.push(item);
+          return;
+        }
         this.currentObject.detail = JSON.stringify(this.arrayDetail);
         axios
           .put(
@@ -670,7 +796,7 @@ export default {
     hide() {
       this.$refs.BaseForm_ref.hide();
       this.reSetform();
-      this.$emit('showDialogFn');
+      this.$emit("showDialogFn");
     },
     /**
      * hiển thị form
@@ -694,14 +820,15 @@ export default {
             }
           })
           .catch((error) => console.log(error));
-      }
-      else if(this.formMode == "insert"){
-        this.arrayDetail=[{
-         sku:"",
-        unit:4,
-         quality:1,
-         prince:1000
-      }]
+      } else if (this.formMode == "insert") {
+        this.arrayDetail = [
+          {
+            sku: "",
+            unit: 4,
+            quality: 1,
+            prince: 1000,
+          },
+        ];
       }
       this.$refs.BaseForm_ref.show();
     },
@@ -891,14 +1018,23 @@ export default {
   min-width: 150px !important;
 }
 .input-prince {
-  width: 76%
+  width: 76%;
 }
-.select-unit{
+.select-unit {
   border: none !important;
   height: 100% !important;
 }
-.select-unit:focus{
+.select-unit:focus {
   border: 1px solid #636dde !important;
   border-radius: 4px;
+}
+.input-prince-money{
+    border: none;
+    height: 100%;
+    border-radius: 4px;
+    width: 100%;
+}
+.input-prince-money:focus{
+  border: 1px solid #636dde !important;
 }
 </style>

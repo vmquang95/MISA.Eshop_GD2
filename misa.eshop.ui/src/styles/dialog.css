@@ -360,6 +360,12 @@
         background-image: url('../assets/img/icon-popup.png');
         background-position: -165px -2px;
     }
+    .content-confirm .icon-confirm-validate{
+        width: 44px;
+        height: 44px;
+        background-image: url('../assets/img/icon-popup.png');
+        background-position: -56px -2px;
+    }
 
     .content-confirm .msg-confirm-delete{
         width: calc(100% - 44px);

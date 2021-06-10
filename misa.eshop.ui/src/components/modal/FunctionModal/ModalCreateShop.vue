@@ -130,6 +130,8 @@
           <div class="row-side">
             <span style="margin-right: 15px;">Nhà cung cấp</span>
             <input
+              v-autofocus
+              ref="focusInput"
               v-if="isReadOnlyInput"
               readonly
               class="input-create"
@@ -283,7 +285,7 @@
       <!-- action-table -->
       <div class="action-table">
         <label> CHI TIẾT</label>
-        <i class="t-icon t-icon-add-col-table" @click="addNewColumDetail()"></i>
+        <i v-if="!isReadOnlyInput" class="t-icon t-icon-add-col-table" @click="addNewColumDetail()"></i>
       </div>
 
       <!-- grid -->
@@ -383,7 +385,7 @@
                 <select
                   :disabled="isReadOnlyInput"
                   type="text"
-                  class="filter-select"
+                  class="filter-select select-unit"
                   id="filter-status"
                   v-model="element.unit"
                 >
@@ -469,6 +471,7 @@
 </template>
 
 <script>
+import autofocus from "@vuejs-tips/v-autofocus"
 // import DatePicker from 'vue2-datepicker';
 //   import 'vue2-datepicker/index.css';
 import moment from "moment";
@@ -476,6 +479,9 @@ import axios from "axios";
 import BaseModalForm from "../../layout/BaseModalForm";
 import ModelSave from "../FunctionModal/ModelSave.vue";
 export default {
+  directives: {
+    autofocus
+  },
   components: {
     BaseModalForm,
     ModelSave,
@@ -512,10 +518,9 @@ export default {
     };
   },
   watch: {
-    arrayDetail() {
-      this.currentObject.detail = JSON.stringify(this.arrayDetail);
-      console.log(this.currentObject.detail);
-    },
+    // arrayDetail() {
+    //   this.currentObject.detail = JSON.stringify(this.arrayDetail);
+    // },
   },
   created() {},
   filters: {
@@ -537,7 +542,7 @@ export default {
     getTotalQuality() {
       var sumQuality = 0;
       this.arrayDetail.forEach((element) => {
-        sumQuality += element.quality;
+        sumQuality += parseInt(element.quality);
       });
       return sumQuality;
     },
@@ -585,6 +590,7 @@ export default {
     save() {
       if (this.formMode === "insert") {
         this.deleteObjectNull();
+        this.currentObject.detail = JSON.stringify(this.arrayDetail);
         console.log("Che do Insert");
         axios
           .post("http://localhost:35480/api/v1/OrderBills", this.currentObject)
@@ -599,6 +605,7 @@ export default {
       } else if (this.formMode === "update") {
         console.log("Che do update");
         this.deleteObjectNull();
+        this.currentObject.detail = JSON.stringify(this.arrayDetail);
         axios
           .put(
             `http://localhost:35480/api/v1/OrderBills/${this.selectedObjectId}`,
@@ -624,11 +631,9 @@ export default {
      * Hàm này delete những phần tử  {} trong mảng arrayDetail
      */
     deleteObjectNull() {
-      console.log(this.arrayDetail);
       this.arrayDetail = this.arrayDetail.filter(function(obj) {
         return Object.keys(obj).length != 0 || obj.constructor != Object;
       });
-      console.log(this.arrayDetail);
     },
     /**
      * resert form
@@ -665,12 +670,10 @@ export default {
             if (this.currentObject.detail) {
               this.arrayDetail = JSON.parse(this.currentObject.detail);
             }
-            console.log(this.currentObject);
-            console.log(this.arrayDetail);
-            console.log(this.currentObject.orderDate);
           })
           .catch((error) => console.log(error));
       }
+    
       this.$refs.BaseForm_ref.show();
     },
   },
@@ -859,5 +862,9 @@ export default {
 }
 .input-prince {
   width: 67px;
+}
+.select-unit{
+  border-radius: 4px;
+  height: 100% !important;
 }
 </style>

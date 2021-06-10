@@ -249,7 +249,7 @@
             </div>
             <div>
               <span style="margin-right:15px"> Tổng thành tiền</span>
-              <span>{{ totalMoneyAllOrderBill | formatMoney }}</span>
+              <span>{{ getTotalMoney() | formatMoney }}</span>
             </div>
           </div>
         </div>
@@ -332,6 +332,13 @@ export default {
   },
 
   methods: {
+    getTotalMoney(){
+      let sum = 0;
+      this.orderBillList.forEach((obj)=>{
+        sum += this.getMoneyOrderBill(obj);
+      });
+      return sum;
+    },
     showDialogFn(){
       this.showDialog = false;
     },
@@ -340,7 +347,7 @@ export default {
       axios
         .get("http://localhost:35480/api/v1/OrderBills")
         .then((respone) => {
-          console.log(respone.data.data);
+          // console.log(respone.data.data);
           this.orderBillList = respone.data.data;
         })
         .catch((error) => console.log(error));
@@ -350,7 +357,8 @@ export default {
      */
     deleteObject() {
       if (!this.selectedObjectId) {
-        console.log("ko co ai de chon", this.selectedObjectId);
+        //console.log("No data", this.selectedObjectId);
+        return;
       } else {
         this.$refs.ModalDelete.show();
       }
@@ -361,7 +369,7 @@ export default {
      */
     clickRow(id) {
       this.selectedObjectId = id;
-      console.log(this.selectedObjectId);
+      // console.log(this.selectedObjectId);
     },
     isSelected(id) {
       if (this.selectedObjectId == id) return true;

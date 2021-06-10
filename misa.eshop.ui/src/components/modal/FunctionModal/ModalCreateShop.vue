@@ -27,7 +27,7 @@
               class="t-btn btn-close t-icon"
               id="btn-close"
               key="['esc']"
-              @click="hide()"
+              @click="openModalSave()"
             ></button>
           </div>
         </div>
@@ -110,7 +110,8 @@
           </button>
         </div>
         <div class="tool-bar-btn div-btn-load">
-          <button class="t-btn btn-load isActive" id="btn-load" @click="hide()">
+          <button @click="openModalSave()"
+            class="t-btn btn-load isActive" id="btn-load">
             <i class="t-icon t-icon-exit"></i>
             <span>Đóng</span>
           </button>
@@ -118,7 +119,7 @@
       </div>
       <!-- toolbar2 -->
       <div class="toobar-filter-date toolbar-create">
-        <button class="btn-quang btn-chose" @click="openModalSave()">
+        <button class="btn-quang btn-chose">
           <span>Chọn phiếu báo hàng</span>
         </button>
       </div>
@@ -284,7 +285,7 @@
       <!-- action-table -->
       <div class="action-table">
         <label> CHI TIẾT</label>
-        <i v-if="!isReadOnlyInput" class="t-icon t-icon-add-col-table" @click="addNewColumDetail()"></i>
+        <i v-if="!isReadOnlyInput" class="t-icon t-icon-add-col-table" style="min-width: 31px;" @click="addNewColumDetail()"></i>
       </div>
 
       <!-- grid -->
@@ -339,7 +340,7 @@
                 </div>
               </th>
 
-              <th class="col-10 colum-prince" fieldName="phoneNumber">
+              <th class="col-10 colum-prince" fieldName="phoneNumber" style="min-width: 158px;">
                 <div class="thead-text">Đơn giá</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
@@ -406,6 +407,7 @@
                   type="number"
                   min="1"
                   v-model="element.quality"
+                  @keypress="formatPressNumber($event)"
                 />
               </td>
               <td
@@ -443,7 +445,7 @@
               >
                 <div
                   class="icon-delete-table"
-                  @click="deleteRowDetail(inndex)"
+                  @click="deleteRowDetail(index)"
                 ></div>
               </td>
             </tr>
@@ -497,6 +499,8 @@ export default {
       object: "",
       currentObject: {
         detail: "",
+        orderDate: this.fnFormatDateInput(new Date()),
+        status:0
       },
       arrayDetail: [],
       arrayStatus: [
@@ -535,14 +539,16 @@ export default {
     },
   },
   methods: {
-    getMoney(){
-      return 100000;
-    },
- 
     /**
      * Lấy tổng tiền.
      */
-    getTotalMoney() {},
+    getTotalMoney() {
+      let sum = 0;
+      this.arrayDetail.forEach((element)=>{
+        sum += element.quality * element.prince;
+      });
+      return sum;
+    },
     /**
      * Lấy tổng số lượng đặt hàng hàng từ 1 chi tiết orerbill
      */
@@ -566,6 +572,9 @@ export default {
      * Event mở mocal save, báo dữ liệu thay đổi
      */
     openModalSave() {
+      if(this.formMode == "watch"){
+        this.hide();
+      }
       this.$refs.ModalSave.show();
     },
     /**
@@ -587,7 +596,7 @@ export default {
     },
     addNewColumDetail() {
       let item = {
-        //  sku:"",
+         sku:"",
         // name:"",
           unit:4,
          quality:1,
@@ -598,7 +607,7 @@ export default {
     },
     save() {
       if (this.formMode === "insert") {
-        this.deleteObjectNull();
+        this.deleteObjectInCorrect();
         this.currentObject.detail = JSON.stringify(this.arrayDetail);
         console.log("Che do Insert");
         axios
@@ -613,7 +622,7 @@ export default {
           });
       } else if (this.formMode === "update") {
         console.log("Che do update");
-        this.deleteObjectNull();
+        this.deleteObjectInCorrect();
         this.currentObject.detail = JSON.stringify(this.arrayDetail);
         axios
           .put(
@@ -639,9 +648,9 @@ export default {
     /**
      * Hàm này delete những phần tử  {} trong mảng arrayDetail
      */
-    deleteObjectNull() {
+    deleteObjectInCorrect() {
       this.arrayDetail = this.arrayDetail.filter(function(obj) {
-        return Object.keys(obj).length != 0 || obj.constructor != Object;
+        return obj.sku != "";
       });
     },
     /**
@@ -874,7 +883,11 @@ export default {
   width: 76%
 }
 .select-unit{
-  border-radius: 4px;
+  border: none !important;
   height: 100% !important;
+}
+.select-unit:focus{
+  border: 1px solid #636dde !important;
+  border-radius: 4px;
 }
 </style>

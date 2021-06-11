@@ -1,0 +1,19 @@
+
+thêm -> hiện(lưu) ẩn(thêm mới,sửa,xóa)
+xem -> hiện(thêm mới,sửa,xóa) ẩn(lưu)
+sửa ->hiện(lưu)
+
+first or defdault, return ob jkect, ép kiểu int , đối trượng truyền vào là object
+tabindex
+checkValidate
+báo thành công/thất bại.
+(*)autoid
+(*)fix lại UI
+(*)datetime
+(*)responsive
+đơn vị tính
+focus validate
+filter
+check duplicate số phiếu
+maxleng input (22 với tiền)
+tiên decimal(22,4) k bắt buộc

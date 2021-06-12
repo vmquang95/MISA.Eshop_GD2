@@ -243,9 +243,12 @@
               v-model="currentObject.refCode"
             />
           </div>
-          <div class="row-side" style="margin-top:8px;">
+          <div
+            class="row-side"
+            style="display: flex;margin-top: 8px;align-items: center;"
+          >
             <span style="margin-right: 6px;">Ngày đặt hàng</span>
-            <input
+            <!-- <input
               v-if="!isReadOnlyInput"
               type="date"
               class="date-pick-create"
@@ -258,7 +261,20 @@
               class="date-pick-create"
               v-model="currentObject.orderDate"
               style="background-color: #e5e6eb;"
-            />
+            /> -->
+            <datepicker
+              v-if="!isReadOnlyInput"
+              input-class="input-orderDate date-pick-create"
+              v-model="currentObject.orderDate"
+              format="dd/MM/yyyy"
+            ></datepicker>
+            <datepicker
+              v-else
+              disabled="true"
+              input-class="input-orderDate date-pick-create inputblock"
+              v-model="currentObject.orderDate"
+              format="dd/MM/yyyy"
+            ></datepicker>
             <!-- <date-picker v-model="currentObject.orderDate" format="DD-MM-YYYY"></date-picker> -->
           </div>
           <div class="row-side" style="margin-top:8px">
@@ -278,7 +294,7 @@
             <select
               v-else
               disabled
-              class="select-datetime-create"
+              class="select-datetime-create inputblock"
               style="background-color: #e5e6eb;"
               v-model="currentObject.status"
             >
@@ -310,14 +326,22 @@
                 <div class="thead-text">Mã SKU</div>
                 <div class="thead-filter order-date-input">
                   <button class="t-btn condition">*</button>
-                  <input disabled type="text" class="t-input filter-text filter-text-create" />
+                  <input
+                    disabled
+                    type="text"
+                    class="t-input filter-text filter-text-create"
+                  />
                 </div>
               </th>
               <th class="col-15" fieldName="shopCode">
                 <div class="thead-text">Tên hàng hóa</div>
                 <div class="thead-filter order-bill-id-input">
                   <button class="t-btn condition">*</button>
-                  <input disabled type="text" class="t-input filter-text filter-text-create" />
+                  <input
+                    disabled
+                    type="text"
+                    class="t-input filter-text filter-text-create"
+                  />
                 </div>
               </th>
               <th class="col-12 colum-unit" fieldName="status">
@@ -336,7 +360,11 @@
                 <div class="thead-text">Số lượng đặt</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
-                  <input disabled type="text" class="t-input filter-text filter-text-create" />
+                  <input
+                    disabled
+                    type="text"
+                    class="t-input filter-text filter-text-create"
+                  />
                 </div>
               </th>
               <th class="col-42 colum-quality" fieldName="address">
@@ -361,7 +389,11 @@
                 <div class="thead-text">Đơn giá</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
-                  <input disabled type="text" class="t-input filter-text filter-text-create" />
+                  <input
+                    disabled
+                    type="text"
+                    class="t-input filter-text filter-text-create"
+                  />
                 </div>
               </th>
 
@@ -369,7 +401,11 @@
                 <div class="thead-text">Thành tiền</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
-                  <input disabled type="text" class="t-input filter-text filter-text-create"  />
+                  <input
+                    disabled
+                    type="text"
+                    class="t-input filter-text filter-text-create"
+                  />
                 </div>
               </th>
               <th v-show="!isReadOnlyInput" class="col-15"></th>
@@ -503,6 +539,7 @@
 <script>
 // import DatePicker from 'vue2-datepicker';
 //   import 'vue2-datepicker/index.css';
+import Datepicker from "vuejs-datepicker";
 import { Money } from "v-money";
 import moment from "moment";
 import axios from "axios";
@@ -516,6 +553,7 @@ export default {
     ModelSave,
     ModalValidate,
     Money,
+    Datepicker,
     // DatePicker
   },
   props: {
@@ -1059,4 +1097,16 @@ export default {
 .filter-text-create {
   height: 32px !important;
 }
+.input-orderDate{
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #bbbbbb;
+  width: 135px !important;
+  padding-left: 12px;
+}
+.inputblock{
+  background-color: rgb(229, 230, 235);
+  
+}
+
 </style>

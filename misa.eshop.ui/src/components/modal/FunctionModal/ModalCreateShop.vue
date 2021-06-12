@@ -119,7 +119,7 @@
       </div>
       <!-- toolbar2 -->
       <div class="toobar-filter-date toolbar-create">
-        <button class="btn-quang btn-chose" @click="openModalValidate()">
+        <button class="btn-quang btn-chose">
           <span>Chọn phiếu báo hàng</span>
         </button>
       </div>
@@ -310,14 +310,14 @@
                 <div class="thead-text">Mã SKU</div>
                 <div class="thead-filter order-date-input">
                   <button class="t-btn condition">*</button>
-                  <input disabled type="text" class="t-input filter-text" />
+                  <input disabled type="text" class="t-input filter-text filter-text-create" />
                 </div>
               </th>
               <th class="col-15" fieldName="shopCode">
                 <div class="thead-text">Tên hàng hóa</div>
                 <div class="thead-filter order-bill-id-input">
                   <button class="t-btn condition">*</button>
-                  <input disabled type="text" class="t-input filter-text" />
+                  <input disabled type="text" class="t-input filter-text filter-text-create" />
                 </div>
               </th>
               <th class="col-12 colum-unit" fieldName="status">
@@ -336,7 +336,7 @@
                 <div class="thead-text">Số lượng đặt</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
-                  <input disabled type="text" class="t-input filter-text" />
+                  <input disabled type="text" class="t-input filter-text filter-text-create" />
                 </div>
               </th>
               <th class="col-42 colum-quality" fieldName="address">
@@ -347,7 +347,7 @@
                   <input
                     disabled
                     type="text"
-                    class="t-input filter-text"
+                    class="t-input filter-text filter-text-create"
                     id="filter-address"
                   />
                 </div>
@@ -361,7 +361,7 @@
                 <div class="thead-text">Đơn giá</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
-                  <input disabled type="text" class="t-input filter-text" />
+                  <input disabled type="text" class="t-input filter-text filter-text-create" />
                 </div>
               </th>
 
@@ -369,7 +369,7 @@
                 <div class="thead-text">Thành tiền</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
-                  <input disabled type="text" class="t-input filter-text" />
+                  <input disabled type="text" class="t-input filter-text filter-text-create"  />
                 </div>
               </th>
               <th v-show="!isReadOnlyInput" class="col-15"></th>
@@ -662,6 +662,22 @@ export default {
     save() {
       if (this.formMode === "insert") {
         this.ConvertData();
+        axios
+          .get("http://localhost:35480/api/v1/OrderBills/getbycode", {
+            params: {
+              refCode: this.currentObject.refCode,
+            },
+          })
+          .then((respone) => {
+            if (respone.data.data) {
+              this.openModalValidate();
+              this.message = "Mã phiếu đã trùng, thử lại với mã khác";
+              return;
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
         if (
           this.checkEmptyValue(this.currentObject.supplierCode) ||
           this.checkEmptyValue(this.currentObject.supplierName)
@@ -839,7 +855,7 @@ export default {
 };
 </script>
 
-<style>
+<style sco>
 @import url("../../../styles/base/formCreate.css");
 @import "../../../styles/layout/toolbar.css";
 .totalfooter {
@@ -1039,5 +1055,8 @@ export default {
 }
 .input-prince-money:focus {
   border: 1px solid #636dde !important;
+}
+.filter-text-create {
+  height: 32px !important;
 }
 </style>

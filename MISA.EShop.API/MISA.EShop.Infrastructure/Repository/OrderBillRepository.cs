@@ -17,6 +17,17 @@ namespace MISA.EShop.Infrastructure.Repository
     /// </summary>
     public class OrderBillRepository : BaseRepository<OrderBill>, IOrderBillRepository
     {
+        public OrderBill GetOrderBillByRefCode(string refCode)
+        {
+            var storeName = $"Proc_GetOrderBillByCode";
+            var parameters = new DynamicParameters();
+            parameters.Add("@RefCode", refCode);
+            var ob = _dbConnection
+                .Query<OrderBill>(storeName, parameters, commandType: CommandType.StoredProcedure)
+                .FirstOrDefault();
+            return ob;
+        }
+
         public IEnumerable<OrderBill> GetOrderBillFilter(string refCode, string supplierName, string customerName, int? status, string description)
         {
             var procName = $"Proc_GetOrderBillFilter";

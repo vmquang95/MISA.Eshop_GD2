@@ -17,6 +17,14 @@ namespace MISA.EShop.Core.Interfaces.IService
     public interface IOrderBillService : IBaseService<OrderBill>
     {
         ResponseResult GetOrderBillFilter(string refCode, string supplierName, string customerName, int? status, string description);
-        
+
+        /// <summary>
+        /// Lấy thông tin cửa hàng theo mã cửa hàng.
+        /// Method riêng, không kế thừa từ Base.
+        /// </summary>
+        /// <param name="refCode">Mã cửa hàng</param>
+        /// <returns>1 cửa hàng có mã tương ứng.</returns>
+        /// CreatedBy: vmquang(14/5/2021).
+        ResponseResult GetOrderBillByRefCode(string refCode);
     }
 }

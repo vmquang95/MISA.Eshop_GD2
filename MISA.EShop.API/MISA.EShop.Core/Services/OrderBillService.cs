@@ -30,6 +30,27 @@ namespace MISA.EShop.Core.Services
             _unitOfWork = unitOfWork;
         }
 
+        public ResponseResult GetOrderBillByRefCode(string refCode)
+        {
+            var result = new ResponseResult();
+            var ob = _unitOfWork.OrderBillTask.GetOrderBillByRefCode(refCode);
+            if (ob != null)
+            {
+                result.Data = ob;
+                result.IsSuccess = false;
+                result.ErrorCode = Enum.ErrorCode.BADREQUEST;
+                result.UserMsg = Resources.Messages.ErrorDuplicate;
+                result.DevMsg = Resources.Messages.ErrorDuplicate;
+            }
+            else
+            {
+                result.IsSuccess = true;
+                result.ErrorCode = Enum.ErrorCode.NONE;
+
+            }
+            return result;
+        }
+
         public ResponseResult GetOrderBillFilter(string refCode, string supplierName, string customerName, int? status, string description)
         {
             var result = new ResponseResult();

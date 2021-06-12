@@ -31,7 +31,7 @@
             <button
               :class="selectedObjectId ? 'isActive' : 'isNotActive'"
               :disabled="!selectedObjectId"
-              @click="openDialog('watch',selectedObjectId)"
+              @click="openDialog('watch', selectedObjectId)"
               class="t-btn btn-edit t-btn-disable"
               id="btn-edit"
             >
@@ -112,7 +112,7 @@
                   <div class="thead-text">Ngày đặt hàng</div>
                   <div class="thead-filter order-date-input">
                     <button class="t-btn condition">=</button>
-                    <input class="t-input filter-text inputdate" type="date" />
+                    <input class="t-input filter-text inputdate" type="date" style="height: 31px;" />
                   </div>
                 </th>
                 <th
@@ -241,8 +241,8 @@
           </table>
         </div>
         <!-- end grid -->
-        <TheFooterStore :records=" orderBillList.length" />
-        <div class="totalfooter">
+        <TheFooterStore :records="orderBillList.length" />
+        <!-- <div class="totalfooter">
           <div class="total-content">
             <div style="margin-right: 370px;">
               <span style="margin-right:15px">Tổng số lượng</span>
@@ -252,6 +252,16 @@
               <span style="margin-right:15px"> Tổng thành tiền</span>
               <span>{{ getTotalMoney() | formatMoney }}</span>
             </div>
+          </div>
+        </div> -->
+        <div class="totalfooter">
+          <div class="totalfooter-left">
+            <span>Tổng số lượng</span>
+            <span>{{ orderBillList.length }}</span>
+          </div>
+          <div class="totalfooter-right">
+            <span> Tổng thành tiền</span>
+            <span>{{ getTotalMoney() | formatMoney }}</span>
           </div>
         </div>
       </div>
@@ -333,14 +343,14 @@ export default {
   },
 
   methods: {
-    getTotalMoney(){
+    getTotalMoney() {
       let sum = 0;
-      this.orderBillList.forEach((obj)=>{
+      this.orderBillList.forEach((obj) => {
         sum += this.getMoneyOrderBill(obj);
       });
       return sum;
     },
-    showDialogFn(){
+    showDialogFn() {
       this.showDialog = false;
     },
     loadData() {
@@ -435,7 +445,10 @@ export default {
   bottom: 3px;
   width: 100%;
   height: 29px;
-  padding-right: 100px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 .totalfooter span {
   font-weight: 700;
@@ -469,5 +482,16 @@ export default {
 }
 .isNotActive:hover {
   cursor: context-menu;
+}
+.totalfooter-left {
+  display: flex;
+  justify-content: space-between;
+  width: 130px;
+}
+.totalfooter-right {
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
+  margin-right: 150px;
 }
 </style>

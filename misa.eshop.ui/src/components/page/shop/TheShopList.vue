@@ -241,7 +241,7 @@
           </table>
         </div>
         <!-- end grid -->
-        <TheFooterStore />
+        <TheFooterStore :records=" orderBillList.length" />
         <div class="totalfooter">
           <div class="total-content">
             <div style="margin-right: 370px;">

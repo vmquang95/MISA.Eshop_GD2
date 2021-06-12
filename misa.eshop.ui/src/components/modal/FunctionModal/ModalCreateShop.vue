@@ -310,26 +310,25 @@
                 <div class="thead-text">Mã SKU</div>
                 <div class="thead-filter order-date-input">
                   <button class="t-btn condition">*</button>
-                  <input type="text" class="t-input filter-text" />
+                  <input disabled type="text" class="t-input filter-text" />
                 </div>
               </th>
               <th class="col-15" fieldName="shopCode">
                 <div class="thead-text">Tên hàng hóa</div>
                 <div class="thead-filter order-bill-id-input">
                   <button class="t-btn condition">*</button>
-                  <input type="text" class="t-input filter-text" />
+                  <input disabled type="text" class="t-input filter-text" />
                 </div>
               </th>
               <th class="col-12 colum-unit" fieldName="status">
                 <div class="thead-text">Đơn vị tính</div>
                 <div class="thead-filter">
-                  <select type="text" class="filter-select" id="filter-status">
-                    <option
-                      v-for="element in arrayUnit"
-                      :key="element.value"
-                      :value="element.value"
-                      >{{ element.text }}</option
-                    >
+                  <select
+                    disabled
+                    type="text"
+                    class="filter-select"
+                    id="filter-status"
+                  >
                   </select>
                 </div>
               </th>
@@ -337,7 +336,7 @@
                 <div class="thead-text">Số lượng đặt</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
-                  <input type="text" class="t-input filter-text" />
+                  <input disabled type="text" class="t-input filter-text" />
                 </div>
               </th>
               <th class="col-42 colum-quality" fieldName="address">
@@ -346,6 +345,7 @@
                   <button class="t-btn condition">*</button>
 
                   <input
+                    disabled
                     type="text"
                     class="t-input filter-text"
                     id="filter-address"
@@ -361,7 +361,7 @@
                 <div class="thead-text">Đơn giá</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
-                  <input type="text" class="t-input filter-text" />
+                  <input disabled type="text" class="t-input filter-text" />
                 </div>
               </th>
 
@@ -369,7 +369,7 @@
                 <div class="thead-text">Thành tiền</div>
                 <div class="thead-filter">
                   <button class="t-btn condition">*</button>
-                  <input type="text" class="t-input filter-text" />
+                  <input disabled type="text" class="t-input filter-text" />
                 </div>
               </th>
               <th v-show="!isReadOnlyInput" class="col-15"></th>
@@ -440,7 +440,10 @@
                   style="background-color:#e1e1e1;"
                 />
               </td>
-              <td class="col-12 txt-money colum-prince" style="padding: 1px 0 0 0">
+              <td
+                class="col-12 txt-money colum-prince"
+                style="padding: 1px 0 0 0"
+              >
                 <!-- <input
                   :disabled="isReadOnlyInput"
                   class="input-table-detail input-prince txt-money"
@@ -1028,13 +1031,13 @@ export default {
   border: 1px solid #636dde !important;
   border-radius: 4px;
 }
-.input-prince-money{
-    border: none;
-    height: 100%;
-    border-radius: 4px;
-    width: 100%;
+.input-prince-money {
+  border: none;
+  height: 100%;
+  border-radius: 4px;
+  width: 100%;
 }
-.input-prince-money:focus{
+.input-prince-money:focus {
   border: 1px solid #636dde !important;
 }
 </style>

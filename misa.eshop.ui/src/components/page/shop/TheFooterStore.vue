@@ -48,14 +48,26 @@
         </div>
         <div class="footer-text display-paging-text">
           Hiển thị <span class="begin-record"> 1 </span> -
-          <span class="last-record"> 13</span> trên
-          <span class="total-record"> 13 </span> kết quả
+          <span class="last-record"> {{records}}</span> trên
+          <span class="total-record"> {{records}} </span> kết quả
         </div>
       </div>
     </div>
     <!-- end footer -->
   </div>
 </template>
+<script>
+  export default{
+    props:{
+      records:Number
+    },
+    data(){
+      return{
+
+      }
+    }
+  }
+</script>
 
 <style>
     @import "../../../styles/layout/footer.css";

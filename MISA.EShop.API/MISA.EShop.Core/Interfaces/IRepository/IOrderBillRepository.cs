@@ -16,7 +16,7 @@ namespace MISA.EShop.Core.Interfaces.IRepository
     /// CreatedBy: vmquang(14/5/2021).
     public interface IOrderBillRepository : IBaseRepository<OrderBill>
     {
-        IEnumerable<OrderBill> GetOrderBillFilter(string refCode, string supplierName, string customerName, int? status, string description);
+        IEnumerable<OrderBill> GetOrderBillFilter(string refCode,string supplierName, string customerName, int? status, string description);
 
         /// <summary>
         /// Lấy thông tin cửa hàng theo mã cửa hàng.

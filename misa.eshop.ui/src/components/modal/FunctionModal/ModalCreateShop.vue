@@ -51,13 +51,21 @@
           </button>
         </div>
         <div class="tool-bar-btn div-btn-edit">
-          <button class="t-btn btn-edit t-btn-disable isActive" id="btn-edit">
+          <button class="t-btn btn-edit t-btn-disable btn-hidden" id="btn-edit">
             <i class="t-icon t-icon-add"></i>
             <span>Thêm mới</span>
           </button>
         </div>
         <div class="tool-bar-btn div-btn-edit">
-          <button class="t-btn btn-edit t-btn-disable isActive" id="btn-edit">
+          <button
+            :disabled="this.formMode != this.$Const.WATCH"
+            :class="
+              this.formMode === this.$Const.WATCH ? 'isActive' : 'btn-hidden'
+            "
+            @click="changeToUpdateObject()"
+            class="t-btn btn-edit t-btn-disable "
+            id="btn-edit"
+          >
             <i class="t-icon t-icon-edit"></i>
             <span>Sửa</span>
           </button>
@@ -128,7 +136,7 @@
         <div class="info-bill-left">
           <label class="titile-left">THÔNG TIN CHUNG</label>
           <div class="row-side">
-            <span style="margin-right: 15px;">Nhà cung cấp</span>
+            <span   style="margin-right: 15px;">Nhà cung cấp</span>
             <input
               ref="RefSupplierCode"
               v-if="isReadOnlyInput"
@@ -447,7 +455,7 @@
                   type="number"
                   min="1"
                   v-model="element.quality"
-                  @keypress="formatPressNumber($event)"
+                  @keypress="formatPressNumber($event,element.quality)"
                 />
               </td>
               <td
@@ -467,13 +475,7 @@
                 class="col-12 txt-money colum-prince"
                 style="padding: 1px 0 0 0"
               >
-                <!-- <input
-                  :disabled="isReadOnlyInput"
-                  class="input-table-detail input-prince txt-money"
-                  type="text"
-                  v-model="element.prince"
-                  @keypress="formatPressNumber($event)"
-                /> -->
+         
                 <money
                   class="txt-money input-prince-money"
                   :disabled="isReadOnlyInput"
@@ -609,6 +611,10 @@ export default {
   },
 
   methods: {
+    changeToUpdateObject() {
+      this.formMode = this.$Const.UPDATE;
+      this.isReadOnlyInput = false;
+    },
     resetArrayDetail() {
       this.arrayDetail = [
         {
@@ -698,9 +704,9 @@ export default {
     /**
      * Chỉ cho phép nhập số.
      */
-    formatPressNumber(e) {
+    formatPressNumber(e,value) {
       let key = e.key;
-      if (!/^\d+/g.test(key)) {
+      if ((!/^\d+/g.test(key)) || value.length >9) {
         e.preventDefault();
       }
     },
@@ -728,7 +734,14 @@ export default {
       this.arrayDetail.splice(index, 1);
     },
     addNewColumDetail() {
-      this.arrayDetail.push(this.itemDefault);
+      let item = {
+        sku: "",
+        name: "",
+        unit: 4,
+        quality: 1,
+        prince: 1000,
+      };
+      this.arrayDetail.push(item);
     },
     checkEmptyValue(value) {
       if (value === "" || !value) {
@@ -807,7 +820,7 @@ export default {
           .catch((error) => {
             this.trashData = error;
           });
-      } else if (this.formMode === this.$Const.WATCH) {
+      } else if (this.formMode === this.$Const.UPDATE) {
         axios
           .get(
             `${this.$Const.API_HOST}/api/v1/OrderBills/CheckDupliCateRefCode`,
@@ -1182,5 +1195,9 @@ export default {
 }
 .inputblock {
   background-color: rgb(229, 230, 235);
+}
+
+input[type=tel]:focus{
+border: 1px solid #636dde !important;
 }
 </style>

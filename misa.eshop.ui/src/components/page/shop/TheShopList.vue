@@ -112,7 +112,11 @@
                   <div class="thead-text">Ngày đặt hàng</div>
                   <div class="thead-filter order-date-input">
                     <button class="t-btn condition">=</button>
-                    <input class="t-input filter-text inputdate" type="date" style="height: 31px;" />
+                    <input
+                      class="t-input filter-text inputdate"
+                      type="date"
+                      style="height: 31px;"
+                    />
                   </div>
                 </th>
                 <th
@@ -200,7 +204,10 @@
                 </th>
               </tr>
             </thead>
-
+            <div v-show="!isLoaded" class="loading-data">
+              <div class="loader"></div>
+              <div class="text">Đang nạp dữ liệu</div>
+            </div>
             <tbody class="tbl-scroll">
               <tr
                 v-for="obj in this.orderBillList"
@@ -311,6 +318,7 @@ export default {
   },
   data() {
     return {
+      isLoaded: false,
       showDialog: false,
       formMode: "",
       selectedObjectId: "",
@@ -354,12 +362,16 @@ export default {
       this.showDialog = false;
     },
     loadData() {
+      this.isLoaded = false;
       this.selectedObjectId = "";
       axios
         .get("http://localhost:35480/api/v1/OrderBills")
         .then((respone) => {
           // console.log(respone.data.data);
           this.orderBillList = respone.data.data;
+        })
+        .then(() => {
+          this.isLoaded = true;
         })
         .catch((error) => console.log(error));
     },
@@ -401,10 +413,10 @@ export default {
     openDialog(mode, id) {
       this.showDialog = true;
       if (mode == "insert") {
-        this.selectedObjectId="";
+        this.selectedObjectId = "";
         this.formMode = "insert";
-        if(id){
-          this.selectedObjectId =id;
+        if (id) {
+          this.selectedObjectId = id;
         }
       } else if (mode == "update") {
         this.formMode = "update";
@@ -498,4 +510,18 @@ export default {
   width: 260px;
   margin-right: 150px;
 }
+.loading-data {
+  width: calc(100% - 186px);
+  height: calc(100vh - 325px);
+  position: fixed;
+  top: 214px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  text-align: center;
+}
+.loading-data .text {
+    position: fixed;
+    left: calc(50% + 20px);
+    top:50%;
+  }
 </style>

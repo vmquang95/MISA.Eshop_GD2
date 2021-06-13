@@ -19,7 +19,8 @@ namespace MISA.EShop.Core.Entities
         /// CreatedBy: vmquang(14/5/2021).
         public string refCode { get; set; }
 
-    
+
+
 
         /// <summary>
         /// Địa chỉ cửa hàng cần filter.

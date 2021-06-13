@@ -17,6 +17,16 @@ namespace MISA.EShop.Infrastructure.Repository
     /// </summary>
     public class OrderBillRepository : BaseRepository<OrderBill>, IOrderBillRepository
     {
+        public string GetNewRefCode()
+        {
+            var storeName = $"Proc_GetNewRefCode";
+            // Thực hiện lấy dữ liệu từ Database
+            var newCode = _dbConnection.Query<string>(
+                storeName,
+                commandType: CommandType.StoredProcedure).FirstOrDefault();
+            return newCode;
+        }
+
         public OrderBill GetOrderBillByRefCode(string refCode)
         {
             var storeName = $"Proc_GetOrderBillByCode";

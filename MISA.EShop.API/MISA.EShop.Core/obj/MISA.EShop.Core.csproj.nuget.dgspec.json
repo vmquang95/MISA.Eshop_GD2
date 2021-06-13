@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell E7450\\Desktop\\MF806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj": {}
+    "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell E7450\\Desktop\\MF806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj": {
+    "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell E7450\\Desktop\\MF806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj",
         "projectName": "MISA.EShop.Core",
-        "projectPath": "C:\\Users\\Dell E7450\\Desktop\\MF806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj",
+        "projectPath": "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj",
         "packagesPath": "C:\\Users\\Dell E7450\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell E7450\\Desktop\\MF806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\obj\\",
+        "outputPath": "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

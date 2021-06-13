@@ -75,5 +75,21 @@ namespace MISA.EShop.WebAPI.Controllers
 
             return Ok(responseResult);
         }
+
+        [HttpGet("GetNewRefCode")]
+        public IActionResult Get()
+        {
+            var responseResult = new ResponseResult();
+            try
+            {
+                responseResult = _orderBillService.GetNewRefCode();
+            }
+            catch (Exception e)
+            {
+                responseResult.OnException(responseResult, e);
+            }
+
+            return Ok(responseResult);
+        }
     }
 }

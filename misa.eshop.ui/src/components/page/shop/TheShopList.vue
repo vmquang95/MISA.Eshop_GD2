@@ -19,7 +19,7 @@
             <button
               :class="selectedObjectId ? 'isActive' : 'isNotActive'"
               :disabled="!selectedObjectId"
-              @click="openDialog('insert', '')"
+              @click="openDialog('insert', selectedObjectId)"
               class="t-btn btn-replication t-btn-disable"
               id="btn-replication"
             >
@@ -401,7 +401,11 @@ export default {
     openDialog(mode, id) {
       this.showDialog = true;
       if (mode == "insert") {
+        this.selectedObjectId="";
         this.formMode = "insert";
+        if(id){
+          this.selectedObjectId =id;
+        }
       } else if (mode == "update") {
         this.formMode = "update";
         this.selectedObjectId = id;

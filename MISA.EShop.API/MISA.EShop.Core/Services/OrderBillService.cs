@@ -30,6 +30,14 @@ namespace MISA.EShop.Core.Services
             _unitOfWork = unitOfWork;
         }
 
+        public ResponseResult GetNewRefCode()
+        {
+            var result = new ResponseResult();
+            var newCode = _unitOfWork.OrderBillTask.GetNewRefCode();
+            result.Data = newCode;
+            return result;
+        }
+
         public ResponseResult GetOrderBillByRefCode(string refCode)
         {
             var result = new ResponseResult();

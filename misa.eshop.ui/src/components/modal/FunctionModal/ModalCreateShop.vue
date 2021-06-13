@@ -270,7 +270,7 @@
             ></datepicker>
             <datepicker
               v-else
-              disabled="true"
+              :disabled="true"
               input-class="input-orderDate date-pick-create inputblock"
               v-model="currentObject.orderDate"
               format="dd/MM/yyyy"
@@ -858,7 +858,7 @@ export default {
     /**
      * hiển thị form
      */
-    show() {
+    async show() {
       if (this.formMode == "update" || this.formMode == "watch") {
         if (this.formMode == "watch") {
           this.isReadOnlyInput = true;
@@ -878,14 +878,42 @@ export default {
           })
           .catch((error) => console.log(error));
       } else if (this.formMode == "insert") {
-        this.arrayDetail = [
-          {
-            sku: "",
-            unit: 4,
-            quality: 1,
-            prince: 1000,
-          },
-        ];
+        await axios
+          .get("http://localhost:35480/api/v1/OrderBills/GetNewRefCode")
+          .then((respone) => {
+            this.currentObject.refCode = respone.data.data;
+          })
+          .catch((error) => console.log(error));
+
+        if (this.selectedObjectId) {
+          axios
+            .get(
+              "http://localhost:35480/api/v1/OrderBills/" +
+                this.selectedObjectId
+            )
+            .then((respone) => {
+              this.currentObject.supplierCode = respone.data.data.supplierCode;
+              this.currentObject.supplierName = respone.data.data.supplierName;
+              this.currentObject.customerCode = respone.data.data.customerCode;
+              this.currentObject.customerName = respone.data.data.customerName;
+              this.currentObject.detail = respone.data.data.detail;
+              this.arrayDetail = JSON.parse(this.currentObject.detail);
+              this.currentObject.description = respone.data.data.description;
+              this.currentObject.orderDate = respone.data.data.orderDate;
+              this.currentObject.status = respone.data.data.status;
+              
+            })
+            .catch((error) => console.log(error));
+        } else {
+          this.arrayDetail = [
+            {
+              sku: "",
+              unit: 4,
+              quality: 1,
+              prince: 1000,
+            },
+          ];
+        }
       }
       this.$refs.BaseForm_ref.show();
     },
@@ -1097,16 +1125,14 @@ export default {
 .filter-text-create {
   height: 32px !important;
 }
-.input-orderDate{
+.input-orderDate {
   height: 35px;
   border-radius: 4px;
   border: 1px solid #bbbbbb;
   width: 135px !important;
   padding-left: 12px;
 }
-.inputblock{
+.inputblock {
   background-color: rgb(229, 230, 235);
-  
 }
-
 </style>

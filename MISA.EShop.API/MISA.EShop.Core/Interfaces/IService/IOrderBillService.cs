@@ -26,5 +26,7 @@ namespace MISA.EShop.Core.Interfaces.IService
         /// <returns>1 cửa hàng có mã tương ứng.</returns>
         /// CreatedBy: vmquang(14/5/2021).
         ResponseResult GetOrderBillByRefCode(string refCode);
+
+        ResponseResult GetNewRefCode();
     }
 }

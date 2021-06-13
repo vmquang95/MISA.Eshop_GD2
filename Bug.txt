@@ -18,4 +18,4 @@ check duplicate số phiếu
 maxleng input (22 với tiền)
 tiên decimal(22,4) k bắt buộc
 
-sửa dữ liêu trùng mã.
+sửa dữ liêu trùng mã chưa check.

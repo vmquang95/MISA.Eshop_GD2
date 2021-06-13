@@ -29,5 +29,7 @@ namespace MISA.EShop.Core.Interfaces.IRepository
 
         string GetNewRefCode();
 
+        OrderBill CheckDuplicateUpDateOrderBill(string refCode, Guid id);
+
     }
 }

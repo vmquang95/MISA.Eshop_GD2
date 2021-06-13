@@ -13,38 +13,6 @@ namespace MISA.EShop.Core.Interfaces
     /// CreatedBy: vmquang (14/5/2021)
     public interface IUnitOfWork
     {
-        #region Properties
-        /// <summary>
-        /// object đại diện cho IStoreRepository
-        /// </summary>
-        /// CreatedBy: vmquang (14/5/2021)
-        IStoreRepository StoreTask { get; }
-
-        /// <summary>
-        /// object đại diện cho ICountryRepository
-        /// </summary>
-        /// CreatedBy: vmquang (14/5/2021)
-        ICountryRepository CountryTask { get; }
-
-        /// <summary>
-        /// object đại diện cho IProvinceRepository
-        /// </summary>
-        /// CreatedBy: vmquang (14/5/2021)
-        IProvinceRepository ProvinceTask { get; }
-
-        /// <summary>
-        /// object đại diện cho IDistrictRepository
-        /// </summary>
-        /// CreatedBy: vmquang (14/5/2021)
-        IDistrictRepository DistrictTask { get; }
-
-        /// <summary>
-        /// object đại diện cho IWardRepository
-        /// </summary>
-        /// CreatedBy: vmquang (14/5/2021)
-        IWardRepository WardTask { get; }
-
         IOrderBillRepository OrderBillTask { get; }
-        #endregion
     }
 }

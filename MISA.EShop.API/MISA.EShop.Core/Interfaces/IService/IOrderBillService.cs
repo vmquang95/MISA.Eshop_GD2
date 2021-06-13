@@ -28,5 +28,7 @@ namespace MISA.EShop.Core.Interfaces.IService
         ResponseResult GetOrderBillByRefCode(string refCode);
 
         ResponseResult GetNewRefCode();
+
+        ResponseResult CheckDuplicateUpDateOrderBill(string refCode, Guid id);
     }
 }

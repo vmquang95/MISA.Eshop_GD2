@@ -10,30 +10,11 @@ namespace MISA.EShop.Infrastructure.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public UnitOfWork(IStoreRepository storeTask, 
-            ICountryRepository countryTask, 
-            IProvinceRepository provinceTask, 
-            IDistrictRepository districtTask,
-            IOrderBillRepository orderBillTask,
-            IWardRepository wardTask)
+        public UnitOfWork(IOrderBillRepository orderBillTask)
         {
-            StoreTask = storeTask;
-            CountryTask = countryTask;
-            ProvinceTask = provinceTask;
-            DistrictTask = districtTask;
-            WardTask = wardTask;
-            OrderBillTask= orderBillTask;
+            OrderBillTask = orderBillTask;
         }
 
-        public IStoreRepository StoreTask { get; }
-
-        public ICountryRepository CountryTask { get; }
-
-        public IProvinceRepository ProvinceTask { get; }
-
-        public IDistrictRepository DistrictTask { get; }
-
-        public IWardRepository WardTask { get; }
         public IOrderBillRepository OrderBillTask { get; }
     }
 }

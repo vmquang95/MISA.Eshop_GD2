@@ -43,20 +43,6 @@ namespace MISA.EShop.WebAPI
             
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddScoped<IStoreRepository, StoreRepository>();
-            services.AddScoped<IStoreService, StoreService>();
-
-            services.AddScoped<ICountryRepository, CountryRepository>();
-            services.AddScoped<ICountryService, CountryService>();
-
-            services.AddScoped<IProvinceRepository, ProvinceRepository>();
-            services.AddScoped<IProvinceService, ProvinceService>();
-
-            services.AddScoped<IDistrictRepository, DistrictRepository>();
-            services.AddScoped<IDistrictService, DistrictService>();
-
-            services.AddScoped<IWardRepository, WardRepository>();
-            services.AddScoped<IWardService, WardService>();
 
             services.AddScoped<IOrderBillRepository, OrderBillRepository>();
             services.AddScoped<IOrderBillService, OrderBillService>();

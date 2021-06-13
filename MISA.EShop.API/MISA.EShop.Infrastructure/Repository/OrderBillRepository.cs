@@ -53,6 +53,18 @@ namespace MISA.EShop.Infrastructure.Repository
 
             return obs;
         }
-      
+
+        public OrderBill CheckDuplicateUpDateOrderBill(string refCode, Guid id)
+        {
+            var storeName = $"Proc_CheckDuplicateUpDateOrderBill";
+            var parameters = new DynamicParameters();
+            parameters.Add("@RefCode", refCode);
+            parameters.Add("@OrderBillId", id);
+            var ob = _dbConnection
+                .Query<OrderBill>(storeName, parameters, commandType: CommandType.StoredProcedure)
+                .FirstOrDefault();
+            return ob;
+        }
+
     }
 }

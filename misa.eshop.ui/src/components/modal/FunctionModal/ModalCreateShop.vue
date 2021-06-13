@@ -5,21 +5,21 @@
       <div class="dialog-header">
         <div class="dialog-header-content">
           <div
-            v-if="formMode == 'insert'"
+            v-if="formMode == this.$Const.INSERT"
             class="dialog-title"
             id="dialog-title"
           >
-            Thêm mới Phiếu đặt hàng
+            {{ this.$Const.TITLE_FORM_INSERT }}
           </div>
           <div
-            v-else-if="formMode == 'update'"
+            v-else-if="formMode == this.$Const.UPDATE"
             class="dialog-title"
             id="dialog-title"
           >
-            Sửa Phiếu đặt hàng
+            {{ this.$Const.TITLE_FORM_UPDATE }}
           </div>
           <div v-else class="dialog-title" id="dialog-title">
-            Phiếu đặt hàng
+            {{ this.$Const.TITLE_FORM_WATCH }}
           </div>
           <div class="dialog-button">
             <button
@@ -248,20 +248,7 @@
             style="display: flex;margin-top: 8px;align-items: center;"
           >
             <span style="margin-right: 6px;">Ngày đặt hàng</span>
-            <!-- <input
-              v-if="!isReadOnlyInput"
-              type="date"
-              class="date-pick-create"
-              v-model="currentObject.orderDate"
-            />
-            <input
-              v-else
-              readonly
-              type="date"
-              class="date-pick-create"
-              v-model="currentObject.orderDate"
-              style="background-color: #e5e6eb;"
-            /> -->
+
             <datepicker
               v-if="!isReadOnlyInput"
               input-class="input-orderDate date-pick-create"
@@ -554,7 +541,6 @@ export default {
     ModalValidate,
     Money,
     Datepicker,
-    // DatePicker
   },
   props: {
     selectedObjectId: String,
@@ -562,6 +548,7 @@ export default {
   },
   data() {
     return {
+      trashData: "",
       message: "",
       index: 0,
       isReadOnlyInput: false,
@@ -596,6 +583,13 @@ export default {
         precision: 0,
         masked: false,
       },
+      itemDefault: {
+        sku: "",
+        name: "",
+        unit: 4,
+        quality: 1,
+        prince: 1000,
+      },
     };
   },
   mounted() {
@@ -615,22 +609,24 @@ export default {
   },
 
   methods: {
+    resetArrayDetail() {
+      this.arrayDetail = [
+        {
+          sku: "",
+          unit: 4,
+          name: "",
+          quality: 1,
+          prince: 1000,
+        },
+      ];
+    },
 
-    convertArrayDetail(){
-      this.arrayDetail.forEach((element)=>{
+    convertArrayDetail() {
+      this.arrayDetail.forEach((element) => {
         element.sku = element.sku.toUpperCase();
-        element.sku = element.sku.replace(
-        /\s+/g,
-        ""
-      );
-
-      element.name = element.name.trim();
-      element.name = element.name.replace(
-        /\s+/g,
-        " "
-      );
-
-
+        element.sku = element.sku.replace(/\s+/g, "");
+        element.name = element.name.trim();
+        element.name = element.name.replace(/\s+/g, " ");
       });
     },
 
@@ -638,7 +634,6 @@ export default {
       this.currentObject.refCode = this.currentObject.refCode.toUpperCase();
       this.currentObject.supplierCode = this.currentObject.supplierCode.toUpperCase();
       this.currentObject.customerCode = this.currentObject.customerCode.toUpperCase();
-
       this.currentObject.refCode = this.currentObject.refCode.replace(
         /\s+/g,
         ""
@@ -673,9 +668,12 @@ export default {
           return letter.toUpperCase();
         });
     },
-
     openModalValidate() {
       this.$refs.ModalValidate.show();
+    },
+    openFormAlertValidate(text) {
+      this.$refs.ModalValidate.show();
+      this.message = text;
     },
     /**
      * Lấy tổng tiền.
@@ -710,7 +708,7 @@ export default {
      * Event mở mocal save, báo dữ liệu thay đổi
      */
     openModalSave() {
-      if (this.formMode == "watch") {
+      if (this.formMode == this.$Const.WATCH) {
         this.hide();
       }
       this.$refs.ModalSave.show();
@@ -728,22 +726,9 @@ export default {
      */
     deleteRowDetail(index) {
       this.arrayDetail.splice(index, 1);
-      // this.arrayDetail = this.arrayDetail.filter(function(obj) {
-      //   return obj.sku != idSku;
-      // });
     },
     addNewColumDetail() {
-      let item = {
-        sku: "",
-        name:"",
-        unit: 4,
-        quality: 1,
-        prince: 1000,
-      };
-      this.arrayDetail.push(item);
-      // console.log(this.arrayDetail.length);
-      // console.log(document.getElementsByClassName("ip-sku").item(this.arrayDetail.length-1));
-      // console.log(this.arrayDetail[this.arrayDetail.length -1]);
+      this.arrayDetail.push(this.itemDefault);
     },
     checkEmptyValue(value) {
       if (value === "" || !value) {
@@ -757,136 +742,134 @@ export default {
       }
     },
 
+    inCorrectSupplierInput() {
+      if (
+        this.checkEmptyValue(this.currentObject.supplierCode) ||
+        this.checkEmptyValue(this.currentObject.supplierName)
+      ) {
+        return true;
+      }
+      return false;
+    },
+
     save() {
       this.convertArrayDetail();
       this.convertDataObject();
-      if (this.formMode === "insert") {
+      if (this.formMode === this.$Const.INSERT) {
         axios
-          .get("http://localhost:35480/api/v1/OrderBills/getbycode", {
+          .get(`${this.$Const.API_HOST}/api/v1/OrderBills/getbycode`, {
             params: {
               refCode: this.currentObject.refCode,
             },
           })
           .then((respone) => {
             if (respone.data.data) {
-              this.openModalValidate();
-              this.message = "Mã phiếu đã trùng, thử lại với mã khác";
+              this.openFormAlertValidate(this.$Const.MESSAGE_DUPLICATE_REFCODE);
               return;
             }
           })
           .catch((error) => {
-            console.log(error);
+            this.trashData = error;
           });
-        if (
-          this.checkEmptyValue(this.currentObject.supplierCode) ||
-          this.checkEmptyValue(this.currentObject.supplierName)
-        ) {
-          this.openModalValidate();
-          this.message = "Không được bỏ trống Mà nhà cung cấp";
+        if (this.inCorrectSupplierInput()) {
+          this.openFormAlertValidate(this.$Const.MESSAGE_EMPTY_SUPPLIER);
           return;
         }
         if (
           this.checkEmptyValue(this.currentObject.customerCode) ||
           this.checkEmptyValue(this.currentObject.customerName)
         ) {
-          this.openModalValidate();
-          this.message = "Không được bỏ trống người đặt";
+          this.openFormAlertValidate(this.$Const.MESSAGE_EMPTY_CUSTOMER);
           return;
         }
         if (this.checkEmptyValue(this.currentObject.orderDate)) {
-          this.openModalValidate();
-          this.message = "Không được bỏ trống ngày đặt";
+          this.openFormAlertValidate(this.$Const.MESSAGE_EMPTY_ORDERDATE);
           return;
         }
         if (this.checkEmptyValue(this.currentObject.refCode)) {
-          this.openModalValidate();
-          this.message = "Không được bỏ trống Phiếu đặt hàng";
+          this.openFormAlertValidate(this.$Const.MESSAGE_EMPTY_REFCODE);
           return;
         }
         this.deleteObjectInCorrect();
         if (this.arrayDetail.length < 1) {
-          this.openModalValidate();
-          this.message = "Phải có ít nhất 1 hàng hóa.";
-          let item = {
-            sku: "",
-            name:"",
-            unit: 4,
-            quality: 1,
-            prince: 1000,
-          };
-          this.arrayDetail.push(item);
+          this.openFormAlertValidate(this.$Const.MESSAGE_NOEXIST_ITEM);
+          this.arrayDetail.push(this.itemDefault);
           return;
         }
         this.currentObject.detail = JSON.stringify(this.arrayDetail);
-        console.log("Che do Insert");
         axios
-          .post("http://localhost:35480/api/v1/OrderBills", this.currentObject)
+          .post(`${this.$Const.API_HOST}/api/v1/OrderBills`, this.currentObject)
           .then((response) => {
-            console.log("Insert thanh cong", response);
+            this.trashData = response;
             this.hide();
             this.$emit("loadData");
           })
           .catch((error) => {
-            console.log(error.data);
+            this.trashData = error;
           });
-      } else if (this.formMode === "update") {
-        console.log("Che do update");
+      } else if (this.formMode === this.$Const.WATCH) {
+        axios
+          .get(
+            `${this.$Const.API_HOST}/api/v1/OrderBills/CheckDupliCateRefCode`,
+            {
+              params: {
+                refCode: this.currentObject.refCode,
+                id: this.currentObject.orderBillId,
+              },
+            }
+          )
+          .then((respone) => {
+            if (respone.data.data) {
+              this.openFormAlertValidate(this.$Const.MESSAGE_DUPLICATE_REFCODE);
+              return;
+            }
+          })
+          .catch((error) => {
+            this.trashData = error;
+          });
         if (
           this.checkEmptyValue(this.currentObject.supplierCode) ||
           this.checkEmptyValue(this.currentObject.supplierName)
         ) {
-          this.openModalValidate();
-          this.message = "Không được bỏ trống Mà nhà cung cấp";
+          this.openFormAlertValidate(this.$Const.MESSAGE_EMPTY_SUPPLIER);
           return;
         }
         if (
           this.checkEmptyValue(this.currentObject.customerCode) ||
           this.checkEmptyValue(this.currentObject.customerName)
         ) {
-          this.openModalValidate();
-          this.message = "Không được bỏ trống người đặt";
+          this.openFormAlertValidate(this.$Const.MESSAGE_EMPTY_CUSTOMER);
           return;
         }
         if (this.checkEmptyValue(this.currentObject.orderDate)) {
-          this.openModalValidate();
-          this.message = "Không được bỏ trống ngày đặt";
+          this.openFormAlertValidate(this.$Const.MESSAGE_EMPTY_ORDERDATE);
           return;
         }
         if (this.checkEmptyValue(this.currentObject.refCode)) {
-          this.openModalValidate();
-          this.message = "Không được bỏ trống Phiếu đặt hàng";
+          this.openFormAlertValidate(this.$Const.MESSAGE_EMPTY_REFCODE);
           return;
         }
         this.deleteObjectInCorrect();
         if (this.arrayDetail.length < 1) {
-          this.openModalValidate();
-          this.message = "Phải có ít nhất 1 hàng hóa.";
-          let item = {
-            sku: "",
-            name:"",
-            unit: 4,
-            quality: 1,
-            prince: 1000,
-          };
-          this.arrayDetail.push(item);
+          this.openFormAlertValidate(this.$Const.MESSAGE_NOEXIST_ITEM);
+          this.arrayDetail.push(this.itemDefault);
           return;
         }
         this.currentObject.detail = JSON.stringify(this.arrayDetail);
         axios
           .put(
-            `http://localhost:35480/api/v1/OrderBills/${this.selectedObjectId}`,
+            `${this.$Const.API_HOST}/api/v1/OrderBills/${this.selectedObjectId}`,
             this.currentObject
           )
           .then((response) => {
-            console.log("update thanh cong", response);
+            this.trashData = response;
             this.hide();
             this.$emit("loadData");
           })
           .catch((error) => {
-            console.log(error.data);
+            this.trashData = error;
           });
-      } else if (this.formMode === "watch") {
-        console.log("Che do watch");
+      } else if (this.formMode === this.$Const.WATCH) {
         this.hide();
       } else {
         return;
@@ -909,6 +892,28 @@ export default {
       this.arrayDetail = [];
       this.isReadOnlyInput = false;
     },
+
+    biddingDataWatch(respone) {
+      this.currentObject = respone.data.data;
+      this.currentObject.orderDate = this.fnFormatDateInput(
+        this.currentObject.orderDate
+      );
+      if (this.currentObject.detail) {
+        this.arrayDetail = JSON.parse(this.currentObject.detail);
+      }
+    },
+
+    copyObject(respone) {
+      this.currentObject.supplierCode = respone.data.data.supplierCode;
+      this.currentObject.supplierName = respone.data.data.supplierName;
+      this.currentObject.customerCode = respone.data.data.customerCode;
+      this.currentObject.customerName = respone.data.data.customerName;
+      this.currentObject.detail = respone.data.data.detail;
+      this.arrayDetail = JSON.parse(this.currentObject.detail);
+      this.currentObject.description = respone.data.data.description;
+      this.currentObject.orderDate = respone.data.data.orderDate;
+      this.currentObject.status = respone.data.data.status;
+    },
     /**
      * ẩn form
      */
@@ -921,60 +926,41 @@ export default {
      * hiển thị form
      */
     async show() {
-      if (this.formMode == "update" || this.formMode == "watch") {
-        if (this.formMode == "watch") {
+      if (
+        this.formMode == this.$Const.UPDATE ||
+        this.formMode == this.$Const.WATCH
+      ) {
+        if (this.formMode == this.$Const.WATCH) {
           this.isReadOnlyInput = true;
         }
         axios
           .get(
-            "http://localhost:35480/api/v1/OrderBills/" + this.selectedObjectId
+            `${this.$Const.API_HOST}/api/v1/OrderBills/` + this.selectedObjectId
           )
           .then((respone) => {
-            this.currentObject = respone.data.data;
-            this.currentObject.orderDate = this.fnFormatDateInput(
-              this.currentObject.orderDate
-            );
-            if (this.currentObject.detail) {
-              this.arrayDetail = JSON.parse(this.currentObject.detail);
-            }
+            this.biddingDataWatch(respone);
           })
-          .catch((error) => console.log(error));
-      } else if (this.formMode == "insert") {
+          .catch((error) => (this.trashData = error));
+      } else if (this.formMode == this.$Const.INSERT) {
         await axios
-          .get("http://localhost:35480/api/v1/OrderBills/GetNewRefCode")
+          .get(`${this.$Const.API_HOST}/api/v1/OrderBills/GetNewRefCode`)
           .then((respone) => {
             this.currentObject.refCode = respone.data.data;
           })
-          .catch((error) => console.log(error));
+          .catch((error) => (this.trashData = error));
 
         if (this.selectedObjectId) {
           axios
             .get(
-              "http://localhost:35480/api/v1/OrderBills/" +
+              `${this.$Const.API_HOST}/api/v1/OrderBills/` +
                 this.selectedObjectId
             )
             .then((respone) => {
-              this.currentObject.supplierCode = respone.data.data.supplierCode;
-              this.currentObject.supplierName = respone.data.data.supplierName;
-              this.currentObject.customerCode = respone.data.data.customerCode;
-              this.currentObject.customerName = respone.data.data.customerName;
-              this.currentObject.detail = respone.data.data.detail;
-              this.arrayDetail = JSON.parse(this.currentObject.detail);
-              this.currentObject.description = respone.data.data.description;
-              this.currentObject.orderDate = respone.data.data.orderDate;
-              this.currentObject.status = respone.data.data.status;
+              this.copyObject(respone);
             })
-            .catch((error) => console.log(error));
+            .catch((error) => (this.trashData = error));
         } else {
-          this.arrayDetail = [
-            {
-              sku: "",
-              unit: 4,
-              name:"",
-              quality: 1,
-              prince: 1000,
-            },
-          ];
+          this.resetArrayDetail();
         }
       }
       this.$refs.BaseForm_ref.show();
@@ -983,7 +969,7 @@ export default {
 };
 </script>
 
-<style sco>
+<style>
 @import url("../../../styles/base/formCreate.css");
 @import "../../../styles/layout/toolbar.css";
 .totalfooter {

@@ -30,6 +30,14 @@ namespace MISA.EShop.Core.Services
             _unitOfWork = unitOfWork;
         }
 
+        public ResponseResult CheckDuplicateUpDateOrderBill(string refCode, Guid id)
+        {
+            var result = new ResponseResult();
+            var ob = _unitOfWork.OrderBillTask.CheckDuplicateUpDateOrderBill(refCode,id);
+            result.Data = ob;
+            return result;
+        }
+
         public ResponseResult GetNewRefCode()
         {
             var result = new ResponseResult();

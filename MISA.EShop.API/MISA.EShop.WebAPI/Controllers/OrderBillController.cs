@@ -76,6 +76,28 @@ namespace MISA.EShop.WebAPI.Controllers
             return Ok(responseResult);
         }
 
+        /// <summary>
+        /// API lấy thông tin đối tượng theo mã 
+        /// </summary>
+        /// <param name="refCode">Mã cửa hàng</param>
+        /// <returns>ResponseResult với data là Danh sách bản ghi có mã cửa hàng bằng mã cửa hàng truyền vào</returns>
+        /// CreatedBy: vmquang 14.5.20201
+        [HttpGet("CheckDupliCateRefCode")]
+        public IActionResult Get(string refCode,Guid id)
+        {
+            var responseResult = new ResponseResult();
+            try
+            {
+                responseResult = _orderBillService.CheckDuplicateUpDateOrderBill(refCode, id);
+            }
+            catch (Exception e)
+            {
+                responseResult.OnException(responseResult, e);
+            }
+
+            return Ok(responseResult);
+        }
+
         [HttpGet("GetNewRefCode")]
         public IActionResult Get()
         {

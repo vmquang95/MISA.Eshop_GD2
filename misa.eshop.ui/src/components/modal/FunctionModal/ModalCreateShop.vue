@@ -566,6 +566,12 @@ export default {
       index: 0,
       isReadOnlyInput: false,
       currentObject: {
+        refCode: "",
+        supplierName: "",
+        supplierCode: "",
+        customerCode: "",
+        customerName: "",
+        description: "",
         detail: "",
         orderDate: this.fnFormatDateInput(new Date()),
         status: 0,
@@ -596,7 +602,7 @@ export default {
     clearTimeout(this.timeOut);
     this.timeOut = setTimeout(() => {
       this.$refs.RefSupplierCode.focus();
-    }, 300);
+    }, 400);
   },
   created() {},
   filters: {
@@ -607,7 +613,67 @@ export default {
       return num;
     },
   },
+
   methods: {
+
+    convertArrayDetail(){
+      this.arrayDetail.forEach((element)=>{
+        element.sku = element.sku.toUpperCase();
+        element.sku = element.sku.replace(
+        /\s+/g,
+        ""
+      );
+
+      element.name = element.name.trim();
+      element.name = element.name.replace(
+        /\s+/g,
+        " "
+      );
+
+
+      });
+    },
+
+    convertDataObject() {
+      this.currentObject.refCode = this.currentObject.refCode.toUpperCase();
+      this.currentObject.supplierCode = this.currentObject.supplierCode.toUpperCase();
+      this.currentObject.customerCode = this.currentObject.customerCode.toUpperCase();
+
+      this.currentObject.refCode = this.currentObject.refCode.replace(
+        /\s+/g,
+        ""
+      );
+      this.currentObject.supplierCode = this.currentObject.supplierCode.replace(
+        /\s+/g,
+        ""
+      );
+      this.currentObject.customerCode = this.currentObject.customerCode.replace(
+        /\s+/g,
+        ""
+      );
+      this.currentObject.customerName = this.currentObject.customerName.trim();
+      this.currentObject.supplierName = this.currentObject.supplierName.trim();
+      this.currentObject.description = this.currentObject.description.trim();
+      this.currentObject.customerName = this.currentObject.customerName.replace(
+        /\s+/g,
+        " "
+      );
+      this.currentObject.supplierName = this.currentObject.supplierName.replace(
+        /\s+/g,
+        " "
+      );
+      this.currentObject.description = this.currentObject.description.replace(
+        /\s+/g,
+        " "
+      );
+
+      this.currentObject.customerName = this.currentObject.customerName
+        .toLowerCase()
+        .replace(/\b[a-z]/g, function(letter) {
+          return letter.toUpperCase();
+        });
+    },
+
     openModalValidate() {
       this.$refs.ModalValidate.show();
     },
@@ -661,7 +727,7 @@ export default {
      * Xóa 1 row ở table detail
      */
     deleteRowDetail(index) {
-      this.arrayDetail.pop(this.arrayDetail[index]);
+      this.arrayDetail.splice(index, 1);
       // this.arrayDetail = this.arrayDetail.filter(function(obj) {
       //   return obj.sku != idSku;
       // });
@@ -669,6 +735,7 @@ export default {
     addNewColumDetail() {
       let item = {
         sku: "",
+        name:"",
         unit: 4,
         quality: 1,
         prince: 1000,
@@ -689,17 +756,11 @@ export default {
         this.value = value.replace(/\s+/g, "");
       }
     },
-    ConvertData() {
-      this.removeSpaces(this.currentObject.supplierCode);
-      this.removeSpaces(this.currentObject.supplierName);
-      this.removeSpaces(this.currentObject.customerCode);
-      this.removeSpaces(this.currentObject.customerName);
-      this.removeSpaces(this.currentObject.description);
-      this.removeSpaces(this.currentObject.refCode);
-    },
+
     save() {
+      this.convertArrayDetail();
+      this.convertDataObject();
       if (this.formMode === "insert") {
-        this.ConvertData();
         axios
           .get("http://localhost:35480/api/v1/OrderBills/getbycode", {
             params: {
@@ -748,6 +809,7 @@ export default {
           this.message = "Phải có ít nhất 1 hàng hóa.";
           let item = {
             sku: "",
+            name:"",
             unit: 4,
             quality: 1,
             prince: 1000,
@@ -769,7 +831,6 @@ export default {
           });
       } else if (this.formMode === "update") {
         console.log("Che do update");
-        this.ConvertData();
         if (
           this.checkEmptyValue(this.currentObject.supplierCode) ||
           this.checkEmptyValue(this.currentObject.supplierName)
@@ -802,6 +863,7 @@ export default {
           this.message = "Phải có ít nhất 1 hàng hóa.";
           let item = {
             sku: "",
+            name:"",
             unit: 4,
             quality: 1,
             prince: 1000,
@@ -901,7 +963,6 @@ export default {
               this.currentObject.description = respone.data.data.description;
               this.currentObject.orderDate = respone.data.data.orderDate;
               this.currentObject.status = respone.data.data.status;
-              
             })
             .catch((error) => console.log(error));
         } else {
@@ -909,6 +970,7 @@ export default {
             {
               sku: "",
               unit: 4,
+              name:"",
               quality: 1,
               prince: 1000,
             },

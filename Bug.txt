@@ -1,4 +1,4 @@
-
+﻿
 thêm -> hiện(lưu) ẩn(thêm mới,sửa,xóa)
 xem -> hiện(thêm mới,sửa,xóa) ẩn(lưu)
 sửa ->hiện(lưu)
@@ -17,3 +17,5 @@ filter
 check duplicate số phiếu
 maxleng input (22 với tiền)
 tiên decimal(22,4) k bắt buộc
+
+sửa dữ liêu trùng mã.

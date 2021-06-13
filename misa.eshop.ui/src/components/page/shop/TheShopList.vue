@@ -65,7 +65,7 @@
           </div>
           <div class="tool-bar-btn div-btn-load">
             <button
-              @click="loadData()"
+              @click="reLoadData()"
               class="t-btn btn-load isActive"
               id="btn-load"
             >
@@ -76,17 +76,17 @@
         </div>
         <!-- end tool bar -->
         <div class="toobar-filter-date">
-          <select class="select-datetime">
+          <select disabled class="select-datetime">
             <option selected>Tháng này</option>
             <option>6 tháng trước</option>
           </select>
           <div class="datepic-side" style="margin-left: 203px;">
             <span>Từ ngày</span>
-            <input class="inputdate" type="date" />
+            <input disabled class="inputdate" type="date" />
           </div>
           <div class="datepic-side">
             <span>Đến ngày</span>
-            <input class="inputdate" type="date" />
+            <input disabled class="inputdate" type="date" />
           </div>
           <button class="btn-quang">
             <div class="icon-quang"></div>
@@ -105,7 +105,7 @@
               <tr>
                 <th class="col-15 col-checkbox">
                   <div>
-                    <input type="checkbox" />
+                    <input disabled type="checkbox" />
                   </div>
                 </th>
                 <th class="col-15 col-inputdate">
@@ -113,6 +113,7 @@
                   <div class="thead-filter order-date-input">
                     <button class="t-btn condition">=</button>
                     <input
+                      disabled
                       class="t-input filter-text inputdate"
                       type="date"
                       style="height: 31px;"
@@ -127,36 +128,36 @@
                   <div class="thead-text">Số phiếu</div>
                   <div class="thead-filter order-bill-id-input">
                     <button class="t-btn condition">*</button>
-                    <input type="text" class="t-input filter-text" />
-                    <!-- <input
+                    <input
+                      tabindex="1"
+                      v-model="filterDataTable.refCode"
                       type="text"
                       class="t-input filter-text"
-                      id="filter-shop-code"
-                    /> -->
+                    />
                   </div>
                 </th>
                 <th class="col-21" fieldName="shopName">
                   <div class="thead-text">Người đặt</div>
                   <div class="thead-filter">
                     <button class="t-btn condition">*</button>
-                    <input type="text" class="t-input filter-text" />
-                    <!-- <input
+                    <input
+                      tabindex="2"
+                      v-model="filterDataTable.customerName"
                       type="text"
                       class="t-input filter-text"
-                      id="filter-shop-name"
-                    /> -->
+                    />
                   </div>
                 </th>
                 <th class="col-42" fieldName="address">
                   <div class="thead-text">Nhà cung cấp</div>
                   <div class="thead-filter">
                     <button class="t-btn condition">*</button>
-                    <input type="text" class="t-input filter-text" />
-                    <!-- <input
+                    <input
+                      tabindex="3"
+                      v-model="filterDataTable.supplierName"
                       type="text"
                       class="t-input filter-text"
-                      id="filter-address"
-                    /> -->
+                    />
                   </div>
                 </th>
 
@@ -164,24 +165,21 @@
                   <div class="thead-text">Tổng tiền</div>
                   <div class="thead-filter">
                     <button class="t-btn condition">*</button>
-                    <input type="text" class="t-input filter-text" />
-                    <!-- <input
-                      type="text"
-                      class="t-input filter-text"
-                      id="filter-phone-number"
-                    /> -->
+                    <input disabled type="text" class="t-input filter-text" />
                   </div>
                 </th>
                 <th class="col-12" fieldName="status">
                   <div class="thead-text">Trạng thái</div>
                   <div class="thead-filter">
                     <select
+                      tabindex="4"
                       type="text"
                       class="filter-select"
                       id="filter-status"
+                      v-model="filterDataTable.status"
                     >
                       <option
-                        v-for="option in storeStatus"
+                        v-for="option in arrayOrderBillStatus"
                         :key="option.value"
                         :value="option.value"
                       >
@@ -194,12 +192,12 @@
                   <div class="thead-text">Diễn dải</div>
                   <div class="thead-filter">
                     <button class="t-btn condition">*</button>
-                    <input type="text" class="t-input filter-text" />
-                    <!-- <input
+                    <input
+                      tabindex="5"
+                      v-model="filterDataTable.description"
                       type="text"
                       class="t-input filter-text"
-                      id="filter-address"
-                    /> -->
+                    />
                   </div>
                 </th>
               </tr>
@@ -247,20 +245,7 @@
             </tbody>
           </table>
         </div>
-        <!-- end grid -->
         <TheFooterStore :records="orderBillList.length" />
-        <!-- <div class="totalfooter">
-          <div class="total-content">
-            <div style="margin-right: 370px;">
-              <span style="margin-right:15px">Tổng số lượng</span>
-              <span>{{ orderBillList.length }}</span>
-            </div>
-            <div>
-              <span style="margin-right:15px"> Tổng thành tiền</span>
-              <span>{{ getTotalMoney() | formatMoney }}</span>
-            </div>
-          </div>
-        </div> -->
         <div class="totalfooter">
           <div class="totalfooter-left">
             <span>Tổng số lượng</span>
@@ -299,7 +284,6 @@ import ModalCreateShop from "../../modal/FunctionModal/ModalCreateShop";
 import ModalDeletShop from "../../modal/FunctionModal/ModelDeleteShop";
 export default {
   name: "Content",
-
   components: {
     ModalCreateShop,
     TheFooterStore,
@@ -316,8 +300,26 @@ export default {
       return num;
     },
   },
+  watch: {
+    "filterDataTable.refCode"() {
+      this.setTimeOutInputFilter();
+    },
+    "filterDataTable.supplierName"() {
+      this.setTimeOutInputFilter();
+    },
+    "filterDataTable.customerName"() {
+      this.setTimeOutInputFilter();
+    },
+    "filterDataTable.description"() {
+      this.setTimeOutInputFilter();
+    },
+    "filterDataTable.status"() {
+      this.getOrderBillByFilter(this.filterDataTable);
+    },
+  },
   data() {
     return {
+      trashDataa: "",
       isLoaded: false,
       showDialog: false,
       formMode: "",
@@ -325,7 +327,7 @@ export default {
       orderBillList: [],
       countOrderBill: 0,
       totalMoneyAllOrderBill: 0,
-      storeStatus: [
+      arrayOrderBillStatus: [
         {
           statusName: "Tất cả",
           value: "",
@@ -343,14 +345,54 @@ export default {
           value: 2,
         },
       ],
+      filterDataTable: {
+        refCode: "",
+        supplierName: "",
+        customerName: "",
+        status: "",
+        description: "",
+        resetFilterTable() {
+          this.refCode = "";
+          this.supplierName = "";
+          this.customerName = "";
+          this.status = "";
+          this.description = "";
+        },
+      },
     };
   },
 
   created() {
-    this.loadData();
+    this.getOrderBillByFilter(this.filterDataTable);
   },
 
   methods: {
+    setTimeOutInputFilter() {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => {
+        this.getOrderBillByFilter(this.filterDataTable);
+      }, 500);
+    },
+    reLoadData() {
+      this.orderBillList = [];
+      this.selectedObjectId = "";
+      this.isLoaded = false;
+      this.filterDataTable.resetFilterTable();
+      this.getOrderBillByFilter(this.filterDataTable);
+    },
+    getOrderBillByFilter(filter) {
+      var endpoint = `${this.$Const.API_HOST}/api/v1/OrderBills/Filter?refCode=${filter.refCode}&supplierName=${filter.supplierName}&customerName=${filter.customerName}&status=${filter.status}&description=${filter.description}`;
+      axios
+        .get(endpoint)
+        .then((respone) => {
+          this.orderBillList = respone.data.data;
+        })
+        .then(() => {
+          this.isLoaded = true;
+        })
+        .catch((error) => (this.trashDataa = error));
+    },
+
     getTotalMoney() {
       let sum = 0;
       this.orderBillList.forEach((obj) => {
@@ -362,25 +404,17 @@ export default {
       this.showDialog = false;
     },
     loadData() {
-      this.isLoaded = false;
+      this.orderBillList = [];
       this.selectedObjectId = "";
-      axios
-        .get("http://localhost:35480/api/v1/OrderBills")
-        .then((respone) => {
-          // console.log(respone.data.data);
-          this.orderBillList = respone.data.data;
-        })
-        .then(() => {
-          this.isLoaded = true;
-        })
-        .catch((error) => console.log(error));
+      this.isLoaded = false;
+      this.filterDataTable.resetFilterTable();
+      this.getOrderBillByFilter(this.filterDataTable);
     },
     /**
      * Sự kiện xóa 1 row của table orderList
      */
     deleteObject() {
       if (!this.selectedObjectId) {
-        // console.log("No data", this.selectedObjectId);
         return;
       } else {
         this.$refs.ModalDelete.show();
@@ -392,7 +426,6 @@ export default {
      */
     clickRow(id) {
       this.selectedObjectId = id;
-      // console.log(this.selectedObjectId);
     },
     isSelected(id) {
       if (this.selectedObjectId == id) return true;
@@ -425,7 +458,6 @@ export default {
         this.formMode = "watch";
         this.selectedObjectId = id;
       }
-      // console.log(this.selectedObjectId);
       setTimeout(() => {
         this.$refs.ModalCreate.show();
       }, 300);
@@ -520,8 +552,8 @@ export default {
   text-align: center;
 }
 .loading-data .text {
-    position: fixed;
-    left: calc(50% + 20px);
-    top:50%;
-  }
+  position: fixed;
+  left: calc(50% + 20px);
+  top: 50%;
+}
 </style>

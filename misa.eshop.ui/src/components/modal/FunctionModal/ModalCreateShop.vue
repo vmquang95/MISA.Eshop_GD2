@@ -136,8 +136,9 @@
         <div class="info-bill-left">
           <label class="titile-left">THÔNG TIN CHUNG</label>
           <div class="row-side">
-            <span   style="margin-right: 15px;">Nhà cung cấp</span>
+            <span style="margin-right: 15px;">Nhà cung cấp</span>
             <input
+              tabindex="1"
               ref="RefSupplierCode"
               v-if="isReadOnlyInput"
               readonly
@@ -148,6 +149,7 @@
               placeholder="Mã nhà cung cấp"
             />
             <input
+              tabindex="1"
               v-else
               ref="RefSupplierCode"
               class="input-create"
@@ -156,6 +158,7 @@
               placeholder="Mã nhà cung cấp"
             />
             <input
+              tabindex="2"
               v-if="isReadOnlyInput"
               readonly
               class="input-create"
@@ -165,6 +168,7 @@
               placeholder="Tên nhà cung cấp"
             />
             <input
+              tabindex="2"
               v-else
               class="input-create"
               type="text"
@@ -176,6 +180,7 @@
           <div class="row-side row-side-2">
             <span style="margin-right: 37px;">Người đặt</span>
             <input
+              tabindex="3"
               v-if="!isReadOnlyInput"
               class="input-create"
               type="text"
@@ -183,6 +188,7 @@
               placeholder="Mã người đặt"
             />
             <input
+              tabindex="3"
               v-else
               class="input-create"
               type="text"
@@ -192,6 +198,7 @@
               placeholder="Mã người đặt"
             />
             <input
+              tabindex="4"
               v-if="!isReadOnlyInput"
               class="input-create"
               type="text"
@@ -200,6 +207,7 @@
               placeholder="Tên người đặt"
             />
             <input
+              tabindex="4"
               v-else
               class="input-create"
               type="text"
@@ -212,6 +220,7 @@
           <div class="row-side row-side-2">
             <span style="margin-right: 47px;">Diễn dải</span>
             <input
+              tabindex="5"
               v-if="!isReadOnlyInput"
               class="input-create"
               type="text"
@@ -219,6 +228,7 @@
               v-model="currentObject.description"
             />
             <input
+              tabindex="5"
               v-else
               readonly
               class="input-create"
@@ -236,6 +246,7 @@
           <div class="row-side row-side-2" style="margin-top:10px">
             <span style=" margin-right: 39px;">Số phiếu</span>
             <input
+              tabindex="7"
               v-if="!isReadOnlyInput"
               class="input-create"
               type="text"
@@ -243,6 +254,7 @@
               v-model="currentObject.refCode"
             />
             <input
+              tabindex="7"
               v-else
               readonly
               class="input-create"
@@ -258,6 +270,7 @@
             <span style="margin-right: 6px;">Ngày đặt hàng</span>
 
             <datepicker
+              tabindex="8"
               v-if="!isReadOnlyInput"
               input-class="input-orderDate date-pick-create"
               v-model="currentObject.orderDate"
@@ -265,6 +278,7 @@
             ></datepicker>
             <datepicker
               v-else
+              tabindex="8"
               :disabled="true"
               input-class="input-orderDate date-pick-create inputblock"
               v-model="currentObject.orderDate"
@@ -275,6 +289,7 @@
           <div class="row-side" style="margin-top:8px">
             <span style="margin-right: 32px;">Trạng thái</span>
             <select
+              tabindex="9"
               v-if="!isReadOnlyInput"
               class="select-datetime-create"
               v-model="currentObject.status"
@@ -287,6 +302,7 @@
               >
             </select>
             <select
+              tabindex="9"
               v-else
               disabled
               class="select-datetime-create inputblock"
@@ -304,12 +320,15 @@
       <!-- action-table -->
       <div class="action-table">
         <label> CHI TIẾT</label>
-        <i
+        <button v-if="!isReadOnlyInput" @click="addNewColumDetail()" class="btn-quang btn-chose btn-action-table">
+          <span>Thêm hàng</span>
+        </button>
+        <!-- <i
           v-if="!isReadOnlyInput"
           class="t-icon t-icon-add-col-table"
           style="min-width: 31px;"
           @click="addNewColumDetail()"
-        ></i>
+        ></i> -->
       </div>
 
       <!-- grid -->
@@ -455,7 +474,7 @@
                   type="number"
                   min="1"
                   v-model="element.quality"
-                  @keypress="formatPressNumber($event,element.quality)"
+                  @keypress="formatPressNumber($event, element.quality)"
                 />
               </td>
               <td
@@ -475,7 +494,6 @@
                 class="col-12 txt-money colum-prince"
                 style="padding: 1px 0 0 0"
               >
-         
                 <money
                   class="txt-money input-prince-money"
                   :disabled="isReadOnlyInput"
@@ -704,9 +722,9 @@ export default {
     /**
      * Chỉ cho phép nhập số.
      */
-    formatPressNumber(e,value) {
+    formatPressNumber(e, value) {
       let key = e.key;
-      if ((!/^\d+/g.test(key)) || value.length >9) {
+      if (!/^\d+/g.test(key) || value.length > 9) {
         e.preventDefault();
       }
     },
@@ -1044,10 +1062,13 @@ export default {
 
 .action-table {
   position: absolute;
-  top: 360px;
+  top: 355px;
   width: 96%;
   height: 30px;
   padding: 10px 0px 0px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .action-table label {
   font: 600 15px Roboto !important;
@@ -1197,7 +1218,20 @@ export default {
   background-color: rgb(229, 230, 235);
 }
 
-input[type=tel]:focus{
-border: 1px solid #636dde !important;
+input[type="tel"]:focus {
+  border: 1px solid #636dde !important;
+}
+.btn-action-table {
+    width: 69px !important;
+    height: 32px !important;
+    padding-left: 4px;
+    padding-right: 4px !important;
+    position: relative !important;
+    top: -12px !important;
+    cursor: pointer;
+}
+.btn-action-table:hover{
+  color: #ffff;
+  background-color:  #2b3173;
 }
 </style>

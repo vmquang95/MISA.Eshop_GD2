@@ -9,6 +9,7 @@ namespace MISA.EShop.Core.Enum
     /// <summary>
     /// Chứa mã các mã code trả về khi có lỗi xảy ra.
     /// OK-200: lấy dữ liệu thành công.
+    /// 204: không có dữ liệu.
     /// NOTFOUND-404: url không đúng.
     /// BADREQUEST-400: Lỗi dữ liệu đầu vào sai.
     /// EXEPTION=500: Lỗi phía serve

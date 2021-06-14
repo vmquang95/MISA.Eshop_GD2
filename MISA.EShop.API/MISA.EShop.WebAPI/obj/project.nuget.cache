@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "us8bbcsXi/c8ocxfNwvkDnQ5NuaVqpDzgpxBvdGgryOU38LzcAFj6IVb6/VmyH6+zh0MapEj7ByABzdOtTGavA==",
+  "dgSpecHash": "by4qWUW0p1LKa2xHhLeru4yXBXyruFMtREx4Y/b3WXshJUVxhvfZaR0ml7O6xxb+4+5BWMPI6RE/u29y8JWjag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.WebAPI\\MISA.EShop.WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\vmquang1\\Desktop\\New folder\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.WebAPI\\MISA.EShop.WebAPI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Dell E7450\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
-    "C:\\Users\\Dell E7450\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
-    "C:\\Users\\Dell E7450\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\Dell E7450\\.nuget\\packages\\mysqlconnector\\1.3.3\\mysqlconnector.1.3.3.nupkg.sha512",
-    "C:\\Users\\Dell E7450\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
-    "C:\\Users\\Dell E7450\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
-    "C:\\Users\\Dell E7450\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "C:\\Users\\Dell E7450\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+    "C:\\Users\\vmquang1\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\vmquang1\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\vmquang1\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\vmquang1\\.nuget\\packages\\mysqlconnector\\1.3.3\\mysqlconnector.1.3.3.nupkg.sha512",
+    "C:\\Users\\vmquang1\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\vmquang1\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\vmquang1\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\vmquang1\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
   ],
   "logs": []
 }

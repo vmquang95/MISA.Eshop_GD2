@@ -34,6 +34,13 @@ namespace MISA.EShop.WebAPI.Controllers
             _orderBillService = orderBillService;
         }
         #endregion
+
+        /// <summary>
+        /// Phương thức get, filter
+        /// </summary>
+        /// <param name="filterparams"></param>
+        /// <returns>200 OK , 500 Exeption ,</returns>
+        /// Created By: vmquang 15/6/2021
         [HttpGet("Filter")]
         public IActionResult Get([FromQuery] FilterOrderBillParams filterparams)
         {
@@ -50,6 +57,7 @@ namespace MISA.EShop.WebAPI.Controllers
             catch (Exception e)
             {
                 responseResult.OnException(responseResult, e);
+                return StatusCode(500);
             }
             return Ok(responseResult);
         }
@@ -98,6 +106,10 @@ namespace MISA.EShop.WebAPI.Controllers
             return Ok(responseResult);
         }
 
+        /// <summary>
+        /// Phương thức get lấy số phiếu không trùng.
+        /// </summary>
+        /// <returns>200 thành công, 500 lỗi exeption</returns>
         [HttpGet("GetNewRefCode")]
         public IActionResult Get()
         {

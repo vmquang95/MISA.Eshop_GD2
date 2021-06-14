@@ -15,8 +15,14 @@ namespace MISA.EShop.Infrastructure.Repository
     /// Tương tác trực tiếp với databse.
     /// Kế thừa từ lớp baseRepository.
     /// </summary>
+    /// Created By: vmquang 15/6/2021
     public class OrderBillRepository : BaseRepository<OrderBill>, IOrderBillRepository
     {
+        /// <summary>
+        /// Lấy số phiếu ngẫu nhiên từ db
+        /// </summary>
+        /// <returns>số phiếu</returns>
+        /// Created By: vmquang 15/6/2021
         public string GetNewRefCode()
         {
             var storeName = $"Proc_GetNewRefCode";
@@ -27,6 +33,12 @@ namespace MISA.EShop.Infrastructure.Repository
             return newCode;
         }
 
+        /// <summary>
+        /// Lấy phiếu đặt hàng theo số phiếu
+        /// </summary>
+        /// <param name="refCode">số phiếu</param>
+        /// <returns>1 bản ghi</returns>
+        /// Created By: vmquang 15/6/2021
         public OrderBill GetOrderBillByRefCode(string refCode)
         {
             var storeName = $"Proc_GetOrderBillByCode";
@@ -38,6 +50,16 @@ namespace MISA.EShop.Infrastructure.Repository
             return ob;
         }
 
+        /// <summary>
+        /// Filter dữ liệu từ db.
+        /// </summary>
+        /// <param name="refCode">số phiếu</param>
+        /// <param name="supplierName">tên nhà cung cấp</param>
+        /// <param name="customerName">tên người đặt</param>
+        /// <param name="status">tình trạng đơn hàng</param>
+        /// <param name="description">diễn dải</param>
+        /// <returns>Danh sách dữ liệu thỏa mãn</returns>
+        /// Created By: vmquang 15/6/2021
         public IEnumerable<OrderBill> GetOrderBillFilter(string refCode, string supplierName, string customerName, int? status, string description)
         {
             var procName = $"Proc_GetOrderBillFilter";
@@ -54,6 +76,13 @@ namespace MISA.EShop.Infrastructure.Repository
             return obs;
         }
 
+        /// <summary>
+        /// Check trùng Số phiếu khi sửa 1 bản ghi.
+        /// </summary>
+        /// <param name="refCode">Số phiếu cần check</param>
+        /// <param name="id">id đại diện đối tượng cần sửa đổi</param>
+        /// <returns>đối tượng trùng lặp</returns>
+        /// Created By: vmquang 15/6/2021
         public OrderBill CheckDuplicateUpDateOrderBill(string refCode, Guid id)
         {
             var storeName = $"Proc_CheckDuplicateUpDateOrderBill";

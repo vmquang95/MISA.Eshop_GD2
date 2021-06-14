@@ -295,27 +295,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dell E7450\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\vmquang1\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.WebAPI\\MISA.EShop.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\vmquang1\\Desktop\\New folder\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.WebAPI\\MISA.EShop.WebAPI.csproj",
       "projectName": "MISA.EShop.WebAPI",
-      "projectPath": "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.WebAPI\\MISA.EShop.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\Dell E7450\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\vmquang1\\Desktop\\New folder\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.WebAPI\\MISA.EShop.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\vmquang1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vmquang1\\Desktop\\New folder\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dell E7450\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\vmquang1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -328,11 +325,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj": {
-              "projectPath": "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj"
+            "C:\\Users\\vmquang1\\Desktop\\New folder\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj": {
+              "projectPath": "C:\\Users\\vmquang1\\Desktop\\New folder\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Core\\MISA.EShop.Core.csproj"
             },
-            "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Infrastructure\\MISA.EShop.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Dell E7450\\Desktop\\mf806\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Infrastructure\\MISA.EShop.Infrastructure.csproj"
+            "C:\\Users\\vmquang1\\Desktop\\New folder\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Infrastructure\\MISA.EShop.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\vmquang1\\Desktop\\New folder\\MISA.Eshop_GD2\\MISA.EShop.API\\MISA.EShop.Infrastructure\\MISA.EShop.Infrastructure.csproj"
             }
           }
         }
@@ -370,7 +367,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -242,28 +242,31 @@ namespace MISA.EShop.Core.Services
         /// </summary>
         /// <param name="responseResult">Kết quả trả về</param>
         /// <param name="entity">thực thể cần validate</param>
+        /// CreatedBy: vmquang(14/5/2021)
         public virtual void Validate(ResponseResult responseResult, T entity, Guid? entityID, string functionName)
         {
     
         }
 
         /// <summary>
-        /// Method nghiệp vụ validate dữ liệu chung ho các entities.
+        /// Method nghiệp vụ validate Insert dữ liệu chung ho các entities.
         /// Các entity sẽ override lại nếu dùng.
         /// </summary>
         /// <param name="responseResult">Kết quả trả về</param>
         /// <param name="entity">thực thể cần validate</param>
+        /// CreatedBy: vmquang(14/5/2021)
         public virtual void ValidateInsertObject(ResponseResult responseResult, T entity)
         {
 
         }
 
         /// <summary>
-        /// Method nghiệp vụ validate dữ liệu chung ho các entities.
+        /// Method nghiệp vụ validate Update dữ liệu chung ho các entities.
         /// Các entity sẽ override lại nếu dùng.
         /// </summary>
         /// <param name="responseResult">Kết quả trả về</param>
         /// <param name="entity">thực thể cần validate</param>
+        /// CreatedBy: vmquang(14/5/2021)
         public virtual void ValidateUpdateObject(ResponseResult responseResult, T entity, Guid entityID)
         {
 

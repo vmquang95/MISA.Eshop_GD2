@@ -13,6 +13,10 @@ namespace MISA.EShop.Core.Interfaces
     /// CreatedBy: vmquang (14/5/2021)
     public interface IUnitOfWork
     {
+        /// <summary>
+        /// OrderBillTask thực thi IOrderBillRepository
+        /// </summary>
+        /// CreatedBy: vmquang(14/5/2021)
         IOrderBillRepository OrderBillTask { get; }
     }
 }

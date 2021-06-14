@@ -13,6 +13,11 @@ using System.Threading.Tasks;
 
 namespace MISA.EShop.Infrastructure.Repository
 {
+    /// <summary>
+    /// Lớp base thao tác với database
+    /// </summary>
+    /// <typeparam name="T">đại diên cho thực thể</typeparam>
+    /// Created By: vmquang 15/6/2021
     public class BaseRepository<T> : IBaseRepository<T>
     {
         protected string _tableName = string.Empty;
@@ -33,6 +38,11 @@ namespace MISA.EShop.Infrastructure.Repository
         }
 
 
+        /// <summary>
+        /// Lấy tất cả dữ liệu của dối tượng
+        /// </summary>
+        /// <returns>Danh sách dữ liệu của đố tượng</returns>
+        /// Created By: vmquang 15/6/2021
         public IEnumerable<T> GetEntities()
         {
             // Thực hiện lấy dữ liệu từ Database
@@ -42,6 +52,11 @@ namespace MISA.EShop.Infrastructure.Repository
             return entities;
         }
 
+        /// <summary>
+        /// Lấy 1 dữ liệu theo id
+        /// </summary>
+        /// <param name="entityId">id cần lấy</param>
+        /// <returns>1 đối tượng</returns>
         public T GetById(Guid entityId)
         {
             // Thực hiện lấy thông tin một đối tượng
@@ -58,7 +73,12 @@ namespace MISA.EShop.Infrastructure.Repository
                 .FirstOrDefault();
             return entity;
         }
-
+        /// <summary>
+        /// Insert dữ liệu vào db
+        /// </summary>
+        /// <param name="entity">đối tượng chứa dữ liệu cần insert</param>
+        /// <returns>số bản ghi thao tác thành cồng</returns>
+        /// Created By: vmquang 15/6/2021
         public int Insert(T entity)
         {
             var keyprop = GetKeyProperty();
@@ -76,6 +96,13 @@ namespace MISA.EShop.Infrastructure.Repository
             return rowAffects;
         }
 
+        /// <summary>
+        /// Insert dữ liệu vào db
+        /// </summary>
+        /// <param name="entity">đối tượng chứa dữ liệu cần Update</param>
+        /// <param name="entityId">id đối tượng hiện tại cần update</param>
+        /// <returns>số bản ghi thao tác thành cồng</returns>
+        /// Created By: vmquang 15/6/2021
         public int Update(T entity, Guid entityId)
         {
             var storeName = $"Proc_Update{_tableName}";
@@ -102,6 +129,12 @@ namespace MISA.EShop.Infrastructure.Repository
             return rowAffects;
         }
 
+        /// <summary>
+        /// Xóa dữ liêu từ db theo id
+        /// </summary>
+        /// <param name="entityId"></param>
+        /// <returns>số bản ghi xóa thành công</returns>
+        /// Created By: vmquang 15/6/2021
         public int Delete(Guid entityId)
         {
             // Thực hiện xóa dữ liệu từ Database:

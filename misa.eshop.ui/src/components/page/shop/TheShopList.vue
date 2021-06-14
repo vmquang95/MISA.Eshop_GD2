@@ -367,19 +367,31 @@ export default {
   },
 
   methods: {
+    /**
+     * hàm settimeout filter.
+     * created vmquang 14/6/2021
+     */
     setTimeOutInputFilter() {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
         this.getOrderBillByFilter(this.filterDataTable);
       }, 500);
     },
+    /**
+     *Hàm load lại dữ liệu.
+     * created vmquang 14/6/2021
+     */
     reLoadData() {
-      // this.orderBillList = [];
+      this.orderBillList = [];
       this.selectedObjectId = "";
       this.isLoaded = false;
       this.filterDataTable.resetFilterTable();
       this.getOrderBillByFilter(this.filterDataTable);
     },
+    /**
+     * Hàm lấy dữ liệu từ filter
+     * created vmquang 14/6/2021
+     */
     getOrderBillByFilter(filter) {
       var endpoint = `${this.$Const.API_HOST}/api/v1/OrderBills/Filter?refCode=${filter.refCode}&supplierName=${filter.supplierName}&customerName=${filter.customerName}&status=${filter.status}&description=${filter.description}`;
       axios
@@ -393,6 +405,10 @@ export default {
         .catch((error) => (this.trashDataa = error));
     },
 
+   /**
+     * Hàm lấy tổng tiền tất cả phiếu hàng.
+     * created vmquang 14/6/2021
+     */
     getTotalMoney() {
       let sum = 0;
       this.orderBillList.forEach((obj) => {
@@ -400,18 +416,29 @@ export default {
       });
       return sum;
     },
+
+     /**
+     * Hàm mở dialog
+     * created vmquang 14/6/2021
+     */
     showDialogFn() {
       this.showDialog = false;
     },
+
+    /**
+     * Hàm load lại data
+     * created vmquang 14/6/2021
+     */
     loadData() {
-      // this.orderBillList = [];
+      this.orderBillList = [];
       this.selectedObjectId = "";
       this.isLoaded = false;
       this.filterDataTable.resetFilterTable();
       this.getOrderBillByFilter(this.filterDataTable);
     },
     /**
-     * Sự kiện xóa 1 row của table orderList
+     * Hàm Xóa 1 đối tượng
+     * created vmquang 14/6/2021
      */
     deleteObject() {
       if (!this.selectedObjectId) {
@@ -427,10 +454,19 @@ export default {
     clickRow(id) {
       this.selectedObjectId = id;
     },
+    /**
+     * Hàm kiểm tra hàng hiện tại có được chọn hay không
+     * created vmquang 14/6/2021
+     */
     isSelected(id) {
       if (this.selectedObjectId == id) return true;
       return false;
     },
+
+    /**
+     * hàm lấy tổng tiển từng hàng.
+     * created vmquang 14/6/2021
+     */
     getMoneyOrderBill(obj) {
       var moneyOrderBill = 0;
       try {
@@ -443,6 +479,10 @@ export default {
       }
       return moneyOrderBill;
     },
+    /**
+     * Hàm mở form Thêm/sửa.xem dữ liệu
+     * created vmquang 14/6/2021
+     */
     openDialog(mode, id) {
       this.showDialog = true;
       if (mode == "insert") {
@@ -544,7 +584,7 @@ export default {
 }
 .loading-data {
   width: calc(100% - 186px);
-  height: calc(100vh - 325px);
+  height: calc(100vh - 300px);
   position: fixed;
   top: 214px;
   background-color: rgba(0, 0, 0, 0.3);

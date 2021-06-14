@@ -14,7 +14,7 @@ namespace MISA.EShop.Core.Entities
     {
         #region Properties
         /// <summary>
-        /// Mã cửa hàng cần filter.
+        /// Số phiếu cần filter.
         /// </summary>
         /// CreatedBy: vmquang(14/5/2021).
         public string refCode { get; set; }
@@ -23,25 +23,26 @@ namespace MISA.EShop.Core.Entities
 
 
         /// <summary>
-        /// Địa chỉ cửa hàng cần filter.
+        /// Tên nhà cung cấp cần filter.
         /// </summary>
         /// CreatedBy: vmquang(14/5/2021).
         public string supplierName { get; set; }
 
         /// <summary>
-        /// Số điện thoại cần filter.
+        /// Tên người đặt.
         /// </summary>
         /// CreatedBy: vmquang(14/5/2021).
         public string customerName { get; set; }
 
         /// <summary>
-        /// Tình trạng(0-đã ngừng hoạt động , 1- đang hoạt động , khác - tất cả).
+        /// Tình trạng đơn hàng.
+        /// (0-Chưa thực hiện , 1- đang thực hiện  , 2 - Đã thực hiện , khác-tất cả).
         /// </summary>
         /// CreatedBy: vmquang(14/5/2021).
         public int? status { get; set; }
 
         /// <summary>
-        /// Số điện thoại cần filter.
+        /// DIễn dải.
         /// </summary>
         /// CreatedBy: vmquang(14/5/2021).
         public string description { get; set; }

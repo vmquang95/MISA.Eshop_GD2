@@ -9,7 +9,7 @@ namespace MISA.EShop.Core.Interfaces
     /// <summary>
     /// Base Repository, chứa các method chung thao tác với Databse.
     /// </summary>
-    /// <typeparam name="T">Thực thể đại diện Store,Ward,Province,...</typeparam>
+    /// <typeparam name="T">Thực thể đại diện chung.</typeparam>
     /// CreatedBy: vmquang(14/5/2021).
     public interface IBaseRepository<T>
     {

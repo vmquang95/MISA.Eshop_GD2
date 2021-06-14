@@ -30,6 +30,13 @@ namespace MISA.EShop.Core.Services
             _unitOfWork = unitOfWork;
         }
 
+        /// <summary>
+        /// nghiệp vụ check trùng số phiếu khi Update
+        /// </summary>
+        /// <param name="refCode"></param>
+        /// <param name="id"></param>
+        /// <returns>ResponseResult</returns>
+        /// Created By: vmquang 15/6/2021
         public ResponseResult CheckDuplicateUpDateOrderBill(string refCode, Guid id)
         {
             var result = new ResponseResult();
@@ -38,6 +45,10 @@ namespace MISA.EShop.Core.Services
             return result;
         }
 
+        /// <summary>
+        /// Nghiệp vụ lấy ra SỐ phiếu không trùng.
+        /// </summary>
+        /// <returns>Created By: vmquang 15/6/2021</returns>
         public ResponseResult GetNewRefCode()
         {
             var result = new ResponseResult();
@@ -46,6 +57,12 @@ namespace MISA.EShop.Core.Services
             return result;
         }
 
+        /// <summary>
+        /// Nghiệp vụ lấy ra đối tượng theo Số phiếu
+        /// </summary>
+        /// <param name="refCode">SỐ phiếu</param>
+        /// <returns>ResponseResult chuẩn restfull</returns>
+        /// Created By: vmquang 15/6/2021
         public ResponseResult GetOrderBillByRefCode(string refCode)
         {
             var result = new ResponseResult();
@@ -66,6 +83,16 @@ namespace MISA.EShop.Core.Services
             return result;
         }
 
+        /// <summary>
+        /// nghiệp vụ filter dữ liệu
+        /// </summary>
+        /// <param name="refCode">Số phêisu</param>
+        /// <param name="supplierName">tên nhà cung cấp</param>
+        /// <param name="customerName">tên người đặt</param>
+        /// <param name="status">tình trạng đơn hàng</param>
+        /// <param name="description">diễn dải</param>
+        /// <returns>ResponseResult</returns>
+        /// Created By: vmquang 15/6/2021
         public ResponseResult GetOrderBillFilter(string refCode, string supplierName, string customerName, int? status, string description)
         {
             var result = new ResponseResult();
@@ -87,6 +114,12 @@ namespace MISA.EShop.Core.Services
             return result;
         }
 
+        /// <summary>
+        /// Nghiệp vụ Validate dữ liệu đầu vào khi Insert
+        /// </summary>
+        /// <param name="responseResult">Res trả về</param>
+        /// <param name="entity">đối tượng truyền vào</param>
+        /// Created By: vmquang 15/6/2021
         public override void ValidateInsertObject(ResponseResult responseResult, OrderBill entity)
         {
             var propertyUnique = "Số Phiếu";
@@ -123,6 +156,13 @@ namespace MISA.EShop.Core.Services
             }
         }
 
+        /// <summary>
+        /// Nghiệp vụ Valudate dữ liệu khi Update 1 đơn hàng
+        /// </summary>
+        /// <param name="responseResult">ResponseResult</param>
+        /// <param name="entity">đối tượng chứa dữ liệu đàu vào</param>
+        /// <param name="entityID">Id đối tượng cần sửa</param>
+        /// Created By: vmquang 15/6/2021
         public override void ValidateUpdateObject(ResponseResult responseResult, OrderBill entity, Guid entityID)
         {
             var propertyUnique = "Số Phiếu";

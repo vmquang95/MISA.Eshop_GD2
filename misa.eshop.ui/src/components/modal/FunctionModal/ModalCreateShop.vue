@@ -604,6 +604,10 @@ export default {
   },
   created() {},
   filters: {
+    /**
+     * Hàm filter tiền.
+     * created vmquang 14/6/2021
+     */
     formatMoney: function(money) {
       if (money != null)
         var num = money.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
@@ -613,10 +617,18 @@ export default {
   },
 
   methods: {
+    /**
+     * Hàm đổi từ form xem sang sửa đối tượng
+     * created vmquang 14/6/2021
+     */
     changeToUpdateObject() {
       this.formMode = this.$Const.UPDATE;
       this.isReadOnlyInput = false;
     },
+    /**
+     * Hàm reset mảng chứa chi tiết đơn hàng
+     * created vmquang 14/6/2021
+     */
     resetArrayDetail() {
       this.arrayDetail = [
         {
@@ -628,7 +640,10 @@ export default {
         },
       ];
     },
-
+    /**
+     * Hàm convert nội dung của chi teeits đơn hàng
+     * created vmquang 14/6/2021
+     */
     convertArrayDetail() {
       this.arrayDetail.forEach((element) => {
         element.sku = element.sku.toUpperCase();
@@ -638,6 +653,10 @@ export default {
       });
     },
 
+    /**
+     * Hàm convert dữ liệu người dùng nhập vào.
+     * created vmquang 14/6/2021
+     */
     convertDataObject() {
       this.currentObject.refCode = this.currentObject.refCode.toUpperCase();
       this.currentObject.supplierCode = this.currentObject.supplierCode.toUpperCase();
@@ -676,9 +695,17 @@ export default {
           return letter.toUpperCase();
         });
     },
+    /**
+     * Hàm mở THông báo validate.
+     * created vmquang 14/6/2021
+     */
     openModalValidate() {
       this.$refs.ModalValidate.show();
     },
+    /**
+     * Hàm mở thông báo validte kèm nội dung message
+     * created vmquang 14/6/2021
+     */
     openFormAlertValidate(text) {
       this.$refs.ModalValidate.show();
       this.message = text;
@@ -735,6 +762,10 @@ export default {
     deleteRowDetail(index) {
       this.arrayDetail.splice(index, 1);
     },
+    /**
+     * Hàm thêm mới 1 hàng hóa ở chi tiết đơn hàng.
+     * created vmquang 14/6/2021
+     */
     addNewColumDetail() {
       let item = {
         sku: "",
@@ -745,18 +776,29 @@ export default {
       };
       this.arrayDetail.push(item);
     },
+    /**
+     * Kiểm tra null hoặc emtpy 1 dữ liệu.
+     * created vmquang 14/6/2021
+     */
     checkEmptyValue(value) {
       if (value === "" || !value) {
         return true;
       }
       return false;
     },
+    /**
+     * hàm xóa dấu cách
+     * created vmquang 14/6/2021
+     */
     removeSpaces(value) {
       if (value) {
         this.value = value.replace(/\s+/g, "");
       }
     },
-
+    /**
+     * Hàm check xem dữ liệu Nhà cung cấp có đúng không ?
+     * created vmquang 14/6/2021
+     */
     inCorrectSupplierInput() {
       if (
         this.checkEmptyValue(this.currentObject.supplierCode) ||
@@ -767,6 +809,10 @@ export default {
       return false;
     },
 
+    /**
+     * Hàm sự kiện nút lưu
+     * created vmquang 14/6/2021
+     */
     save() {
       this.convertArrayDetail();
       this.convertDataObject();
@@ -908,6 +954,10 @@ export default {
       this.isReadOnlyInput = false;
     },
 
+    /**
+     * truyền dữ liệu sang form watch
+     * created vmquang 14/6/2021
+     */
     biddingDataWatch(respone) {
       this.currentObject = respone.data.data;
       this.currentObject.orderDate = this.fnFormatDateInput(
@@ -918,6 +968,10 @@ export default {
       }
     },
 
+    /**
+     * Hàm copy thông tin đối tượng, phục phục vụ chức năng nhân bản
+     * created vmquang 14/6/2021
+     */
     copyObject(respone) {
       this.currentObject.supplierCode = respone.data.data.supplierCode;
       this.currentObject.supplierName = respone.data.data.supplierName;

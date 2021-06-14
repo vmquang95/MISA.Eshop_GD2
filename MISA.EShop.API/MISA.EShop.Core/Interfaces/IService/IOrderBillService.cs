@@ -16,6 +16,16 @@ namespace MISA.EShop.Core.Interfaces.IService
     /// CreatedBy: vmquang(14/5/2021).
     public interface IOrderBillService : IBaseService<OrderBill>
     {
+        /// <summary>
+        /// FIlter dữ liệu theo tiêu chí từ phía client.
+        /// </summary>
+        /// <param name="refCode">Số phiếu đặt hàng</param>
+        /// <param name="supplierName">Tên nhà cung cấp</param>
+        /// <param name="customerName">Tên người đặt</param>
+        /// <param name="status">Tình trạng đơn hàng</param>
+        /// <param name="description">diễn dải đơn hàng</param>
+        /// <returns>Respone theo chuẩn Resfull</returns>
+        /// CreatedBy: vmquang(14/5/2021)
         ResponseResult GetOrderBillFilter(string refCode, string supplierName, string customerName, int? status, string description);
 
         /// <summary>
@@ -27,8 +37,22 @@ namespace MISA.EShop.Core.Interfaces.IService
         /// CreatedBy: vmquang(14/5/2021).
         ResponseResult GetOrderBillByRefCode(string refCode);
 
+        /// <summary>
+        /// Lấy thông tin cửa hàng theo mã cửa hàng.
+        /// Method riêng, không kế thừa từ Base.
+        /// </summary>
+        /// <param name="refCode">Mã cửa hàng</param>
+        /// <returns>Respone chuẩn restFull</returns>
+        /// CreatedBy: vmquang(14/5/2021).
         ResponseResult GetNewRefCode();
 
+        /// <summary>
+        /// Check trùng Số phiếu đối với thao tác update dữ liệu
+        /// </summary>
+        /// <param name="refCode">Số phiếu sửa đổi</param>
+        /// <param name="id">mã địa diện cho thực thể hiện tại đang sửa</param>
+        /// <returns>Respone chuẩn restfull</returns>
+        /// CreatedBy: vmquang(14/5/2021)
         ResponseResult CheckDuplicateUpDateOrderBill(string refCode, Guid id);
     }
 }

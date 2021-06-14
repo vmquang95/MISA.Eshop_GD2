@@ -21,17 +21,8 @@ namespace MISA.EShop.Core.Results
         // Messagess cho lập trình viên.
         public string DevMsg { get; set; }
 
-        // Messagess cho user
-        public string UserMsg { get; set; }
-
         // Mã lỗi thao tác, mặc định là NONE(0) không có lỗi.
         public ErrorCode ErrorCode { get; set; } = ErrorCode.NONE;
-
-        // Thông tin thêm thêm cho lập trình viên.
-        public string MoreInfo { get; set; }
-
-        // Mã lỗi để tra cữu.
-        public string TraceId { get; set; }
 
         // Dữ liệu trả về dạng Object.
         public object Data { get; set; }
@@ -47,10 +38,10 @@ namespace MISA.EShop.Core.Results
         /// CreatedBy: vmquang(14/5/2021)
         public void OnException(ResponseResult result, Exception ex)
         {
-            result.UserMsg = Resources.Messages.ExceptionUser;
             result.DevMsg = Resources.Messages.ExceptionUser;
             result.IsSuccess = false;
             result.ErrorCode = ErrorCode.EXCEPTION;
+            result.Data = null;
         }
 
         /// <summary>
@@ -63,7 +54,6 @@ namespace MISA.EShop.Core.Results
             result.IsSuccess = false;
             result.ErrorCode = ErrorCode.BADREQUEST;
             result.DevMsg = Resources.Messages.ErrorInputData;
-            result.UserMsg = Resources.Messages.ErrorInputData;
         }
         #endregion
     }

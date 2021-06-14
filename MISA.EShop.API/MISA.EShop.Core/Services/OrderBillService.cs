@@ -55,7 +55,6 @@ namespace MISA.EShop.Core.Services
                 result.Data = ob;
                 result.IsSuccess = false;
                 result.ErrorCode = Enum.ErrorCode.BADREQUEST;
-                result.UserMsg = Resources.Messages.ErrorDuplicate;
                 result.DevMsg = Resources.Messages.ErrorDuplicate;
             }
             else
@@ -78,17 +77,89 @@ namespace MISA.EShop.Core.Services
                 result.Data = stores;
                 result.IsSuccess = true;
                 result.ErrorCode = Enum.ErrorCode.NONE;
-                result.UserMsg = Resources.Messages.GetDataSuccess;
             }
             else
             {
                 result.IsSuccess = false;
                 result.ErrorCode = Enum.ErrorCode.NOCONTENT;
-                result.UserMsg = Resources.Messages.ErrorFilterData;
                 result.DevMsg = Resources.Messages.ErrorFilterData;
             }
             return result;
         }
+
+        public override void ValidateInsertObject(ResponseResult responseResult, OrderBill entity)
+        {
+            var propertyUnique = "Số Phiếu";
+            var propertyRequired = new Dictionary<string, string>();
+            propertyRequired.Add("Số Phiếu", entity.RefCode);
+            propertyRequired.Add("Ngày đặt hàng", entity.OrderDate.ToString());
+            propertyRequired.Add("Trạng thái", entity.Status.ToString());
+            propertyRequired.Add("Mã nhà cung cấp", entity.SupplierCode);
+            propertyRequired.Add("Tên nhà cung cấp", entity.SupplierName);
+            propertyRequired.Add("Mã người đặt", entity.CustomerCode);
+            propertyRequired.Add("Tên người đặt", entity.CustomerName);
+            propertyRequired.Add("Chi tiết đơn đặt hàng", entity.Detail);
+
+
+            foreach (var property in propertyRequired)
+            {
+                if (string.IsNullOrEmpty(property.Value))
+                {
+                    responseResult.IsSuccess = false;
+                    responseResult.ErrorCode = Enum.ErrorCode.BADREQUEST;
+                    responseResult.DevMsg = property.Key + " " + Resources.Messages.ErrorInputData;
+                    responseResult.Data = null;
+                }
+            }
+
+            // kiểm tra xem trường nào là duy nhất (có thuộc tính Unique) thì check duplicate
+            var ob = _unitOfWork.OrderBillTask.GetOrderBillByRefCode(entity.RefCode);
+
+            if (ob != null)
+            {
+                responseResult.IsSuccess = false;
+                responseResult.ErrorCode = Enum.ErrorCode.BADREQUEST;
+                responseResult.DevMsg = propertyUnique + " " + Resources.Messages.ErrorDuplicate;
+            }
+        }
+
+        public override void ValidateUpdateObject(ResponseResult responseResult, OrderBill entity, Guid entityID)
+        {
+            var propertyUnique = "Số Phiếu";
+            var propertyRequired = new Dictionary<string, string>();
+            propertyRequired.Add("Số Phiếu", entity.RefCode);
+            propertyRequired.Add("Ngày đặt hàng", entity.OrderDate.ToString());
+            propertyRequired.Add("Trạng thái", entity.Status.ToString());
+            propertyRequired.Add("Mã nhà cung cấp", entity.SupplierCode);
+            propertyRequired.Add("Tên nhà cung cấp", entity.SupplierName);
+            propertyRequired.Add("Mã người đặt", entity.CustomerCode);
+            propertyRequired.Add("Tên người đặt", entity.CustomerName);
+            propertyRequired.Add("Chi tiết đơn đặt hàng", entity.Detail);
+
+
+            foreach (var property in propertyRequired)
+            {
+                if (string.IsNullOrEmpty(property.Value))
+                {
+                    responseResult.IsSuccess = false;
+                    responseResult.ErrorCode = Enum.ErrorCode.BADREQUEST;
+                    responseResult.DevMsg = property.Key + " " + Resources.Messages.ErrorInputData;
+                    responseResult.Data = null;
+                }
+            }
+
+            // kiểm tra xem trường nào là duy nhất (có thuộc tính Unique) thì check duplicate
+            var ob = _unitOfWork.OrderBillTask.CheckDuplicateUpDateOrderBill(entity.RefCode, entityID);
+
+            if (ob != null)
+            {
+                responseResult.IsSuccess = false;
+                responseResult.ErrorCode = Enum.ErrorCode.BADREQUEST;
+                responseResult.DevMsg = propertyUnique + " " + Resources.Messages.ErrorDuplicate;
+            }
+        }
+
+
         #endregion
     }
 }

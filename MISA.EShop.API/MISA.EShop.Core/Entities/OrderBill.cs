@@ -24,22 +24,25 @@ namespace MISA.EShop.Core.Entities
         public int? Status { get; set; }
 
         [Required]
+        [Display(Name = "Mã nhà cung cấp")]
         public string SupplierCode { get; set; }
 
         [Required]
-        [Display(Name = "Nhà cung cấp")]
+        [Display(Name = "Tên cung cấp")]
         public string SupplierName { get; set; }
 
         [Required]
+        [Display(Name = "Mã người đặt")]
         public string CustomerCode { get; set; }
 
         [Required]
-        [Display(Name = "Người đặt")]
+        [Display(Name = "Tên người đặt")]
         public string CustomerName { get; set; }
 
         [Display(Name = "Diễn dải")]
         public string Description { get; set; }
 
+        [Display(Name = "Chi tiết đơn hàng")]
         public string Detail { get; set; }
 
     }

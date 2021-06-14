@@ -374,7 +374,7 @@ export default {
       }, 500);
     },
     reLoadData() {
-      this.orderBillList = [];
+      // this.orderBillList = [];
       this.selectedObjectId = "";
       this.isLoaded = false;
       this.filterDataTable.resetFilterTable();
@@ -404,7 +404,7 @@ export default {
       this.showDialog = false;
     },
     loadData() {
-      this.orderBillList = [];
+      // this.orderBillList = [];
       this.selectedObjectId = "";
       this.isLoaded = false;
       this.filterDataTable.resetFilterTable();

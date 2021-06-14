@@ -53,7 +53,7 @@ namespace MISA.EShop.Core.Services
                 result.ErrorCode = Enum.ErrorCode.BADREQUEST;
                 result.DevMsg = Resources.Messages.ErrorIsNotExist;
             }
-            //có id
+            //id hợp lệ
             else
             {
                 //lấy dữ liệu thực thể theo id từ DB, trả về 1 đối tượng.
@@ -62,18 +62,19 @@ namespace MISA.EShop.Core.Services
                 //có đối tượng,gán data , gán message
                 if (entity != null)
                 {
-                    result.Data = entity;
                     result.IsSuccess = true;
+                    result.DevMsg = Resources.Messages.GetDataSuccess;
+                    result.Data = entity;
                     result.ErrorCode = Enum.ErrorCode.NONE;
-                    result.UserMsg = Resources.Messages.GetDataSuccess;
 
                 }
                 //không có dữ liệu trả về , gán message thông báo/
                 else
                 {
-                    result.IsSuccess = false;
-                    result.DevMsg = Resources.Messages.ErrorIsNotExist;
-                    result.UserMsg = Resources.Messages.ErrorIsNotExist;
+                    result.IsSuccess = true;
+                    result.Data = null;
+                    result.ErrorCode = Enum.ErrorCode.NOCONTENT;
+                    result.DevMsg = Resources.Messages.NoContentData;
                 }
             }
 
@@ -88,18 +89,19 @@ namespace MISA.EShop.Core.Services
         public ResponseResult GetEntities()
         {
             var entities = _baseRespository.GetEntities();
-
             var result = new ResponseResult();
             if (entities != null)
             {
+                result.IsSuccess = true;
                 result.Data = entities;
                 result.ErrorCode = Enum.ErrorCode.NONE;
-                result.UserMsg = Resources.Messages.GetDataSuccess;
+                result.DevMsg = Resources.Messages.GetDataSuccess;
+
             }
             else
             {
-                result.IsSuccess = false;
-                result.UserMsg = Resources.Messages.NotFoundData;
+                result.IsSuccess = true;
+                result.Data = null;
                 result.DevMsg = Resources.Messages.NoContentData;
                 result.ErrorCode = Enum.ErrorCode.NOCONTENT;
             }
@@ -115,30 +117,42 @@ namespace MISA.EShop.Core.Services
         /// CreatedBy: vmquang(14/5/2021).
         public ResponseResult Insert(T entity)
         {
-            var result = new ResponseResult();
-            string functionName = "Insert";
-            
-            // Validate nghiệp vụ
-            Validate(result, entity, null, functionName);
+            //var result = new ResponseResult();
+            //string functionName = "Insert";
 
-            if (result.IsSuccess == true)
+            //// Validate nghiệp vụ
+            //Validate(result, entity, null, functionName);
+
+            //if (result.IsSuccess == true)
+            //{
+            //    // Thực hiện thêm mới
+            //    var rowAffects = _baseRespository.Insert(entity);
+
+            //    if (rowAffects == 1)
+            //    {
+            //        result.IsSuccess = true;
+            //        result.ErrorCode = Enum.ErrorCode.NONE;
+            //    }
+            //    else
+            //    {
+            //        result.IsSuccess = false;
+            //        result.ErrorCode = Enum.ErrorCode.EXCEPTION;
+            //        result.DevMsg = Resources.Messages.ErrorInsertData;
+            //    }
+            //}
+
+            //return result;
+            var result = new ResponseResult();
+            // Validate nghiệp vụ
+            ValidateInsertObject(result, entity);
+            if (result.IsSuccess)
             {
                 // Thực hiện thêm mới
                 var rowAffects = _baseRespository.Insert(entity);
+                result.Data = rowAffects;
+                result.ErrorCode = Enum.ErrorCode.NONE;
+                result.DevMsg = Resources.Messages.InsertDataSuccess;
 
-                if (rowAffects == 1)
-                {
-                    result.IsSuccess = true;
-                    result.ErrorCode = Enum.ErrorCode.NONE;
-                    result.UserMsg = Resources.Messages.InsertDataSuccess;
-                }
-                else
-                {
-                    result.IsSuccess = false;
-                    result.ErrorCode = Enum.ErrorCode.EXCEPTION;
-                    result.DevMsg = Resources.Messages.ErrorInsertData;
-                    result.UserMsg = Resources.Messages.ErrorInsertData;
-                }
             }
 
             return result;
@@ -152,34 +166,46 @@ namespace MISA.EShop.Core.Services
         /// CreatedBy: vmquang(14/5/2021).
         public ResponseResult Update(T entity, Guid entityId)
         {
+            //var result = new ResponseResult();
+            //string functionName = "Update";
+
+            ////Validate nghiệp vụ khi cập nhật
+
+            //Validate(result, entity, entityId, functionName);
+
+            //if (result.IsSuccess == true)
+            //{
+            //    // thực hiện cập nhật
+            //    var rowAffects = _baseRespository.Update(entity, entityId);
+
+            //    if (rowAffects == 1)
+            //    {
+            //        result.IsSuccess = true;
+            //        result.ErrorCode = Enum.ErrorCode.NONE;
+
+            //    }
+            //    else
+            //    {
+            //        result.IsSuccess = false;
+            //        result.ErrorCode = Enum.ErrorCode.EXCEPTION;
+            //        result.DevMsg = Resources.Messages.ErrorUpdateData;
+
+            //    }
+            //}
+            //return result;
             var result = new ResponseResult();
-            string functionName = "Update";
-
-            //Validate nghiệp vụ khi cập nhật
-
-            Validate(result, entity, entityId, functionName);
-
-            if (result.IsSuccess == true)
+            // Validate nghiệp vụ
+            ValidateUpdateObject(result, entity, entityId);
+            if (result.IsSuccess)
             {
-                // thực hiện cập nhật
+                // Thực hiện thêm mới
                 var rowAffects = _baseRespository.Update(entity, entityId);
+                result.Data = rowAffects;
+                result.ErrorCode = Enum.ErrorCode.NONE;
+                result.DevMsg = Resources.Messages.UpdateDataSuccess;
 
-                if (rowAffects == 1)
-                {
-                    result.IsSuccess = true;
-                    result.ErrorCode = Enum.ErrorCode.NONE;
-                    result.UserMsg = Resources.Messages.UpdateDataSuccess;
-
-                }
-                else
-                {
-                    result.IsSuccess = false;
-                    result.ErrorCode = Enum.ErrorCode.EXCEPTION;
-                    result.DevMsg = Resources.Messages.ErrorUpdateData;
-                    result.UserMsg = Resources.Messages.ErrorUpdateData;
-
-                }
             }
+
             return result;
         }
 
@@ -203,7 +229,6 @@ namespace MISA.EShop.Core.Services
             else
             {
                 result.IsSuccess = false;
-                result.UserMsg = Resources.Messages.NoContentData;
                 result.DevMsg = Resources.Messages.NoContentData;
                 result.ErrorCode = Enum.ErrorCode.NOCONTENT;
             }
@@ -220,6 +245,28 @@ namespace MISA.EShop.Core.Services
         public virtual void Validate(ResponseResult responseResult, T entity, Guid? entityID, string functionName)
         {
     
+        }
+
+        /// <summary>
+        /// Method nghiệp vụ validate dữ liệu chung ho các entities.
+        /// Các entity sẽ override lại nếu dùng.
+        /// </summary>
+        /// <param name="responseResult">Kết quả trả về</param>
+        /// <param name="entity">thực thể cần validate</param>
+        public virtual void ValidateInsertObject(ResponseResult responseResult, T entity)
+        {
+
+        }
+
+        /// <summary>
+        /// Method nghiệp vụ validate dữ liệu chung ho các entities.
+        /// Các entity sẽ override lại nếu dùng.
+        /// </summary>
+        /// <param name="responseResult">Kết quả trả về</param>
+        /// <param name="entity">thực thể cần validate</param>
+        public virtual void ValidateUpdateObject(ResponseResult responseResult, T entity, Guid entityID)
+        {
+
         }
 
         #endregion

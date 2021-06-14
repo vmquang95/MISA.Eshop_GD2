@@ -5,7 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using MISA.EShop.Core.Enum;
+using MISA.EShop.Core.Results;
 
 namespace MISA.EShop.WebAPI.Controllers
 {
@@ -39,34 +40,29 @@ namespace MISA.EShop.WebAPI.Controllers
         /// <summary>
         /// API GET
         /// </summary>
-        /// <returns>OK-thành công , Badrequest-dữ liệu không đúng.</returns>
+        /// <returns>OK(200)-thành công , có data trả về. ,\
+        /// 204-NoContent-thành công, khong có data trả về
+        /// 500 - lỗi hệ thống.</returns>
         /// CreatedBy: vmquang 14/5/2021.
         [HttpGet]
         public IActionResult Get()
         {
+            var responseResult = _baseService.GetEntities();
             try
             {
-                var responseResult = _baseService.GetEntities();
+                if (responseResult.ErrorCode == ErrorCode.NOCONTENT)
+                {
+                    return NoContent();
+                }
+
                 return Ok(responseResult);
-
-            }
-            catch (Exception)
-            {
-
-                return BadRequest();
-            }
-            /*var responseResult = new ResponseResult();
-            try
-            {
-                 responseResult.Data = _baseService.GetEntities();
-                
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                responseResult.OnException(responseResult, ex);
+                return StatusCode(500);
             }
-            return new JsonResult(responseResult);*/
         }
 
 
@@ -79,8 +75,23 @@ namespace MISA.EShop.WebAPI.Controllers
         [HttpGet("{entityId}")]
         public IActionResult Get(Guid entityId)
         {
-            var responseResult = _baseService.GetById(entityId);
-            return Ok(responseResult);
+            var responseResult = new ResponseResult();
+            try
+            {
+                responseResult = _baseService.GetById(entityId);
+                //if (responseResult.ErrorCode == ErrorCode.NOCONTENT)
+                //{
+                //    return NoContent(responseResult);
+                //}
+
+                return Ok(responseResult);
+
+            }
+            catch (Exception ex)
+            {
+                responseResult.OnException(responseResult, ex);
+                return StatusCode(500);
+            }
         }
 
         /// <summary>
@@ -92,12 +103,11 @@ namespace MISA.EShop.WebAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] T entity)
         {
-
             var responseResult = _baseService.Insert(entity);
-            if(responseResult.IsSuccess)
+            if (responseResult.IsSuccess)
             {
 
-            return Created(Messages.InsertDataSuccess, responseResult);
+                return Created(Messages.InsertDataSuccess, responseResult);
             }
             else
             {
@@ -119,7 +129,7 @@ namespace MISA.EShop.WebAPI.Controllers
             if (responseResult.IsSuccess)
             {
 
-            return Ok(responseResult);
+                return Ok(responseResult);
             }
             else
             {
